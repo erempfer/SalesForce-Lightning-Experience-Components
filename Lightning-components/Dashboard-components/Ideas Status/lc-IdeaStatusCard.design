@@ -1,0 +1,6 @@
+<design:component label="Ideas: Status Counts">
+    <design:attribute name="whatProduct" 	label="SofterWare Product" 	datasource = "DonorPerfect, DP Online Forms, EZCare" default="DonorPerfect"/>
+    <design:attribute name="whatStatus" 	label="Idea Status" 		datasource = "Already Exists, Completed, Considering, Coming Soon, Planned, Declined" default="Completed"/>
+	<design:attribute name="iconName" 		label="Icon URL or Font Awesome Name" 			placeholder="fa-star-o" description="The external URL location (Transparent PNG 50px x 50px) or Font Awesome class name" /> 
+	<design:attribute name="url"			label="Url for the Link" 	placeholder="/feature-story"/>
+</design:component>

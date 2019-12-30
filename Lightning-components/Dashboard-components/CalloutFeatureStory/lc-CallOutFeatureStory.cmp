@@ -1,0 +1,41 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="GetFeatureStoryApexContoller">	
+    <aura:attribute name="articles" 		type="SObject[]" /> 
+    <aura:attribute name="itExists" 		type="Boolean" 	default="true" />     	
+    <aura:attribute name="picture" 			type="String" 	default="https://www.softerware.com/community/donorperfect/assets/feature-story/FeatureStory.png"/>
+    <aura:attribute name="linkText" 		type="String" 	default="Read more..." />
+    <aura:attribute name="url"		 		type="String" 	default="/feature-story" />
+    <aura:attribute name="whichArticle" 	type="String" 	default="" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <div aura:id ="main-container">
+        <aura:if isTrue="{!v.itExists}">
+            <a class="story-container" href="javascript:void(0)" onclick="{!c.gotoURL}">
+                <div class="image-container" style="{! 'background: url(' + v.picture + ')'}"></div>    
+                
+                <div class="story-content">
+                    <aura:iteration var="article" items="{!v.articles}">
+                        <h1>{!article.Title}</h1>
+                        <p class="line-clamp line-clamp-6"><aura:unescapedHtml value="{!article.Body__c}"/></p>                        
+                    </aura:iteration>
+                    <span class="link-text">{!v.linkText}</span>
+                </div>                 
+            </a>            
+            
+            <aura:set attribute="else">
+                <div class="error-no-article">
+                    <h1>No Article Found</h1>
+                    <p><b>Troubleshooting</b></p>
+                    <ol>
+                        <li>Is the article number you entered in the property editor correct?</li>
+                        <li>Does the Featured Article Number field contain any unneccessary blank spaces?</li>
+                        <li>Is article type set as "Featured"?</li>
+                        <li>Is the article published?</li>
+                    </ol>
+                </div>
+            </aura:set>        
+        </aura:if>
+        
+        <div aura:id="newRibbon" class="ribbon hidden"><span>New!</span></div>
+    </div>
+</aura:component>

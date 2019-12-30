@@ -1,0 +1,364 @@
+/**************************
+Text Styling 
+***************************/
+.THIS h1, .THIS h5 {
+    font-size:		1.8rem;
+    line-height:	1.9rem;
+    font-weight:	bold;
+}
+
+.THIS h2 {
+    font-size:		1.3rem;
+    line-height:	1.4rem;
+}
+
+.THIS h3 {
+    font-size:		1.15rem;
+    line-height:	1.3rem;
+}
+
+.THIS h4 {
+    font-size:		1rem;
+    line-height:	1.1rem;
+    font-weight:	bold;
+}
+
+.THIS h5 span {
+    font-weight:	normal; 
+}
+
+.THIS small {
+    font-size:	0.85rem;
+}
+
+.THIS ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    width: 100%;
+}
+
+.THIS li {
+    margin: 0.5rem 0 0.5rem 20px;
+}
+
+.THIS ul span {
+    font-weight: bold;
+}
+
+.THIS span span{
+    font-weight: normal;
+}
+
+/**************************
+Header Styling 
+***************************/
+.THIS header {
+    margin-bottom: 30px;
+}
+
+.THIS header .title {
+    display:			flex;
+    align-items: 		center;
+    margin:				0 auto 15px;
+    padding:			15px;
+    border:				token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-radius:		token(styleBorderRadiusSW);
+}
+
+.THIS .title .client-id,
+.THIS .dt-highlights > small,
+.THIS .account-info p {
+    font-style: italic;
+}
+
+.THIS header .title img {
+    margin-right:	15px;
+}
+
+
+/**************************
+Summary/Overview Styling 
+***************************/
+.THIS .dt-overview {
+    display: 			flex;
+    margin: 			10px auto 0;
+}
+
+.THIS .dt-overview > section {  
+    background: 		token(colorZebraStripeSW);
+}
+
+.THIS .dt-overview .dt-highlights {
+    display: 			flex;
+    flex-wrap:			wrap;
+    justify-content: 	space-between;
+    align-content:		flex-start;
+    align-items:		flex-start;
+    flex-grow:			2;
+    margin-right:		30px;
+    padding: 			15px 30px;
+}
+
+.THIS .dt-highlights > div:nth-child(2) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.THIS .dt-highlights > div {
+    flex-grow:			1.5;
+    align-self:			center;
+    margin-bottom:		1rem;
+    padding:			10px 20px;
+    color:				#fff;
+    text-align:			center;
+    border-radius:		5px;
+    background: 		token(colorTextLinkSW);
+}
+
+.THIS .dt-highlights .exceeds-limit {
+    background: 		token(ezRed);
+}
+
+.THIS.dp-style .dt-highlights .exceeds-limit {
+    background: 		token(dpRed);
+}
+
+.THIS .transfer-exceed-warning {
+    display: 		block;
+    margin-bottom: 	1rem;
+    text-align: 	center;
+    color: 			token(ezRed);
+    font-style:		italic;
+}
+
+.THIS.dp-style .transfer-exceed-warning {
+    color: 			token(dpRed);
+}
+
+.THIS .dt-highlights > aside {
+    display: 			flex;
+    justify-content: 	space-evenly;
+    flex-wrap: 			wrap;
+    width: 				100%;
+}
+
+.THIS .dt-highlights > aside p {
+    font-style: italic;
+}
+
+.THIS .dt-highlights > aside p i,
+.THIS .table i {
+    color: 			token(colorTextLinkSW);
+    font-size: 		1.1rem;
+    margin-right: 	5px;
+}
+
+.THIS .dt-highlights .notes {
+    margin: 20px auto;
+}
+
+.THIS .dt-highlights .check-list {
+    list-style-type: none;
+}
+
+.THIS .check-list i {
+    margin-right: 5px;
+}
+
+.THIS .check-list li {
+    display: 	inline-block;   
+    margin:		0 1rem 1rem 0;
+}
+
+.THIS .fa-check-circle {
+    color: token(ezGreen);
+}
+
+.THIS.dp-style .fa-check-circle {
+    color: token(dpGreen);
+}
+
+.THIS .fa-times-circle {
+    color: token(ezRed);
+}
+
+.THIS.dp-style .fa-times-circle {
+    color: token(dpRed);
+}
+
+.THIS .important-info {
+    margin: 50px auto;
+}
+
+.THIS .account-info > * {
+    padding: 10px 30px;
+}
+
+.THIS .account-info h3 {
+    display:			block;
+    font-weight:		bold;
+    background: 		token(colorBorderSW);
+}
+
+/********************************
+Summary/Overview Styling Tablet 
+*********************************/
+@media only screen and (max-width: 1023px) {	
+    .THIS .dt-overview {
+        flex-wrap: wrap;
+    }
+    
+    .THIS .dt-overview > section,
+    .THIS .dt-overview .dt-highlights {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/**************************
+Mapping Details Styling 
+***************************/
+.THIS .table-head {
+    margin-top:		20px;
+    padding: 		10px;
+    border: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-radius:	5px;
+    text-transform:	uppercase;
+    font-weight: 	bold;
+}
+
+.THIS .table-row {
+    display: flex;
+}
+
+.THIS .table-row .header {
+    width:			100%;
+    margin:			50px auto 5px;
+    border: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-radius:	5px 5px 0 0;
+    background: 	token(colorZebraStripeSW);
+}
+
+.THIS .table-row .header i {
+ 	margin-right: 10px;   
+}
+
+.THIS .table-row .subHeader {
+    font-weight: 	bold;
+    text-transform: uppercase;
+}
+
+.THIS .table-row .data {
+    border-top: 	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS .table-row .data.no-border {
+    border-top: 	none;
+}
+
+.THIS .data i {
+    float: 		right;
+    font-size: 	1.5rem;
+    color:		token('rgba(' + ezBlueRGB + ', 0.6)');
+}
+
+.THIS.dp-style .data i {
+    color:		token('rgba(' + dpBlueRGB + ', 0.6)');
+}
+
+.THIS .table-column {
+    width: 25%;
+    padding: 15px 10px;
+}
+
+.THIS .last-column {
+    width: 40%;
+}
+
+/********************************
+Mapping Details Styling Phone 
+*********************************/
+@media only screen and (max-width: 640px) {	
+    .THIS .table-head {
+        margin:	20px auto;
+    }
+    
+    .THIS .table-row {
+        flex-wrap: 	wrap;
+    }
+    
+    .THIS .table-column:last-child {
+        margin-bottom: 30px;
+    }
+    
+    .THIS .table-row:nth-child(even) > * {
+        background: token(colorZebraStripeSW);
+    }
+    
+    .THIS .table-column {
+        width: 	100%;      
+    }
+    
+    .THIS .table-row .header {
+        margin: 		0 auto 20px;
+        border:			none;
+        border-radius: 	5px;
+        background:		token(colorTextLinkSW);
+        color:			#fff;
+    }
+    
+    .THIS .table-row .header i {
+        color:			#fff;
+    }
+    
+    .THIS .table-row .subHeader {
+        display: none;
+    }    
+    
+    .THIS .table-row .table-column.data {
+        border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+        border-top: none;
+    }
+    
+	.THIS .table-row .table-column.data:first-child {
+        border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    }
+    
+    .THIS .table-row .subHeader:first-of-type,
+    .THIS .table-row .data:first-of-type {
+        margin-left: 0;
+    }
+    
+    .THIS .table-row .data:nth-child(1):before {
+        content: 'Source: ';
+    }
+    
+    .THIS .table-row .data:nth-child(2):before {
+        content: 'New Screen: ';
+    }
+    
+    .THIS .table-row .data:nth-child(3):before {
+        content: 'New Name: ';
+    }
+    
+    .THIS .table-row .data:nth-child(4):before {
+        content: 'Notes: ';
+    }
+    
+    .THIS .table-row .data:before {
+        font-style: italic;
+        font-weight: bold;
+    }
+    
+    .THIS .table-row .data i {
+        display: none;
+    }
+}
+
+
+/**************************
+Global Styling 
+***************************/
+.THIS .hidden {
+    display: none;
+}

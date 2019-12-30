@@ -1,0 +1,17 @@
+<aura:component controller="GetCaseArticles" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <!-- Id of the Account the page hosting this component is showing -->
+    <aura:attribute name="theRecordId" type="String" access="global"/>
+    <aura:attribute name="header" type="String" access="global" default="Related KnowledgeBase Articles"/>
+    <aura:attribute name="articles" type="SObject[]" />
+    <aura:attribute name="numOfArt" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.getArticle}" />
+    
+    <div class="selfServiceCaseDetails">
+        <div class="header">{!v.header} ({!v.numOfArt})</div>        
+        <aura:iteration var="article" items="{!v.articles}">
+            <div class="articleList">
+                <a href="javascript:void(0)" onclick="{!c.gotoArticle}" data-value="{!article.KnowledgeArticleVersion.UrlName}" data-id="{!article.KnowledgeArticleVersion.Id}">{!article.KnowledgeArticleVersion.Title}</a>
+            </div>
+        </aura:iteration>          
+    </div>   
+</aura:component>

@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <div class='tophead'>
+        <div class="topbox">
+            <a href="/dpcommunity/s/" class="community-logo">
+                <img class='dpologo' src='https://www.softerware.com/community/donorperfect/assets/header/DonorPerfect-White.png' width='135' height='25' align="center" alt='DonorPefect Online'/>
+                <img class='planelogo' src='https://www.softerware.com/community/donorperfect/assets/header/Logo-Plane.png' width='300' align="center" alt='Community'/>
+            </a>
+            <a href="https://www.donorperfect.net" target="_blank" class="element system">            
+                <p class="arrow">My System</p>           
+            </a>
+        </div>
+    </div>
+</aura:component>

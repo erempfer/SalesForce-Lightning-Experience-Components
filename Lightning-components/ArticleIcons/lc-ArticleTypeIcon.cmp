@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" controller="KBArticleIconApexController">
+    <aura:attribute name= "theRecordId" 	type="String" />
+    <aura:attribute name= "tagLine"		 	type="String" />
+    <aura:attribute name= "iconName"		type="String" />
+    <aura:attribute name= "whatProduct"		type="String" />
+    <aura:attribute name= "showIcon"		type="Boolean" default="false"/>
+    <aura:attribute name= "clickLink1" 		type="String" 	access="global" default="/article/How-to-Use-the-EZ-Explorers" />
+    <aura:attribute name= "clickLink2" 		type="String" 	access="global" default="/article/How-to-Use-the-EZ-Explorers" />
+    <aura:attribute name= "clickLink3" 		type="String" 	access="global" default="/article/How-to-Use-the-EZ-Explorers" />
+    <aura:attribute name= "clickLink4" 		type="String" 	access="global" default="/article/How-to-Use-the-EZ-Explorers" />
+    <aura:attribute name= "clickLink5" 		type="String" 	access="global" default="/article/How-to-Use-the-EZ-Explorers" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!-- Register event to be received by the parent component pageLayoutArticleDetail -->
+    <aura:registerEvent name="iconEventFired" type="c:ArticleIconEvent"/>
+    
+    <aura:if isTrue="{!v.showIcon}">
+        <a href="javascript:void(0)" onclick="{!c.gotoURL}">
+            <div aura:id="iconContainer"> 
+                <img src="{!'https://www.softerware.com/community/ez/assets/icons/explorers/' + v.iconName}" alt="icon" height="100" width="100"/>
+                <h5 aura:id="iconText">{!v.tagLine}</h5>
+            </div> 
+        </a>
+    </aura:if>   
+</aura:component>

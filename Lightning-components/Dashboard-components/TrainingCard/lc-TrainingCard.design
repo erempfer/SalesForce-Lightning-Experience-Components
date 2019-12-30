@@ -1,0 +1,5 @@
+<design:component label="Class: Upcoming Class Card">
+    <design:attribute name="whatProduct" 	label="SofterWare Product" 	datasource = "DonorPerfect, EZCare, RSA"/>
+    <design:attribute name="linkText"		label="What the link says" 	placeholder="Learn More!"/>
+	<design:attribute name="url"			label="Url for the Link" 	placeholder="/feature-story"/>
+</design:component>

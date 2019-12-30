@@ -1,0 +1,5 @@
+<design:component label="Data Transfer Mapping">
+    <design:attribute name="theRecordId" 	label="Record ID" 		default="{!recordId}" required="true"/>
+    <design:attribute name="whatProduct" 	label="What Product" 	datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/>
+    <design:attribute name="imgURL"			label="Logo URL"/>
+</design:component>

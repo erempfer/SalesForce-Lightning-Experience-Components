@@ -1,0 +1,158 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" controller="DTMapping_ApexController">
+    <aura:attribute name="theRecordId" 			type="String" 	access="global" /> 
+    <aura:attribute name="overviewInfo" 		type="SObject[]" />
+    <aura:attribute name="mappingInfo" 			type="String[]" />
+    <aura:attribute name="records2Keep"			type="Integer" />
+    <aura:attribute name="totalMappedFields" 	type="Integer" />
+    <aura:attribute name="dataMapped"			type="Boolean" default="true" />
+    <aura:attribute name="hasAttachment"		type="Boolean" default="true" />
+    <aura:attribute name="isDP"					type="Boolean" default="false" />
+    <aura:attribute name="whatProduct"			type="String"  default="DonorPerfect"	access="global"/>
+    <aura:attribute name="imgURL"				type="String"  default="https://www.softerware.com/community/donorperfect/assets/icons/dp-circle-blue.png"	access="global"/>
+    
+    <aura:handler 	name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <aura:if isTrue="{!v.dataMapped}">        
+        <section aura:id="dt-map">
+            <header>
+                <div class="title">
+                    <img src="{!v.imgURL}" alt="Logo" width="100" height="100"></img>
+                    <div>
+                        <h1>Data Transfer Review and Approval</h1>
+                        <p>{!v.overviewInfo[0].Account__r.Name}</p>
+                        <p class="client-id">Client ID: {!v.overviewInfo[0].Client_ID__c}</p>
+                    </div>
+                </div>
+            </header>
+            
+            <h2>Data Transfer Summary/Overview</h2>
+            <article class="dt-overview">            
+                <section class="dt-highlights">
+                    <div>
+                        <small>Data transfer limit</small>
+                        <h5>{!v.overviewInfo[0].Max_Data_Transfer_Records__c} <span> records</span></h5>
+                    </div>
+                    <div aura:id="recordsToKeep">
+                        <small>Records to keep</small>
+                        <h5>{!v.records2Keep}</h5>
+                    </div>
+                    <div>
+                        <small>Records to delete</small>
+                        <h5>{!v.overviewInfo[0].Marked_for_Deletion__c}</h5>
+                    </div>
+                    <span class="transfer-exceed-warning hidden" aura:id="teWarning">
+                        The number of records to be transferred exceeds the number of transfer records you purchased. 
+                        Please contact your Implementation Coordinator for help.
+                    </span>
+                    <aside>
+                        <p><i class="far fa-calendar-alt"></i> Final data expected: <ui:outputDateTime value="{!v.overviewInfo[0].Final_Data_Due_Date__c}" format="M/D/yyyy"/></p>
+                        <p><i class="fas fa-table"></i> Source: {!v.overviewInfo[0].Source_Data_Type__c}</p> 
+                    </aside>
+                    <ul class="notes">
+                        <li>Fields mapped with <span>{!v.overviewInfo[0].Primary_Contact__r.Name}</span> on
+                            <ui:outputDateTime value="{!v.overviewInfo[0].Initial_Mapping__c}" format="M/D/yyyy"/></li>
+                        <li aura:id="specialNotes">{!v.overviewInfo[0].Mapping_Notes__c}</li>
+                    </ul>
+                    <ul class="check-list">
+                        <li><i class="fas fa-times-circle" aura:id="NCOA"></i>NCOA/CASS</li>
+                        <li><i class="fas fa-times-circle" aura:id="deceasedID"></i>Deceased Identification</li>
+                        <li><i class="fas fa-times-circle" aura:id="phoneAppend"></i>Residential Phone Append</li>
+                    </ul>
+                </section>           
+                
+                <section class="account-info">
+                    <h3>We're here to help!</h3>
+                    <div class="account-manager">                    
+                        <h4>Account Mananger</h4>
+                        <p>{!v.overviewInfo[0].Account_Manager_Front_Line_Sales__c}</p>
+                        <p>{!v.overviewInfo[0].AM_FL_Sales_Phone__c}</p>
+                        <p><a href="{! 'mailto:' + v.overviewInfo[0].AM_FL_Sales_Email__c}">{!v.overviewInfo[0].AM_FL_Sales_Email__c}</a></p>
+                    </div>
+                    <div class="data-service-specialist">
+                        <h4>Data Services Specialist</h4>
+                        <p>{!v.overviewInfo[0].Owner.Name}</p>
+                        <p>{!v.overviewInfo[0].Owner.Phone}</p>
+                        <p><a href="{! 'mailto:' + v.overviewInfo[0].Owner.Email}">{!v.overviewInfo[0].Owner.Email}</a></p>
+                    </div>
+                    <div class="implementation-coordinator">
+                        <h4>Implementation Coordinator</h4>
+                        <p>{!v.overviewInfo[0].IC_Name__c}</p>
+                        <p>{!v.overviewInfo[0].IC_Phone__c}</p>
+                        <p><a href="{! 'mailto:' + v.overviewInfo[1].OpportunityTeamMembers[0].User.Email}">
+                            {!v.overviewInfo[0].IC_Email__c}</a>
+                        </p>
+                    </div>
+                </section>
+            </article>
+            
+            <article class="important-info">
+                <h2>Important Information About Your Data Transfer</h2>
+                <aura:if isTrue="{!v.isDP}">
+                    <ul>
+                        <li>
+                            Changes to your {!v.whatProduct} system, such as creating new fields to map to your existing data, 
+                            can be made during the data conversion process.
+                        </li>
+                        <li>
+                            Do you have records in your existing system you would like to delete? Tell your Data Services Specialist 
+                            how to identify those records, so they can be marked using a special field. Your specialist does not delete 
+                            the records, but you will be able to find them easily by filtering that field. You should remove the records 
+                            marked for deletion within two weeks of your system delivery to avoid additional fees for records you don’t need. 
+                            If you need help checking the records and deleting them, please contact our Support Department.
+                        </li>
+                        <li>
+                            When your records are transferred, your Data Services Specialist does not identify, remove, or merge duplicate 
+                            records. Once your system is delivered, {!v.whatProduct}'s duplicate removal tool will help you identify, merge and 
+                            clean out duplicate records. Duplicate maintenance is an important step to keep system totals accurate and make 
+                            system adjustments easier.
+                        </li>
+                        <li>
+                            In {!v.whatProduct}, records are classified as “Individuals” or “Organizations.” The fields displayed in your system 
+                            will change based on this designation. Individual records use First Name, Last Name, and Suffix fields. 
+                            Organization records will show the Organization Name and Contact Person fields.
+                        </li>
+                    </ul>
+                    <aura:set attribute="else">
+                        <ul>
+                            <li>
+                                When your records are transferred, your Data Services Specialist does not identify, remove, or merge duplicate 
+                                records.
+                            </li>
+                        </ul>
+                    </aura:set>
+                </aura:if>
+            </article>            
+        </section>        
+        
+        <section aura:id="dt-map" class="mapping-details">            
+            <h2>Data Conversion Chart</h2>
+            <aura:if isTrue="{!v.hasAttachment}">
+                <p>
+                    In a data conversion, {!v.whatProduct} staff matches the data you provide to the places it will be stored in your 
+                    new {!v.whatProduct} system. Below is a detailed look at how your old data fields and new data fields line up.
+                </p>
+                
+                <div class="table"> 
+                    <div class="table-head"><i class="fas fa-table"></i> Source Table to Convert: {!v.overviewInfo[0].Source_Data_Type__c}</div>
+                    <aura:iteration items="{!v.mappingInfo}" var="col" indexVar="rowNum">
+                        <div class="{! 'table-row ' + 'row' + rowNum}">                            
+                            <aura:unescapedHtml value="{!col[0]}"></aura:unescapedHtml>
+                            <aura:unescapedHtml value="{!col[1]}"></aura:unescapedHtml>
+                            <aura:unescapedHtml value="{!col[2]}"></aura:unescapedHtml>
+                            <aura:unescapedHtml value="{!col[3]}"></aura:unescapedHtml>
+                            <aura:unescapedHtml value="{!col[4]}"></aura:unescapedHtml>
+                        </div>
+                    </aura:iteration>            
+                </div>
+                
+                <aura:set attribute="else">
+                    You're data conversion chart is being processed. Please check back at a later date.
+                </aura:set>
+            </aura:if>
+        </section>
+        
+        <aura:set attribute="else">
+            You're data transfer mapping is being processed. Please check back at a later date.
+        </aura:set>
+    </aura:if> 
+</aura:component>

@@ -1,0 +1,41 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" controller="ArticleCall">
+    <aura:attribute name="articles" 			type="SObject[]" /> 
+    <aura:attribute name="numOfArticles" 		type="Integer" default="20" /> 
+    <aura:attribute name="toggleSpinner" 		type="boolean" default="false"/>
+    <aura:attribute name="isPublic" 			type="boolean" default="false"/>
+	<aura:attribute name="whichProduct"			type="String" 	access="global" />
+    <aura:attribute name="myHeight"				type="String" 	access="global" default="25.5rem"/>
+    
+    <aura:handler event="aura:waiting" 			action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" 		action="{!c.hideSpinner}"/>  
+    <aura:handler name="init" value="{!this}" 	action="{!c.getArticle}" />
+    <aura:handler event="c:SearchKeyChange" 	action="{!c.searchKeyChange}"/>
+    
+    <c:SearchBarComponent />
+    
+    <div class="article-table" aura:id="kb-articles">
+        <div class="rows row-header">        
+            <ul>
+                <li class="article-title">Article</li>
+                <li class="article-summary">Summary</li>
+                <li class="article-date">Published</li>
+            </ul>
+        </div>
+        
+        <div class="rows rows-all-articles" style="{! 'height: ' + v.myHeight + ';'}">
+            <aura:if isTrue="{!v.toggleSpinner}">
+                <center><ui:spinner aura:id="spinner" class="slds-spinner_container"/></center>
+            </aura:if> 
+            
+            <aura:iteration var="article" items="{!v.articles}">
+                <div class="row-article">
+                    <ul>
+                        <li class="article-title"><a onclick="{!c.gotoArticle}" data-value="{!article.UrlName}" data-id="{!article.Id}">{!article.Title}</a></li>
+                        <li class="article-summary">{!article.Summary}</li>
+                        <li class="article-date"><ui:outputDate value="{!article.LastPublishedDate}"/></li>
+                    </ul>
+                </div>
+            </aura:iteration>  
+        </div>     
+    </div>
+</aura:component>

@@ -1,0 +1,5 @@
+<design:component label="Training Request Form" >
+    <design:attribute name="valueProduct"	label="Which Product" datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/> 
+    <design:attribute name="formAction"		label="Pardot's Endpoint URL" />
+    <design:attribute name="valueForm"		label="The Community URL that contains the form"/>
+</design:component>

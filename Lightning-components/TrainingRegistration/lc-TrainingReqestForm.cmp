@@ -1,0 +1,184 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="TrainingEventApex">    
+    <aura:attribute name="userInfo" 	type="SObject[]"	access="global" /> 
+    <aura:attribute name="checkNum" 	type="Integer" 		access="global" default="0" />
+    <aura:attribute name="isEnabled" 	type="Boolean" 		access="global" default="false" />
+    <aura:attribute name="formAction"	type="String" 		access="global" default="https://go.pardot.com/l/124112/2017-05-11/3bgx6g"/>
+    <aura:attribute name="valueProduct"	type="String" 		access="global" default="DonorPerfect"/>
+    <aura:attribute name="valueForm"	type="String" 		access="global" default="https://softerware.force.com/dpcommunity/s/training"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+        
+    <form aura:id="training-form" accept-charset="UTF-8" method="post" action="{!v.formAction}" class="slds-form--stacked slds-grid slds-wrap slds-grid--pull-padded slds-m-top--large">           
+        <aura:iteration var="user" items="{!v.userInfo}">            
+            <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-required" for="first_name">First Name</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="first_name" id="first_name" class="slds-input" value="{!user.FirstName}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-required" for="last_name">Last Name</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="last_name" id="last_name" class="slds-input" value="{!user.LastName}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-required" for="email">Email</label>
+                    <div class="slds-form-element__control">
+                        <input type="email" name="email" id="email" class="slds-input" value="{!user.Contact.Email}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element hidden">
+                    <label class="slds-form-element__label slds-required" for="WebForm__c">Web Form</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="WebForm__c" id="WebForm__c" class="slds-input" value="{!v.valueForm}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element hidden">
+                    <label class="slds-form-element__label slds-required" for="Lead_Type__c">Lead Type</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="Lead_Type__c" id="Lead_Type__c" class="slds-input" value="Other" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-required" for="phone">Phone</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="phone" id="phone" class="slds-input" value="{!user.Account.Phone}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label slds-required" for="company">Company</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="company" id="company" class="slds-input" value="{!user.Account.Name}" required="required" />
+                    </div>
+                </div>
+                
+                <div class="slds-form-element hidden">
+                    <label class="slds-form-element__label" for="Client_Id__c">Client ID</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="Client_Id__c" id="Client_Id__c" class="slds-input read-only" value="{!user.Account.Client_Id__c}" readonly="true"/>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element hidden">
+                    <label class="slds-form-element__label slds-required" for="Product_Line__c">Product Line</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="Product_Line__c" id="Product_Line__c" class="slds-input" value="{!v.valueProduct}" required="required" />
+                    </div>
+                </div>
+                <div class="slds-form-element hidden">
+                    <label class="slds-form-element__label slds-required" for="Product_Detail__c">Product Detail</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" name="Product_Detail__c" id="Product_Detail__c" class="slds-input" value="{!v.valueProduct}" required="required" />
+                    </div>
+                </div>
+            </div>            
+        </aura:iteration>
+        
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 training-info">
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label slds-required">Training Options</legend>
+
+                <div class="{!v.valueProduct == 'EZCare' ? 'slds-form-element hidden' : 'slds-form-element'}">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="Addon_OPT_Training__c" id="webinar_sub" value="Unlimited Webinar Subscription Plan" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="webinar_sub">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">Unlimited Webinar Subscription Plan</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input aura:id="contact-info" type="checkbox" name="Addon_OPT_Training__c" id="virtual_ost" value="Virtual On-Site Training" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="virtual_ost">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">Virtual On-Site Training</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="Addon_OPT_Training__c" id="onsite_training" value="On-Site Training" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="onsite_training">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">On-Site Training</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="Addon_OPT_Training__c" id="headquarters" value="SofterWare Headquarters" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="headquarters">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">SofterWare Headquarters</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="{!v.valueProduct == 'EZCare' ? 'slds-form-element hidden' : 'slds-form-element'}">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="Addon_OPT_Training__c" id="client_advisory" value="Client Advisory Services" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="client_advisory">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">Client Advisory Services</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <span class="slds-checkbox">
+                            <input type="checkbox" name="Addon_OPT_Training__c" id="training_tracks" value="Training Tracks" onclick="{!c.checkboxJs}" checked="false" />
+                            <label class="slds-checkbox__label" for="training_tracks">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-form-element__label">Training Tracks</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 training-info">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="description">Tell us about your needs and situation. This information will help us understand your unique requirements. <em>(Optional)</em></label>
+                <div class="slds-form-element__control">
+                    <textarea name="description" id="description" rows="6" class="slds-textarea" placeholder="Special requests" value=""></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-form-element submit center-me">
+            <aura:if isTrue="{!v.isEnabled}">
+                <button aura:id="submit-btn" type="submit" value="Submit">Send Request</button>
+                <aura:set attribute="else">
+                    <ui:button label="Choose Your Training Option(s)" class="disable" disabled="true"/>
+                </aura:set>                
+            </aura:if>
+        </div>
+        
+    </form>
+</aura:component>

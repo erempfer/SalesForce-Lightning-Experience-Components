@@ -1,0 +1,137 @@
+.THIS {
+    font-size: 		1rem;
+}
+
+/* Global style for lists */
+.THIS.article-table .rows ul {
+    display: 		flex;
+    list-style-type: 	none;
+    margin: 			0;
+    padding:			0;
+}
+
+.THIS.article-table .rows li {
+    display: 		inline-block;
+    zoom: 			1;
+    padding: 		0.7rem 1rem;
+}
+
+/* Header bar for the list of articles */
+.THIS .row-header { 
+    background: 	token(ezColor1);
+    height: 		auto;
+    width: 			100%;
+    color:			#fff;
+    font-weight:	bold;
+}
+
+.THIS.dp-style .row-header {
+    background: 	token(dpColor1);
+}
+
+.THIS.article-table .row-header li.article-summary {
+    padding-left: 0.5rem;
+}
+
+.THIS.article-table .row-header li.article-date {
+    padding-left: 0; 
+}
+
+/* Rows under the header */
+.THIS .rows-all-articles {
+    height: 		25.5rem;
+    position: 		relative;
+    top: 			auto;
+    overflow-y: 	auto;
+    border:			token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-top:		none;
+}
+
+.THIS .row-article {
+    background: 	transparent;
+}
+
+.THIS .row-article:nth-child(even) {
+    background:		token(colorZebraStripeSW);
+}
+
+.THIS .row-article ul {
+    border-bottom:	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS .row-article li {
+    text-overflow: 	ellipsis;
+    white-space: 	nowrap;
+    overflow: 		hidden;
+    vertical-align: middle;
+}
+
+.THIS .row-article li a {
+    text-decoration: none;
+}
+
+.THIS .row-article li a:hover {
+    color: 		token(colorBrandSW);
+}
+
+.THIS .article-title {
+    width:		40%;
+}
+
+.THIS .article-summary {
+    width:		43%;
+}
+
+.THIS .slds-spinner_container {
+    z-index: 	10000;
+    position: 	absolute;
+    background: #fff;
+    opacity: 	0.75;
+}
+
+.THIS .slds-spinner_container .spinner-img {
+    position: 	absolute;
+    top: 		50%;
+}
+
+
+
+/*Tablet Style*/
+@media only screen and (max-width: 1023px) {
+    .THIS.article-table .rows .article-date {
+        display: none;
+    }
+    
+    .THIS.article-table .rows .row-article li {
+        text-overflow:	initial;
+        white-space: 	pre-wrap;
+    }  
+}
+
+/*Phone Style*/
+@media only screen and (max-width: 640px) {
+    .THIS.article-table .article-title,
+    .THIS.article-table .article-summary{
+        width:		100%;
+        text-align:	center;
+    }
+    
+    .THIS.article-table .row-header li {
+        display: none;
+    }
+    
+    .THIS.article-table .row-header .article-title {
+        display: 			inline-block;
+        text-align: 		center;
+        width: 				100%;
+        text-decoration:	none;
+        padding: 			0.8rem 0;
+    }
+    
+    .THIS.article-table .rows-all-articles .article-title {
+        padding-bottom: 	0;
+        font-size: 			1.2rem;
+        line-height: 		1.5rem;
+        text-decoration:	underline;
+    }
+}

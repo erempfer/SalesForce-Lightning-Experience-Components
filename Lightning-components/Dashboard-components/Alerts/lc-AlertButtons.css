@@ -1,0 +1,98 @@
+.THIS {
+    display:		inline-block;
+	position:		relative;
+    max-width:		150px;
+    min-width:		100px;
+    padding:		20px 20px 15px 20px;
+    /*border:			token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW); */
+    border-radius: 	token(styleBorderRadiusDashboard);
+    background:		#ffffff;
+    font-size: 		1rem;
+    box-shadow:		token(dpBoxShadow);
+    cursor: 		pointer;
+}
+
+.THIS,
+.THIS .sf-icon svg {    
+    color: 		token(colorTextLinkSW);
+    fill:		token(colorTextLinkSW);
+    
+    transition:	color .1s linear, fill .1s linear;
+}
+
+.THIS:hover,
+.THIS:hover .sf-icon svg {
+    color: 	token(colorBrandSW);
+    fill: 	token(colorBrandSW);
+}
+
+.THIS span {
+    display: 		inline-block;
+    text-align:		center;
+}
+
+.THIS .icon {
+    display: 		block;
+    margin:			0 auto 5px;
+    min-width:		2rem;
+    text-align:		center;
+}
+
+.THIS .fa,
+.THIS .fas,
+.THIS .far,
+.THIS .fab,
+.THIS .sf-icon svg {
+    font-size: 		2rem;
+    max-width:		50px;
+}
+
+.THIS .text {
+    width: 			100%;
+    line-height: 	1.3rem;
+    font-size:		1rem;
+}
+
+/*Phone Style*/
+@media only screen and (max-width: 640px) {
+    .THIS {
+        display:	block;
+        padding: 	15px;
+        max-width:	950px;
+    }
+}
+
+/*************************** 
+Alert Style 
+***************************/
+.THIS .alert-dot {
+    display:	block;
+    position: 	absolute;
+    right: 		-10px;
+    top: 		-10px;
+    z-index: 	1;
+    width: 		30px;
+    height: 	30px;
+    text-align: center;
+}
+
+.THIS .alert-dot span {
+    display: 		block;
+    width: 			35px;
+    height: 		35px;
+    line-height: 	35px;
+    border-radius: 	50%;
+    font-size: 		1rem;
+    font-weight:	bold;
+    text-align: 	center;
+    color:			#fff;
+    background: 	token(ezColor4);   
+}
+
+.THIS.dp-style .alert-dot span {
+    background: 	token(dpColor4);   
+}
+
+.THIS .hidden {
+    display: none;
+}

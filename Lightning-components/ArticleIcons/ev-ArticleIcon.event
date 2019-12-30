@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event used in the pageLayoutArticleDetail and KBArticleIcon components" >
+    <aura:attribute name="hasIcon" type="Boolean" access="global" />
+</aura:event>

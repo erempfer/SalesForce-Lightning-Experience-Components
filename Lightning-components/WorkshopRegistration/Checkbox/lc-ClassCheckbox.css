@@ -1,0 +1,173 @@
+/**************************
+User Checkbox Styling 
+***************************/
+.THIS .uiInputCheckbox {
+    display: 	flex;
+    align-items:center;
+    width: 		auto !important;
+}
+
+.THIS .uiInputCheckbox label {
+    order: 			2;
+    margin-bottom: 	0.5px;
+}
+
+.THIS .uiInputCheckbox span {
+    display: 	inline-block;
+    margin: 	0 5px;
+    color:		token(colorTextDefaultSW);
+}
+
+.THIS .uiInputCheckbox input[type='checkbox'] {
+    width: 	20px;
+    height: 20px;
+}
+
+
+/**************************
+Additional Options Styling 
+***************************/
+/* Animate the additonal options off, controlled through the class names in the cmp */
+.THIS .additional-options {
+    margin: 		0;
+    padding-left: 	25px;
+    max-height:		0px;
+    overflow:		hidden;
+    
+    transition: max-height 0.5s, margin 0.5s, opacity 0.5s;
+}
+
+/* Animate the additonal options on, controlled through the class names in the cmp */
+.THIS .additional-options.show {
+    max-height: 1000px;
+}
+
+.THIS .additional-options > * {
+    margin: 	10px auto;
+}
+
+
+/**************************
+Experience Level Styling 
+***************************/
+.THIS .experience-level {
+    display: flex;
+}
+
+.THIS .experience-level legend,
+.THIS .group-checkboxes legend {
+    font-size: 	0.85rem;
+    font-style: italic;
+    color: 		token(colorTextDefaultSW);     
+}
+
+.THIS .experience-level .slds-radio_button-group {
+    border: token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS .experience-level .slds-radio_button-group .slds-button {
+    color: 		token(colorTextDefaultSW);
+    font-size: 	0.85rem;
+}
+
+.THIS .slds-radio_button-group .slds-button:focus,
+.THIS .slds-radio_button [type="radio"]:focus + .slds-radio_button__label {
+    box-shadow: none;
+}
+
+
+/**************************
+Date Checkbox Styling 
+***************************/
+.THIS .group-checkboxes {
+    margin-top: 15px;
+}
+
+.THIS .group-checkboxes .form-element_control {
+    display:	flex;
+    flex-wrap:	wrap;
+}
+
+.THIS .group-checkboxes .date-checkbox {
+    margin: 5px 5px 0 0;
+}
+
+.THIS .group-checkboxes .date-checkbox [type=checkbox] {
+    width: 			1px;
+    height: 		1px;
+    clip: 			rect(0px 0px 0px 0px);
+    position: 		absolute;
+    border-width: 	0px;
+    border-style:	initial;
+    border-color: 	initial;
+    border-image: 	initial;
+    margin: 		-1px;
+    overflow: 		hidden;
+    padding: 		0px;
+}
+
+.THIS .group-checkboxes .checkbox-label {
+    display:		flex;
+    flex-direction:	column;
+    justify-content:center;
+    padding:		10px;
+    width:			4.5rem;
+    height:			4.5rem;
+    font-size:		0.85rem;
+    border-radius:	50%;
+    border: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    background: 	#fff;
+    transition: 	background-color 0.5s, border 0.5s;
+}
+
+.THIS .group-checkboxes .checkbox-label:hover {
+    cursor: 		pointer;
+    border-color:	token(dpColor2);
+    color:			token(dpColor2);
+}    
+
+.THIS .group-checkboxes .checkbox-label > span {
+    display:		flex;
+    flex-direction:	column;
+    text-align:		center;
+}
+
+.THIS .group-checkboxes .checkbox-label span span {
+    text-align:		center;
+    line-height:	1rem;
+}
+
+.THIS .group-checkboxes .checkbox-label .label-day {
+    font-weight: bold;
+}
+
+.THIS .group-checkboxes .date-checkbox [type=checkbox]:checked + label {
+    background: token(dpColor2);
+    color:		#fff;
+}
+
+
+/**************************
+Global Styling 
+***************************/
+.THIS .hidden, .THIS.hidden {
+    display: none;
+}
+
+.THIS.turned-off {
+    opacity: 0.5;
+}
+
+
+/**************************
+Warning Styling 
+***************************/
+.THIS .warning {
+    color: 			token(dpRed);
+    font-weight:	bold;
+    margin-left:	5px;
+}
+
+.THIS .group-checkboxes .checkbox-label.warning-outline {
+    border-color: token(dpRed);
+}

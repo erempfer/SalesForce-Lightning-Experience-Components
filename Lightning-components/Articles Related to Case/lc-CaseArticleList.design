@@ -1,0 +1,4 @@
+<design:component label="Articles Related to Case">
+	<design:attribute name="theRecordId" label="Case ID" default="{!recordId}" required="true"/>
+    <design:attribute name="header" label="Header Name"/>
+</design:component>

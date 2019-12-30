@@ -1,0 +1,5 @@
+<design:component label="Callout: Blog">
+    <design:attribute name="whatProduct" 	label="The SofterWare product" datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/>
+	<design:attribute name="headerText"		label="Header Text" />
+    <design:attribute name="linkText" 		label="Text for Link" /> 
+</design:component>

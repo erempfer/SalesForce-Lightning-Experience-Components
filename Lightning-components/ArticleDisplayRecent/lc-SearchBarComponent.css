@@ -1,0 +1,32 @@
+.THIS {
+    position:	relative;
+    max-width:	23em;
+	margin: 	1rem 0 0.5rem 0;   
+}
+
+.THIS span {
+    position:	absolute;
+    left:		10px;
+    top:		10px;
+    font-size:	1rem;
+    color:		token(colorTextLabelSW);
+	transition:	color .1s linear;
+}
+
+.THIS:hover span {
+    color:	token(colorBrandSW);
+}
+
+.THIS .search-bar {
+	width: 				100%;
+    padding:			6px 15px 6px 30px; 
+    border:				token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+	border-radius:		2rem; 
+    outline:			none;
+	transition:			border-color .1s linear;
+}
+
+.THIS .search-bar:hover {
+    border-color: 	token(colorBrandSW);
+    box-shadow:		0 0 3px token(colorBrandSW);
+}

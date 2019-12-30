@@ -1,0 +1,11 @@
+<design:component label="Button: Icon with Alerts">
+    <design:attribute name="whatProduct" 	label="The SofterWare product" 	datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/>
+    <design:attribute name="whatObject" 	label="Community Topic Alerts" 	datasource="None, Cases, Knowledgebase, Groups, Invoice, Training" default="None"/>
+    <design:attribute name="lookBackDays" 	label="How many days the alert lasts" 	default="5"/>
+    <design:attribute name="textLink"		label="Text"				description="The text you want in the button" />  
+    <design:attribute name="iconLink"		label="Icon Name"			description="FA icon - the class name of the icon
+                                                                             SF icon - the name of the package and icon                                                                             
+                                                                             (https://lightningdesignsystem.com/icons/#utility)" />
+	<design:attribute name="urlLinkList" 	label="URL to List Page" 	description="Community URL to general page like KB or Groups List"/>
+    <design:attribute name="urlLinkDetail"	label="URL to Detail Page" 	description="Community URL when an alert appears for Groups" /> 
+</design:component>

@@ -1,0 +1,8 @@
+<design:component label="Article Related Links">
+    <design:attribute name="theRecordId" 	label="Record ID" 				default="{!recordId}" 	required="true"/>	
+    <design:attribute name="whatProduct" 	label="The SofterWare product" 	datasource="DonorPerfect, EZCare, EZ2, RSA" default="DonorPerfect"/>
+    <design:attribute name="title1" 		label="Name for the 1st set of articles." />	
+    <design:attribute name="title2" 		label="Name for the 2nd set of articles." />
+	<design:attribute name="title3" 		label="Name for the 3rd set of links." />
+    <design:attribute name="noneMessage"	label="Message when no articles are found." />
+</design:component>
