@@ -801,10 +801,10 @@ MAIL MERGE STYLE
         margin: 1em 0;
     }
     .THIS .gizmo #fieldblank td:nth-of-type(1):before {
-        content: "Result if “Address 2” field is blank";
+        content: "Result if Â“Address 2Â” field is blank";
     }
     .THIS .gizmo #fieldblank td:nth-of-type(2):before {
-        content: "Result if “Address 2” field has data";
+        content: "Result if Â“Address 2Â” field has data";
     }
 }
 
