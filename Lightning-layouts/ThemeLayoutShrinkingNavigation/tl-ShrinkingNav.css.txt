@@ -1,0 +1,785 @@
+/*********************
+GENERAL  
+**********************/
+.THIS {
+    position: 	relative;
+    z-index: 	1;
+    font-size:	1rem;
+}
+
+.THIS .hidden {
+    display: none;
+}
+
+
+/*********************
+SLDS Button Overides
+**********************/
+/*
+.THIS a:hover{
+    text-decoration: 	none;
+    color:		token(colorBrandSW);	
+}
+*/
+
+/* Action Buttons (<button>) */
+.THIS .slds-button.slds-button--neutral,
+.THIS .slds-button.slds-button--brand, 
+.THIS .slds-button.slds-button--brand.askCommunityBtn,
+.THIS .slds-button.slds-button--brand.selfServiceContactSupport,
+.THIS .slds-button.slds-button--neutral.not-selected.slds-not-selected, 
+.THIS .slds-button.slds-button--neutral.is-selected.slds-is-selected,
+.THIS .slds-button.slds-button--neutral.caseCreationButton {   
+    background:		token(colorBrandSW);
+    border:		token(sizeBorderSW) token(styleBorderSW) token(colorBrandSW);
+    color:		#fff; 
+    border-radius:	5px;
+    transition:		all .1s linear;
+}
+
+/* Action Buttons' Hover (<button>) */
+.THIS .slds-button.slds-button--neutral:hover,
+.THIS .slds-button.slds-button--brand:hover,
+.THIS .slds-button.slds-button--brand.askCommunityBtn:hover,
+.THIS .slds-button.slds-button--brand.selfServiceContactSupport:hover,
+.THIS .slds-button.slds-button--neutral.not-selected.slds-not-selected:hover,
+.THIS .slds-button.slds-button--neutral.is-selected.slds-is-selected:hover,
+.THIS .slds-button.slds-button--neutral.caseCreationButton:hover {
+    background: 	#fff;
+    border:		token(sizeBorderSW) token(styleBorderSW) token(colorBrandSW);
+    color:		token(colorBrandSW);
+}
+
+/* Action Buttons Where The Default Text Is Blue (<button><a>) */
+.THIS .slds-button-group .slds-button--neutral > a {
+    color: 		#fff;
+}
+
+.THIS .slds-button-group .slds-button--neutral > a:hover {
+    background: transparent;
+    color:		token(colorBrandSW);
+}
+
+/* Action Buttons That Are In A Row (<ul>) */
+.THIS .slds-button-group .slds-button + .slds-button, 
+.THIS .slds-button-group .slds-button + .slds-button_last .slds-button, 
+.THIS .slds-button-group .slds-button + .slds-button--last .slds-button, 
+.THIS .slds-button-group-list li + li .slds-button {
+    margin-left: 	1px;
+    border-radius: 	0;
+}
+
+/* Action Buttons That Are In A Row (<ul>) And Are the First One */
+.THIS .slds-button-group-list li:first-child .slds-button, 
+.THIS .slds-button-group .slds-button:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+
+/* Action Buttons That Are In A Row (<ul>) And Are the Last One */
+.THIS .slds-button-group .slds-button:last-child, 
+.THIS .slds-button-group-list li:last-child .slds-button, 
+.THIS .slds-button-group .slds-button_last .slds-button, 
+.THIS .slds-button-group .slds-button--last .slds-button, 
+.THIS .slds-button-group .slds-button.slds-button_last, 
+.THIS .slds-button-group .slds-button.slds-button--last, 
+.THIS .slds-button-group .slds-button.slds-button_last, 
+.THIS .slds-button-group .slds-button.slds-button--last {
+    border-radius: 0 5px 5px 0;
+}
+
+/* Action Buttons That Are In A Row (<ul>) And Are the Only One */
+.THIS .slds-button-group .slds-button:only-child, 
+.THIS .slds-button-group .slds-button:only-child {
+    border-radius: 5px;
+}
+
+.THIS .dummyButtonCallToAction {
+    background: 	#fff;
+    border-color:	token(colorBorderSW);
+    color: 		token(colorTextLabelSW);
+}
+
+.THIS .slds-button.upload-file-button {
+    border: none;
+}
+
+.THIS .slds-rich-text-editor__textarea a,
+.THIS .slds-rich-text-editor__output a {
+    word-break: normal;
+}
+
+.THIS .slds-form-element__label,
+.THIS .slds-form-element__static {
+    font-size: 1rem;
+}
+
+.THIS .slds-form-element_readonly {
+    border: none;
+}
+
+/* Checkbox styles */
+.THIS .forceCommunityUserSettings input[type=checkbox]:checked {
+    box-shadow: none;
+}
+
+
+/*********************
+SLDS Tab Bar Overides
+**********************/
+/* Tabs Bar (<ul>) Styling */
+.THIS .forceCommunityTabset.uiTabset .uiTabBar {
+    margin-bottom: 10px;
+}
+
+/* Active Tab Style (<li>) */
+.THIS .forceCommunityTabset.uiTabset .uiTabBar .uiTabItem.active {
+    background: #fff;
+}
+
+/* Tabs Style for Non-phones (<li>) */
+@media only screen and (min-width: 480px) {
+    .THIS .forceCommunityTabset.uiTabset .uiTabBar .uiTabItem {
+        max-width: 	30%;
+        min-width: 	60px;
+        padding:	0 8px;
+        text-align: 	center;
+        border: 	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+        border-bottom: 	none;
+        border-radius: 	5px 5px 0 0;
+        background: 	token(colorZebraStripeSW);
+    }
+    
+    .THIS .forceCommunityTabset.uiTabset .uiTabBar .uiTabItem + .uiTabItem {
+        margin-left: 	10px;
+    }
+}
+
+
+/**********************
+SLDS Tables Overrides
+***********************/
+.THIS .slds-table tr:nth-child(even){
+    background: token(colorZebraStripeSW);
+}
+
+.THIS .slds-table tr th,
+.THIS .slds-table tr td {
+    background: transparent;
+}
+
+
+/***************************************
+SLDS Object/Record Detail Component
+****************************************/
+/* Page: Case, Group, Account, User Details; LC: forceCommunityRecordHeadline; Header <div> */
+.THIS .slds-page-header {
+    border: 	none;
+    padding: 	0;
+    height:	auto;
+}
+
+/* Page: Case Details, Group Details; LC: selfServiceCaseDetails, detailRelatedList; Header <h3> */
+.THIS div.siteforceContentArea .forceRecordLayout .slds-section__title.test-id__section-header-container {
+    border-bottom: 	token(sizeBorderSW) token(styleBorderSW) token(colorTextLinkActiveSW);
+    border-radius: 	0;
+    margin-top: 	30px;
+    padding: 		0 10px;
+    color:		token(colorTextLinkActiveSW);
+}
+
+/* Page: Case Details, Group Details; LC: selfServiceCaseDetails; First Header <h3> */
+.THIS div.siteforceContentArea .forceRecordLayout .test-id__section:first-of-type .slds-section__title.test-id__section-header-container {
+    margin-top: 	0;
+}
+
+.THIS div.siteforceContentArea .forceRecordLayout .slds-section__title.test-id__section-header-container span {
+    padding: 0;
+}
+
+/* Page: Case Details; LC: selfServiceCaseDetails; Header <div> */
+.THIS .selfServiceCaseDetails .header {
+    margin-bottom: 15px;
+}
+
+/* Page: Case Details; LC: selfServiceCaseDetails; Row <div> */
+.THIS div.siteforceContentArea .forceRecordLayout .slds-form .forcePageBlockSectionRow {
+    padding: 15px;
+}
+
+.THIS div.siteforceContentArea .forceRecordLayout .slds-form .forcePageBlockSectionRow:nth-child(even) {
+    background: 	token(colorZebraStripeSW);
+    border: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-left: 	none;
+    border-right: 	none;
+}
+
+/* Page: Object Details; LC: Record Detail; Element Label <span> */
+.THIS div.siteforceContentArea .forceRecordLayout .slds-form .forcePageBlockSectionRow .slds-form-element__label {
+    display: 		inline;
+    font-weight:	bold;
+}
+
+/* Page: Object Details; LC: Record Detail; Static Label <span> */
+.THIS div.siteforceContentArea .forceRecordLayout .slds-form .forcePageBlockSectionRow .slds-form-element__static {
+    word-wrap: 		normal;
+    border:		none;
+}
+
+/* Page: Group Details; LC: forceCommunityGroupRecordHomeTabs -> Group Details <div>; */
+.THIS .forceDetailPanel .forcePageBlockSectionView .forcePageBlockItem:only-child {
+    padding: 0;
+}
+
+/* Page: Invoice Details; LC: forceCommunityRecordHomeTabs -> recordHomePrimaryContent <div>; */
+@media only screen and (min-width: 64.0625em){
+    .THIS .forceCommunityRecordHomeTabs .recordHomePrimaryContent {
+        float: none;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+
+
+/*********************
+SLDS HIDDEN BUTTONS
+**********************/
+/*
+/* Pages: Account Detail, LC:Case Detail; Button: +Follow */
+.THIS .forceHighlightsPanel.forceCommunityRecordHeadline .slds-page-header div.forceActionsContainer,	
+/* Pages: Case Details; LC: selfServiceCaseDetails; Button: View More*/
+.THIS .selfServiceCaseDetails .detailsContainer .more,								
+/* Pages: Case List, Group List, Invoice List; LC: forceListViewManager; Button: New */
+.THIS .forceListViewManager ul.oneActionsRibbon {									
+    display: none;
+}
+
+/* Pages: Group List, LC: forceCommunityGroupObjectHome, Button: New */
+.THIS .forceCommunityGroupObjectHome .forceListViewManager ul.oneActionsRibbon {
+    display: inline-flex;
+}
+
+/* Pages: Case Detail, LC: selfServiceCaseDetails, <div class="content"> */
+.THIS .selfServiceCaseDetails .viewMore .content {
+    max-height: 100%;
+    opacity: 	1;
+}
+
+
+/*********************
+PUBLIC HEADER  
+**********************/
+.THIS .ezHeader {
+    width: 		100%;
+    margin-bottom: 	20px;
+    height: 		150px;    
+    overflow: 		hidden;
+    text-align: 	center;
+    /* Sticky */
+    position: 		fixed;
+    top: 		0;
+    z-index: 		10;
+}
+
+.THIS .login-header {
+    height:	auto;
+    overflow:	visible;
+}
+
+.THIS .public-header {
+    position: 		relative;
+    margin-bottom:	0;
+}
+
+.THIS .public-header img {
+    max-width: 	1920px;
+    margin: 	0 -500%;
+}
+
+
+/*********************
+TOP BAR (PROFILE & LOGOS)
+**********************/
+.THIS .ezProfileMenuRegion {
+    position: 		relative;
+    height: 		50px;
+    padding: 		10px;
+    background: 	token(ezColor1);	/* Look in the defaultTokens for the color */
+}
+
+.THIS.dp-style .ezProfileMenuRegion {
+    background: 	token(dpColor1);	    /* Look in the defaultTokens for the color */
+}
+
+.THIS .ezProfileMenuRegion .logo-profile-container,
+.THIS .ezSearchRegion .search-menu-container {
+    position:	relative;
+    max-width: 	1400px;
+    width: 	100%;
+    margin:	0 auto;
+    text-align:	left;
+}
+
+.THIS .ezProfileMenuRegion .logo-container {
+    display:		inline-block;
+    margin-left: 	50px;
+}
+
+.THIS .ezProfileMenuRegion .product-logo, 
+.THIS .ezProfileMenuRegion .community-logo {
+    display:		inline-block;
+    min-width:		10px;
+    min-height:		10px;
+    margin-right: 	5px;
+}
+
+.THIS .ezProfileMenuRegion .ezProfileContainer,
+.THIS .ezProfileMenuRegion .ezLoginContainer {
+    width: 		15%;
+    float: 		right;
+    margin-right: 	50px;
+}
+
+.THIS .ezProfileMenuRegion .ezLoginContainer {
+    width: 		25%;
+}
+
+.THIS .ezProfileMenuRegion .ezLoginContainer > * {
+    display: 		flex;
+    flex-wrap: 		nowrap;
+    width: 		auto;
+    z-index: 		10;
+    position: 		relative;
+}
+
+.THIS .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenuTrigger a {
+    text-shadow:	none;
+}
+
+.THIS .ezProfileMenuRegion .ezProfileContainer .selfServiceUserProfileMenu .menuList {
+    z-index: 5001;
+}
+
+/********************* TOP BAR (PROFILE & LOGOS) SCROLLING **********************/
+.THIS .scrolled-nav .ezProfileMenuRegion {
+    margin-bottom: 4px;
+}
+
+.THIS .scrolled-nav .ezProfileMenuRegion .logo-container {
+    display: none;
+}
+
+.THIS .scrolled-nav .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenuTrigger .profileName,
+.THIS .scrolled-nav .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenuTrigger .triggerDownArrow {
+    display: none;
+}
+
+.THIS .scrolled-nav .ezProfileMenuRegion .ezProfileContainer {
+    position: 	relative;
+    z-index: 	10;
+    width: 	40px;
+}
+
+/********************* TOP BAR (PROFILE & LOGOS) SCROLLING TABLET **********************/
+@media only screen and (max-width: 1023px) {
+    .THIS .ezProfileMenuRegion .logo-container {
+        margin-left: 15px;
+    }
+    
+    .THIS .ezProfileMenuRegion .ezProfileContainer {
+        margin-right: 0;
+    }
+    
+    .THIS .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenu {
+        margin-top: 44px;
+    }
+    
+    .THIS .scrolled-nav .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenuTrigger {
+        padding: 0;
+        top: 	-44px;
+    }
+}
+
+/********************* TOP BAR (PROFILE & LOGOS) SCROLLING PHONE **********************/
+@media only screen and (max-width: 767px) {
+    .THIS .ezProfileMenuRegion {
+        margin-bottom:	0;
+    }
+    
+    .THIS .ezProfileMenuRegion .logo-container .community-logo {
+        display: 	none;
+    }
+    
+    .THIS .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenu {
+        margin-top: 	0;
+    }
+    
+    .THIS .ezProfileMenuRegion .ezProfileContainer .selfServiceProfileMenuTrigger {
+        padding: 	0;
+        top: 		0;
+    }
+    
+    .THIS .ezProfileMenuRegion .ezLoginContainer {
+     	display: 	none;   
+    }
+}
+
+
+/*********************
+MAIN SEARCH AND NAV
+**********************/
+.THIS .ezSearchRegion {
+    position: relative;
+}
+
+.THIS .ezSearchRegion .search-menu-container {
+    width: 	100%;
+    position: 	relative;
+    top: 	0;
+    transition: top .5s; 
+}
+
+.THIS .ezSearchRegion .search-component,
+.THIS .ezSearchRegion .menu-component {
+    width: auto;
+}
+
+.THIS .ezSearchRegion .search-component label {
+    display: initial;
+}
+
+.THIS .ezSearchRegion .product-logo-scrolling {
+    display: none;
+}
+
+/********************* MAIN SEARCH AND NAV SCROLLING **********************/
+.THIS .scrolled-nav .ezSearchRegion {
+    background-image:	none;
+    max-width: 		1540px;
+    width: 		100%;
+    height: 		0;
+    margin: 		0 auto;
+}
+
+.THIS .scrolled-nav .ezSearchRegion .search-menu-container {
+    width: 		100%;
+    top: 		-69px;
+    margin-left:	50px;
+}
+
+.THIS .scrolled-nav .ezSearchRegion .search-menu-container > div {
+    margin-right: 15px;
+}
+
+.THIS .search-container .search-input-group .slds-button.search-button {
+    border-radius: 	0;
+    cursor: 		pointer;
+}
+
+.THIS .search-container .search-input-group .slds-button.search-button:hover  {
+    background: token(colorBackgroundButtonBrandActiveSW);
+}
+
+.THIS .scrolled-nav .ezSearchRegion .search-component {
+    width: 	40%;
+    display: 	inline-block;
+}
+
+.THIS.public .scrolled-nav .ezSearchRegion .search-component {
+   	width: 	20%;
+}
+
+.THIS .scrolled-nav .ezSearchRegion .product-logo-scrolling,
+.THIS .scrolled-nav .ezSearchRegion .menu-component {
+    display: 	inline-block;
+}
+
+/********************* MAIN SEARCH AND NAV TABLET **********************/
+@media only screen and (max-width: 1023px) {
+    .THIS .scrolled-nav .ezSearchRegion .search-menu-container {
+        margin-left:	15px;
+    }
+    
+    .THIS .scrolled-nav .ezSearchRegion .search-menu-container > div {
+        margin-right: 5px;
+    }
+    
+    .THIS .ezSearchRegion .search-component {
+        width: 	90%;
+        margin:	0 auto;
+    }
+    
+    .THIS .scrolled-nav .ezSearchRegion .search-component {
+        width: 27%;
+    }
+}
+
+/********************* MAIN SEARCH AND NAV PHONE **********************/
+@media only screen and (max-width: 767px) {
+    .THIS .scrolled-nav .ezSearchRegion .search-menu-container {
+        margin-left:	15px;
+    }
+    
+    .THIS .scrolled-nav .ezSearchRegion .search-menu-container > div {
+        margin-right:	5px;
+    }
+    
+    .THIS .ezSearchRegion .search-component {
+        width: 		100%;
+        margin:		0 auto;
+        background:	rgba(255, 255, 255, 0.5);
+    }
+    
+    .THIS .scrolled-nav .ezSearchRegion .search-component {
+        width: 27%;
+    }
+}
+
+
+/*********************
+MAIN SEARCH
+**********************/
+.THIS .ezSearchRegion .search-component {
+    height:		auto; 
+    margin:		0 auto;
+    max-width:		800px;
+    padding-top:	15px;
+}
+
+.THIS .ezSearchRegion .search-wrapper {
+    padding: 0;
+}
+
+.THIS .ezSearchRegion .image-wrapper {
+    display: none;
+}
+
+.THIS .ezSearchRegion .result-container {
+    position: 	absolute;
+    width: 	100%;
+}
+
+/********************* MAIN SEARCH NAV SCROLLING **********************/
+.THIS .scrolled-nav .ezSearchRegion .search-menu-container .search-button {
+    display: 	none;
+    width: 	5rem;    
+}
+
+.THIS .scrolled-nav .ezSearchRegion .search-container .mobile-search-icon {
+    display:		inline-block;
+    position: 		absolute;
+    right: 		0;
+    top: 		0;
+    height: 		48px;
+    margin: 		0;
+    border: 		none;
+    border-radius: 	0;
+}
+
+/********************* MAIN SEARCH PHONE **********************/
+@media only screen and (max-width: 767px) {
+    .THIS .ezSearchRegion .search-component {
+        height:		 35px; 
+    }
+    
+    .THIS .ezSearchRegion .search-component,
+    .THIS .ezSearchRegion .selfServiceSearchWrapper {
+        padding-top:	0;
+    }
+    
+    .THIS .ezSearchRegion .selfServiceSearchWrapper .body-search {
+        background-color: rgba(50, 50, 50, 0.8);
+    }
+    
+    .THIS .ezSearchRegion .selfServiceSearchWrapper .search-field {
+        border-radius: 	0;
+        opacity: 	1;
+    }
+    
+    .THIS .ezSearchRegion .search-component .zero-state-panel {
+        height: 	auto;
+        padding: 	10px;
+    }
+    
+    .THIS .ezSearchRegion .search-component .zero-state-panel .zero-state-panel-label {
+        padding: 	0;
+    }
+    
+    .THIS .ezSearchRegion .search-container .mobile-search-icon {   
+        margin: 	0 0 2px 20px;
+        background:	transparent;
+        border:		none;
+        color:		token(colorTextLinkSW);
+    }
+    
+    .THIS .ezSearchRegion .search-component .curtain-blur {
+        background: 	rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+/*********************
+MAIN NAVIGATION
+**********************/
+.THIS .ezSearchRegion .menu-component {
+    padding-top: 	16px;
+}
+
+.THIS .background-image {
+    margin: 			0 auto;
+    height: 			200px;
+    background-image: 		url("https://www.softerware.com/community/ez/assets/header/header_bg.png?");
+    background-position:	50%;
+    background-repeat:		repeat-x;
+}
+
+.THIS .background-image.fall {
+    background-image: 		url("https://www.softerware.com/community/ez/assets/header/EZ-BG-Fall.png?");
+}
+
+.THIS .background-image.winter {
+    background-image: 		url("https://www.softerware.com/community/ez/assets/header/EZ-BG-Winter.png?");
+}
+
+.THIS .background-image.spring {
+    background-image: 		url("https://www.softerware.com/community/ez/assets/header/EZ-BG-Spring.png?");
+}
+
+.THIS .background-image.bday {
+    background-image: 		url("https://www.softerware.com/community/ez/assets/header/EZ-BG-Birthday.png?");
+}
+
+/* DonorPerfect Style */
+.THIS.dp-style .background-image {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Summer.png?");
+}
+
+.THIS.dp-style .background-image.fall {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Fall.png?");
+}
+
+.THIS.dp-style .background-image.winter {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Winter.png?");
+}
+
+.THIS.dp-style .background-image.spring {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Spring.png?");
+}
+
+.THIS.dp-style .background-image.givingtuesday {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Fall-GT.png?");
+}
+
+.THIS.dp-style .background-image.bday {
+    background-image: 		url("https://www.softerware.com/community/donorperfect/assets/header/DP-BG-Birthday.png?");
+}
+
+
+/********************* MAIN NAVIGATION PHONE **********************/
+@media only screen and (max-width: 767px) {
+    .THIS .background-image {
+        height: 		100px;
+        background-image: 	none !important;
+    }
+    
+    .THIS .ezSearchRegion .menu-component {
+        padding: 0;
+    }
+}
+
+
+/*********************
+BODY
+**********************/
+.THIS .ezMainContentArea {
+    max-width: 	1600px;
+    margin: 	0 auto;
+    margin-top:	150px;
+    padding: 	30px 8%;
+}
+
+.THIS .public-header + .ezMainContentArea,
+.THIS .background-image + .ezMainContentArea {
+    margin-top:	0;
+}
+
+.THIS .ezMainContentArea > * {
+    padding: 		15px;
+    background: 	#fff;
+    border-color:	token(colorBorderSW);
+    border-width:	token(sizeBorderSW);
+    border-style:	token(styleBorderSW);
+    border-radius:	token(styleBorderRadiusSW);    
+}
+
+.THIS.dp-style .ezMainContentArea > * {
+    box-shadow: token(dpBoxShadow);
+} 
+
+/********************* BODY PHONE **********************/
+@media only screen and (max-width: 767px) {
+	.THIS .ezMainContentArea {
+        padding: 	0;
+    }
+}
+
+
+/*********************
+FOOTER  
+**********************/
+.THIS .ezFooter {
+    margin-top: 40px;
+    min-height: 20px;
+}
+
+
+/*********************
+PRINT 
+**********************/
+@media print {
+    /*.THIS .ezHeader,*/ 
+    .THIS .ezSearchRegion, 
+    .THIS .ezProfileMenuRegion, 
+    .THIS .ezNavigation, 
+    .THIS .ezFooter,
+    .THIS .cNavCommPage,
+    .THIS .selfServiceArticleLayout.voting {
+        display:	none;
+    }
+    
+    .THIS .ezHeader {
+        position: 	relative;
+        height: 	100%;
+        margin: 	0 0 15px 0;
+        padding: 	0;
+    }
+    
+    .THIS .ezMainContentArea,
+    .THIS .ezMainContentArea .selfServiceArticleLayout{
+        margin: 	0 auto;
+        padding: 	0;
+        max-width:	100%;
+        width:		100%;
+    }
+    
+    /* Fixes Firefox not printing all the pages issue */
+    .THIS .ezMainContentArea .selfServiceArticleLayout .slds-grid,
+    .THIS .ezMainContentArea .selfServiceArticleLayout .slds-form-element__static {
+        display: 	block;
+    }
+    
+    .THIS .ezMainContentArea > * {
+        border: 	none;
+        box-shadow:	none;
+        padding: 	0;
+        margin: 	0;
+    }
+    
+    .THIS .selfServiceArticleLayout .forcePageBlockItem.full img {
+        width: 		auto;
+    }
+    
+    .THIS a[href]::after {
+        content: 	none;
+    }
+}

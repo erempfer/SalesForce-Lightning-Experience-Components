@@ -1,0 +1,4 @@
+<design:component label="Shrinking Header">
+    <design:attribute name="whichProduct" 	label="Which Product" datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/> 
+	<design:attribute name="public" label="Is a public page"/>
+</design:component>
