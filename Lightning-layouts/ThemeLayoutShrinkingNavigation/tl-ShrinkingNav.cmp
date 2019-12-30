@@ -1,0 +1,71 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="SW Products Theme Layout">     
+    <aura:attribute name="search"	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="profileMenu"	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="loginMenu"	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="product" 	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="community" 	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="navMenu"	type="Aura.Component[]" required="false" access="global"/>
+    <aura:attribute name="newHeader"	type="Aura.Component[]" required="false" access="global"/> 
+    <aura:attribute name="newFooter"	type="Aura.Component[]" required="false" access="global"/> 
+    
+    <aura:attribute name="scrollCheckIntervalId"	type="Decimal" required="false" access="global"/>
+    <aura:attribute name="whichProduct"			type="String" 	access="global" />
+    <aura:attribute name="public"			type="Boolean"	default="false"/> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!-- Register event to be received by child component NavMenu -->
+    <aura:registerEvent name="cmpEventFired" 	type="c:NavScrollingEvent"/>
+    
+    <div aura:id="main-container">
+        <div aura:id="navBar" class="ezHeader login-header">
+            <div class="ezProfileMenuRegion">
+                <div class="logo-profile-container">
+                    <div class="logo-container">
+                        <div class="product-logo">
+                            {!v.product}
+                        </div>
+                        <div class="community-logo">
+                            {!v.community}
+                        </div>                                
+                    </div>
+                    
+                    <aura:if isTrue="{!v.public}">
+                        <div class="ezLoginContainer">
+                            {!v.loginMenu}
+                        </div>
+                        <aura:set attribute="else">
+                            <div class="ezProfileContainer">
+                                {!v.profileMenu}
+                            </div>
+                        </aura:set>
+                    </aura:if>         
+                </div>                    
+            </div>
+            
+            <div class="ezSearchRegion">
+                <div class="search-menu-container">
+                    <div class="product-logo-scrolling">
+                        {!v.product}
+                    </div>
+                    <div class="search-component">
+                        {!v.search}
+                    </div>
+                    <div class="menu-component">
+                        {!v.navMenu}
+                    </div>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="background-image" aura:id="bgImage"></div>
+        
+        <div class="ezMainContentArea">
+            {!v.body}
+        </div>
+        
+        <div class="ezFooter">
+            {!v.newFooter}
+        </div>               
+    </div>
+</aura:component>

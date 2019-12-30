@@ -1,0 +1,134 @@
+/*********************
+PAGE LAYOUT 
+**********************/
+.THIS {
+    font-size: 		1rem;
+    padding: 		0 !important;
+    box-shadow:		none !important;
+    background: 	none !important;
+    border-width:	0 !important;
+}
+
+.THIS > article {
+    display: 		inline-flex;
+    width: 		100%;
+}
+
+.THIS > article > div {
+    margin-bottom: 30px;
+}
+
+/********************* PAGE LAYOUT TABLET ********************/
+@media only screen and (max-width: 767px) {   
+    .THIS {
+        padding: 0 20px !important;
+    }
+}
+
+
+/*********************
+Page Header (Row 1) Style
+**********************/
+.THIS .first-row > div {
+    width: 			50%;
+    margin-right: 	15px;
+    margin-bottom:	20px;
+}
+
+.THIS .first-row .first-row-column-2 {
+    margin-right: 0;
+}
+
+
+/*********************
+Page Body (Row 2) Style
+**********************/
+.THIS .second-row > div {
+    width: 100%;
+}
+
+.THIS .second-row-column-1 > * {
+    display: 			flex;
+	flex-direction: 	row;
+	justify-content: 	space-between;
+    align-content: 		space-between;
+}
+
+/********************* PAGE BODY (ROW 2) TABLET ********************/
+@media only screen and (max-width: 1023px) {    
+    .THIS .second-row-column-1 > * {
+        flex-wrap: 	wrap;
+        height:		250px;
+    }
+}
+
+/********************* PAGE BODY (ROW 2) PHONE ********************/
+@media only screen and (max-width: 640px) {   
+    .THIS .second-row-column-1 > * {
+        display: 		block;
+        height:			auto;
+    }
+    
+    .THIS .second-row-column-1 > * > * {
+        width:			100%;
+        margin-bottom:	 	15px;
+    }
+}
+
+
+/*******************************
+Page Body (Row 3 - Left Column) Style
+*******************************/
+.THIS .left-column {
+    display: 		inline-block;
+    width:		48%;
+    margin-right:	4%;
+    vertical-align:	top;
+}
+
+
+/*******************************
+Page Body (Row 3 - Right Column) Style
+*******************************/
+.THIS .right-column {
+	display: 	inline-block;
+    	width: 		48%;
+    	vertical-align:	top;
+}
+
+.THIS .right-column > div {
+    width: 100%;
+}
+
+.THIS .right-column .right-column-row-1 {
+    margin-bottom: 5px;
+}
+
+/* Ideas Status Card */
+.THIS .right-column .right-column-row-2 > * {
+	display: 		flex;
+	flex-wrap: 		wrap;
+	justify-content: 	space-between;
+}
+
+.THIS .right-column .right-column-row-2 > * > * {
+	margin-bottom: 	15px;
+    	width: 		49%;
+}
+
+/********************* PAGE BODY (ROW 3) TABLET ********************/
+@media only screen and (max-width: 1024px) {     
+    .THIS .left-column,
+    .THIS .right-column{
+        display: 	block;
+        width:		100%;
+        margin:		0;
+    }
+}
+
+/********************* PAGE BODY (ROW 2) PHONE ********************/
+@media only screen and (max-width: 640px) {   
+    .THIS .right-column .right-column-row-2 > * > * {
+        width: 	100%;
+    }
+}

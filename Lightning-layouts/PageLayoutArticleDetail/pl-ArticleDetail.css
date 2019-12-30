@@ -1,0 +1,1287 @@
+/*********************
+PAGE LAYOUT 
+**********************/
+.THIS {
+    font-size: 	1rem;
+}
+
+.THIS > *,
+.THIS .selfServiceArticleLayout .summary,
+.THIS .selfServiceArticleLayout .content,
+.THIS .article-detail-header,
+.THIS article.voting {
+    padding: 25px;
+}
+
+/* Header, Body, Footer container <section> */
+.THIS.article-detail-container {
+    display:		inline-block;
+    vertical-align:	top;
+    width: 		73%;
+    margin-right: 	1%;
+    padding:		0;
+}
+
+/* Related Articles container <section> */
+.THIS.side-bar {
+    display:		inline-block;
+    vertical-align:	top;
+    width: 		26%;
+    padding:		0;
+}
+
+.THIS .header-left,
+.THIS .header-right {
+    display: 		inline-block;
+    width: 		50%;
+    vertical-align: 	middle;
+}
+
+.THIS .article-detail-body {
+    position: 		relative;
+    padding:		0;
+    margin-bottom:	15px;
+}
+
+.THIS .article-detail-footer {
+    padding-top: 	0;
+    padding-bottom: 	0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .THIS.side-bar,
+    .THIS.article-detail-container {
+        display: 	block;
+        width: 		100%;  
+    }
+    
+    .THIS.side-bar {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .THIS .header-left,
+    .THIS .header-right {
+        display: 	block;
+        width: 		100%;
+    }
+    
+    .THIS .article-detail-header {
+        display: 		flex;
+        flex-direction: 	column-reverse;
+    }
+}
+
+
+/*********************
+Article Detail Style
+**********************/
+.THIS .selfServiceArticleLayout {
+    font-size: 		1rem;
+    line-height: 	1.5rem;
+    box-sizing: 	border-box;
+}
+
+/* Styling Lists */
+.THIS .selfServiceArticleLayout ul, 
+.THIS .selfServiceArticleLayout ol {
+    margin-left: 	2rem;
+    padding-left:	0;
+}
+
+.THIS .selfServiceArticleLayout ol li,
+.THIS .selfServiceArticleLayout ul li {
+    margin: 		1rem auto;
+    padding: 		0;
+    font-size: 		1rem;
+    line-height: 	1.5rem;
+    list-style: 	decimal;  
+}
+
+.THIS .selfServiceArticleLayout ol > li {
+    padding-left:	3px;
+}
+
+.THIS .selfServiceArticleLayout ul li {
+    list-style:		disc;
+}
+
+.THIS .selfServiceArticleLayout ol li:before,
+.THIS .selfServiceArticleLayout ul li:before {
+ 	content: 	none;   
+}
+
+.THIS .selfServiceArticleLayout ol li > *,
+.THIS .selfServiceArticleLayout ul li > * {
+    margin-top: 	10px;
+    margin-bottom:	10px;
+}
+
+/* Styling Containers */
+.THIS .selfServiceArticleLayout.article-column {
+    width: 		100%;
+    padding: 		0;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .slds-section__title,
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__inline-edit-trigger {
+    display: none;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .labelCol {
+    margin-bottom: 10px;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockItem {
+    border: 0;
+}
+
+/* SF Field Labels for Articles <span> */
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__field-label,
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__grouped-field-label-icon {
+    display:		none;
+    text-transform:	token(textTransformSW);
+    font-weight: 	bold;
+    font-size: 		1rem;
+    color: 		token(colorTextLinkActiveSW);
+}
+
+/* SF Field Values (Content) for Articles <span> */
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__field-value {
+    color: 		token(colorTextDefaultSW);
+    font-weight: 	normal;
+    font-size: 		100%;
+    margin-right:	0;
+    padding:		0;
+    min-height:		0;
+}
+
+/* SF Field Values (Content) for Articles that only have text<span> or url<span> */
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__field-value span.uiOutputText,
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__field-value span.forceOutputURL{
+    display:		none;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockSectionView.full .test-id__field-value div.uiOutputRichText > *:last-child {
+    margin-bottom: 	25px;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockItem.full,
+.THIS .selfServiceArticleLayout .forcePageBlockItem.full:last-child {
+    padding: 		0;
+    border-left: 	0;
+    border-bottom: 	0;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockSectionRow.full,
+.THIS .selfServiceArticleLayout .forcePageBlockSectionRow.full .slds-form-element {
+    padding: 		0;
+    line-height: 	0;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockItemView .slds-form-element_separator {
+	border:		none;
+}
+
+.THIS .selfServiceArticleLayout .forcePageBlockItem.full .uiOutputRichText img {
+    height: 	auto;
+    max-width: 	100%;
+}
+
+.THIS .selfServiceArticleLayout .slds-section.slds-is-open .slds-section__content {
+    padding-top: 0;
+}
+
+.THIS .selfServiceArticleLayout p.forcePageBlockItem.full {
+    margin: 	0;
+    clear: 	both;
+}
+
+/* Article Body <article> */
+.THIS .selfServiceArticleLayout .content {
+    border-top:		none;
+    padding-top: 	0;
+}
+
+/* Article Header <article> */
+.THIS .selfServiceArticleLayout .summary {
+    background:		token(colorZebraStripeSW); 
+    border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-left:	none;
+    border-right:	none;
+    /* color:		token(colorTextLinkSW); */
+}
+
+
+
+
+/***********************************************/
+/******** Article Description <article> ********/
+.THIS .hasIcon .selfServiceArticleLayout .summary {
+    padding-left: 	150px;
+    min-height: 	calc(150px + 2rem);
+    display: 		flex;
+    align-content: 	center;
+    flex-wrap: 		wrap;
+}
+
+/* Article Description <article> */
+.THIS .hasIcon .selfServiceArticleLayout .summary > * {
+    display: 	inline-block;
+    width:	 100%;
+}
+
+/***********************************************/
+/***********************************************/
+
+
+
+
+/* Article Title <h1> */
+.THIS .selfServiceArticleLayout .article-head {
+    margin: 		0;
+    font-size: 		2rem;
+    font-weight: 	normal;
+    line-height: 	2.2rem;
+    word-wrap: 		normal;
+}
+
+/* Article Description <p> */
+.THIS .selfServiceArticleLayout .article-summary {
+    margin: 	5px 0;
+}
+
+/* Article Date & Time <span> */
+.THIS .selfServiceArticleLayout .meta {
+    margin-bottom: 	0;
+}
+
+.THIS .selfServiceArticleLayout .meta .dot,
+.THIS .selfServiceArticleLayout .meta .article-type {
+    display: none;
+}
+
+.THIS .selfServiceArticleLayout .breadcrumb {
+    margin-top: 20px;
+}
+
+.THIS .selfServiceArticleLayout .loadingCon {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.THIS .selfServiceArticleLayout.zoom.article-column {
+    padding: 0 30px 0;
+}
+
+.THIS .selfServiceArticleLayout.zoom .article-head {
+    font-size: 1.4em;
+}
+
+.THIS .selfServiceArticleLayout.zoom .article-summary,
+.THIS .selfServiceArticleLayout.zoom .forcePageBlockSectionView.full .test-id__field-value {
+    font-size: 		1.15em;
+    line-height: 	1.4em;
+}
+
+.THIS .selfServiceArticleLayout.zoom .forcePageBlockSectionView.full .test-id__field-value .osOutputLabel {
+    font-size: 1.3em;
+}
+
+/* Extra Space Between Article and VotingArticle Voting Panel <div> */
+.THIS .selfServiceArticleLayout.slds-pill_container--bare {
+    display: none;
+}
+
+/* Article Voting Panel <article> */
+.THIS article.voting {
+    padding-top: 0;
+}
+
+@media only screen and (min-width: 48em) {
+    .THIS .selfServiceArticleLayout .article-head,
+    .THIS .selfServiceArticleLayout .breadcrumb {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 48em) and (min-aspect-ratio: 4/3),
+    only screen and (min-width: 64.0625em) {
+    .THIS .selfServiceArticleLayout.article-column {
+        padding: 0;
+    }
+}
+
+/*********************
+Video Resize
+**********************/
+.THIS .videosize {
+    position: 		relative;
+    padding-bottom: 	56.25%;
+    height: 		0;
+    overflow: 		hidden;
+}
+
+.THIS .videosize iframe {
+    margin: 	0 auto;
+    display: 	block;
+    width: 	100%;
+    height: 	100%;
+    position: 	absolute;
+    top: 	0;
+    left: 	0;
+}
+
+/*********************
+CODE SAMPLE STYLE
+**********************/
+.THIS pre.ckeditor_codeblock {
+    	display: 	block;
+    	width: 		90%;
+    	margin: 	0 auto;
+    	padding: 	20px;
+	background: 	token(colorZebraStripeSW);
+   	border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);			
+    	border-radius: 	token(styleBorderRadiusSW);
+    	white-space:	pre-wrap;
+}
+
+
+/*********************
+PRINT 
+**********************/
+@media print {
+    .THIS .article-detail-header,
+    .THIS.side-bar {
+        display: none;
+    }
+    
+    .THIS.article-detail-container {
+        display:	block;
+        width: 		100%;
+        margin-right: 	0;
+    }
+    
+    .THIS .selfServiceArticleLayout .summary {
+        padding: 	0 15px 15px;
+        color:		#fff;  
+        border-top:	none;
+    }
+    
+    .THIS .selfServiceArticleLayout .summary h1{
+        font-size:	1.6rem;
+        font-weight:	bold;
+    }
+    
+    .THIS .selfServiceArticleLayout .content {
+        padding: 	15px;
+        border-radius:	0 0 token(styleBorderRadiusSW) token(styleBorderRadiusSW);	
+        border:		none;
+    }
+}
+
+
+/*********************************
+IMAGE POSITION STYLE
+**********************************/
+.THIS .float-left {
+    float: 		left;
+    margin-right: 	10px;
+}
+
+.THIS .float-right {
+    float: 		right;
+    margin-left: 	10px;
+}
+
+.THIS .clearfix::after {
+    content: 		"";
+    clear: 		both;
+    display: 		table;
+}
+
+@media screen and (max-width: 640px) {
+    .THIS .float-right,
+    .THIS .float-left {
+        display: 	block;
+    	float: 		none;
+        margin: 	0 auto;
+	} 
+}
+
+
+/*********************************
+PATHYWAY STYLE
+**********************************/
+/* Div container for the questions and answers */
+.THIS .pathway,
+.THIS .directional {
+    display:            flex;
+    position:		relative;
+    z-index:		0;
+    opacity:            0;
+    height:             0;
+    margin:             0;
+    padding:            0;
+    flex-wrap:          wrap;
+    justify-content:    center;
+    pointer-events:     none;
+    transition:         all 0.2s ease-in-out;
+}
+
+/* a tag for the answers */
+.THIS .pathway *,
+.THIS .directional * {
+    pointer-events:     auto;
+}
+
+/* Div container for the targeted Q&A */
+.THIS .pathway:target,
+.THIS .first-question,
+.THIS .directional {
+    opacity:    1;
+    height:     auto;
+    z-index:	9999;
+}
+
+/* All question containers below the targeted question */
+.THIS .pathway:target ~ .pathway {
+    display: 	none;
+    opacity: 	0;
+} 
+
+/* Text for the questions */
+.THIS .question,
+.THIS .solution {
+    	width: 		100%;
+    	margin:		20px auto;
+    	font-size: 	1.2rem;
+    	line-height:	1.4rem;
+	text-align:	center;
+}
+
+/* a tag with the answers */
+.THIS .answer {
+    min-width:			75px;
+    margin:			1rem; 
+    padding: 			1rem;
+    font-size: 			1rem;
+    line-height: 		1rem;
+    text-align: 		center;
+    text-decoration: 		none;
+    color: 			#fff;
+    background: 		token(colorBrandSW);
+    border: 			1px solid token(colorBrandSW);
+    border-radius: 		5px;
+}
+
+.THIS .answer.replay:before {
+    content: 			'\f2f9';
+    font-family: 		"Font Awesome 5 Free";
+    font-weight: 		bold;
+    display: 			inline-block;
+    margin-right: 		8px;
+}
+
+.THIS .answer:hover {
+    background: 	#fff;
+    text-decoration: 	none;
+    color: 		token(colorBrandSW);
+}
+
+/*********************************
+DIRECTIONAL STYLE
+**********************************/
+.THIS .directional {
+	justify-content:    space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************
+MAIL MERGE STYLE
+**********************************/
+.THIS .gizmo .accordionItemContent {
+    box-sizing: 		border-box;
+    padding: 			10px;
+    background-color: 		#fff;
+    border-top: 		none;
+    width: 			100%;
+    margin: 			0 0 10px 0;
+    display: 			block;
+    transform: 			scaleY(1);
+    transform-origin: 		top;
+}
+
+.THIS .gizmo .accordionItemContent ol li {
+    list-style-type: decimal;
+}
+
+
+.THIS .gizmo div {
+    display: none;
+}
+
+.THIS .gizmo :target,
+.THIS .gizmo a {
+    display: block;
+}
+
+.THIS .gizmo .menus {
+    background: 	token(colorTextLinkSW);
+    border-radius: 	token(styleBorderRadiusSW);
+    display: 		block;
+    margin: 		0.75em 0;
+    pointer-events: 	none;
+}
+
+.THIS .gizmo .menus * {
+    pointer-events: 	auto;
+}
+
+.THIS .gizmo .menus > a::before {
+    width: 			1.5em;
+    height: 			1.5em;
+    margin-right: 		5px;
+    content: 			"";
+    background: 		url("https://softerware.force.com/dpcommunity/s/sfsites/c/resource/comm_iconChevronDown") no-repeat 0 0;
+    background-position: 	center;
+    background-size: 		90%;
+    float: 			right !important;
+}
+
+.THIS .gizmo .menus > a {
+    display: 			block;
+    font-size:			1.2em;
+    color: 			white;
+    padding: 			0.8em 0.5em;
+    cursor: 			pointer;
+    border: 			none;
+    box-sizing: 		border-box;
+}
+
+.THIS .gizmo .menus div {
+    background: 		token(dpLtGray);
+    padding:			3px;
+    padding-top: 		55px;
+    margin-top: 		-50px;
+    background-clip: 	content-box;
+    border-radius:		token(styleBorderRadiusSW);
+}
+
+/**** Return to top button ****/
+.THIS .gizmo .backbutton {
+    display: 	none;
+    margin: 	1em;
+    text-align: right;
+}
+
+.THIS .gizmo .buttons {
+    display: 			inline-block;
+    background: 		token(colorBrandSW);
+    padding: 			.2em 2em;
+    margin: 			0.5em 0;
+    text-decoration: 		none;
+    color: 			#fff;
+    border-radius: 		.2em;
+    border: 			token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    z-index: 			2147483647 !important;
+    cursor: 			pointer !important;
+}
+
+.THIS .gizmo .buttons:hover {
+    background: 	#fff;
+    color:		token(colorBrandSW);
+    transition:		color .1s linear, background .1s linear;
+}
+
+.THIS .gizmo .buttons:before {
+    float: 		left;
+    width: 		1em;
+    text-align: 	center;
+    font-size: 		1.7em;
+    margin: 		0 0.5em 0 -1em;
+    padding: 		0 .2em;
+    pointer-events: 	none;
+}
+
+.THIS .gizmo .up_arrow:before {
+    content: 		"\276f";
+    transform:		rotate(270deg);
+}
+
+/* Generic Styling, for Desktops/Laptops */
+.THIS .gizmo table {
+    width: 		100%;
+    margin:		0;
+    border-collapse:	collapse;
+    background:		#fff;
+}
+
+.THIS .gizmo thead {
+    border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+/* Zebra striping */
+.THIS .gizmo tr:nth-of-type(odd) {
+    background: 	token(colorZebraStripeSW);
+}
+
+.THIS .gizmo th {
+    background: 	token(colorTextLabelSW);
+    color: 		white;
+    font-weight: 	normal;
+}
+
+.THIS .gizmo td,
+.THIS .gizmo th {
+    padding: 		6px;
+    border: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    text-align: 	left;
+    word-break: 	normal;
+}
+
+.THIS .gizmo table a {
+    display: 		inline-block;
+    word-break: 	break-word;
+}
+
+.THIS .gizmo .col-1,
+.THIS .gizmo .col-2,
+.THIS .gizmo .col-3 {
+    width: auto;
+}
+
+.THIS .gizmo ol {
+    list-style: 	initial;
+    list-style-type: 	decimal;
+    margin: 		0 2em;
+}
+
+.THIS .gizmo #names td,
+.THIS .gizmo #names th {
+    max-width: 650px;
+}
+
+/* This query will take effect for any screen smaller than 760px and also iPads specifically. */
+@media only screen and (max-width: 768px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    .THIS .gizmo table,
+    .THIS .gizmo thead,
+    .THIS .gizmo tbody,
+    .THIS .gizmo th,
+    .THIS .gizmo td,
+    .THIS .gizmo tr {
+        display: block !important;
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .THIS .gizmo thead tr {
+        position: 	absolute;
+        top: 		-9999px;
+        left: 		-9999px;
+    }
+    
+    .THIS .gizmo tr {
+        border: token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    }
+    
+    .THIS .gizmo td {
+        /* Behave  like a "row" */
+        border: 	none;
+        border-bottom: 	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+        position: 	relative !important;
+        padding-left: 	35%;
+        word-wrap: 	normal;
+    }
+    .THIS .gizmo .specific a {
+        display: 	inline !important;
+        word-wrap: 	break-word;
+    }
+    
+    .THIS .gizmo td:before {
+        /* Now like a table header */
+        position: 		absolute;
+        /* Top/left values mimic padding */
+        top: 			6px;
+        left: 			6px;
+        width: 			35%;
+        padding-right: 		10px;
+        white-space: 		pre-wrap;
+        word-break: 		normal;
+        font-weight: 		700;
+    }
+    .THIS .gizmo #fieldblank td {
+        /* Behave  like a "row" */
+        border: 		none;
+        border-bottom: 		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+        position: 		relative;
+        padding-left: 		65%;
+        word-wrap: 		break-word;
+    }
+    
+    .THIS .gizmo #fieldblank td:before {
+        /* Now like a table header */
+        position: 		absolute;
+        /* Top/left values mimic padding */
+        top: 			6px;
+        left: 			6px;
+        width: 			60%;
+        padding-right: 		10px;
+        white-space: 		pre-wrap;
+        word-break: 		normal;
+    }
+    
+    /* Label the data - USA */
+    .THIS .gizmo #usa td:nth-of-type(1):before {
+        content: "Type";
+    }
+    .THIS .gizmo #usa td:nth-of-type(2):before {
+        content: "Template Name";
+    }
+    .THIS .gizmo #usa td:nth-of-type(3):before {
+        content: "Description";
+    }
+    
+    /* Label the data - Names/Addresses */
+    .THIS .gizmo #names {
+        margin: 1em 0;
+    }
+    .THIS .gizmo #names td:nth-of-type(1):before {
+        content: "Merge Field";
+    }
+    .THIS .gizmo #names td:nth-of-type(2):before {
+        content: "Description";
+    }
+    .THIS .gizmo #names td:nth-of-type(3):before {
+        content: "Example";
+    }
+    
+    /* Label the data - Specific */
+    .THIS .gizmo #specific {
+        margin: 1em 0;
+    }
+    .THIS .gizmo #specific td:nth-of-type(1):before {
+        content: "Merge Field";
+    }
+    .THIS .gizmo #specific td:nth-of-type(2):before {
+        content: "Description";
+    }
+    .THIS .gizmo #specific td:nth-of-type(3):before {
+        content: "Tax Letters";
+    }
+    .THIS .gizmo #specific td:nth-of-type(4):before {
+        content: "Pledge Reminder";
+    }
+    .THIS .gizmo #specific td:nth-of-type(5):before {
+        content: "Orders Management";
+    }
+    .THIS .gizmo #specific td:nth-of-type(6):before {
+        content: "Canadian Templates";
+    }
+    /* Label the data - FAQ - Merge Templates left Blank */
+    .THIS .gizmo #fieldblank {
+        margin: 1em 0;
+    }
+    .THIS .gizmo #fieldblank td:nth-of-type(1):before {
+        content: "Result if Address 2 field is blank";
+    }
+    .THIS .gizmo #fieldblank td:nth-of-type(2):before {
+        content: "Result if Address 2 field has data";
+    }
+}
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .THIS .gizmo body {
+        padding:	0;
+        margin: 	0;
+        width: 		320px;
+    }
+}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .THIS .gizmo body {
+        width: 		495px;
+    }
+}
+
+/* Image with text to right */
+.THIS .gizmo .menus .div-wrapper {
+    background: 	#fff;
+    border:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    border-radius: 	token(styleBorderRadiusSW);
+    white-space: 	nowrap;
+    max-width: 		90%;
+    width: 		100%;
+    display: 		block;
+    padding: 		15px;
+    margin: 		15px auto;
+}
+
+.THIS .gizmo .menus .single-div {
+    width: 		45%;
+    display: 		inline-block;
+    text-align: 	center;
+    vertical-align: 	middle;
+    margin: 		0 5%;
+    white-space: 	normal;
+}
+
+.THIS .gizmo .div-links {
+    width: 		100%;
+    display: 		inline-block;
+}
+
+.THIS .gizmo .div-links ul {
+    margin: 	0 1em;
+    padding: 	0;
+}
+
+.THIS .gizmo .div-links li {
+    line-height: 	1.5em;
+    list-style-type: 	none;
+}
+
+.THIS .gizmo .div-links > div {
+    width: 		100%;
+    display: 		inline-block;
+    text-align: 	left;
+    vertical-align: 	middle;
+    margin: 		0 1%;
+    white-space: 	normal;
+}
+
+.THIS .gizmo .div-wrapper .image {
+    width: 		100px;
+    background: 	none;
+    margin: 		0;
+    padding: 		0;
+    display: 		inline-block;
+}
+
+.THIS .gizmo .div-wrapper .sidenote {
+    width: 		calc(96% - 100px);
+    background: 	none;
+    margin: 		0;
+    padding: 		0;
+    text-align: 	left;
+    display: 		inline-block;
+}
+
+.THIS .gizmo .postnote {
+    text-align: 	left;
+    padding: 		0;
+    display: 		inline;
+    background: 	transparent !important;
+}
+
+.THIS .gizmo .notesteps {
+    padding-top: 		1em;
+    text-align: 		center;
+    display: 			block;
+    list-style-position: 	inside;
+}
+
+.THIS .gizmo .notesteps a {
+    text-decoration: 	underline;
+}
+
+.THIS .gizmo .notesteps ol {
+    text-align: 	center;
+    display: 		inline-block;
+}
+
+.THIS .gizmo .notesteps li {
+    text-align: 	left;
+}
+
+.THIS .gizmo .steps {
+    padding-top: 	1em;
+    text-align: 	left;
+    display: 		inline-block;
+}
+
+.THIS .gizmo .steps img {
+    margin: 		0 auto;
+    display: 		block;
+    width: 		100%
+}
+
+.THIS .gizmo .steps p {
+    margin-bottom: 	1em;
+}
+
+.THIS .gizmo .steps li {
+    list-style-type: none;
+    margin-bottom: 	2em;
+}
+
+.THIS .gizmo .subtitle {
+    text-align: 	left;
+    margin: 		.7em;
+}
+
+.THIS .gizmo .circle {
+    display: 		block;
+    max-width: 		30px;
+    height: 		30px;
+    max-height: 	30px;
+    border-radius: 	50%;
+    margin: 		0 auto !important;
+    padding: 		0 !important;
+}
+
+.THIS .gizmo #eoy {
+    background: token(dpColor1);
+}
+
+.THIS .gizmo #pledge {
+    background: token(dpColor2);
+}
+
+.THIS .gizmo #orders {
+    background: token(dpColor5);
+}
+
+.THIS .gizmo #canada {
+    background: token(dpColor4);
+}
+
+.THIS .gizmo #blank {
+    background: none;
+}
+
+.THIS .gizmo h2,
+.THIS .gizmo h4 {
+    font-size: 			1.1rem;
+    font-weight: 		normal;
+    line-height: 		1.5rem;
+    margin: 			15px 0 0 0;
+    display: 			inline-block;
+    width: 			100%;
+    border-bottom:		token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+@media screen and (max-width: 480px) {
+    .THIS .gizmo .single-div {
+        display: 	block;
+        width: 		65%;
+        margin: 	0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .THIS .gizmo .over-panel-title {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************
+ARTICLE CALLOUT STYLE
+**********************************/
+/* Responsive Tables */
+
+.THIS .toolkit.title {
+    padding: 	1em 0;
+    border-top: token(dpBorderWidth) token(dpBorderStyle) token(colorBorderSW);
+}
+
+.THIS .toolkit.w3-table {
+    overflow-x: auto;
+}
+
+.THIS .toolkit.w3-table .toolkit.table {
+    border-collapse: 	collapse;
+    border-spacing: 	0;
+    width: 		100%;
+    border: 		token(dpBorderWidth) token(dpBorderStyle) token(colorBorderSW);
+}
+
+.THIS .toolkit.w3-table th,
+.THIS .toolkit.w3-table td {
+    border: 		none;
+    text-align: 	left;
+    padding: 		8px;
+}
+
+.THIS .toolkit.w3-table tr:nth-child(even) {
+    background-color: token(colorZebraStripeSW);
+}
+
+.THIS .toolkit.modwraps {
+    margin: 	1em auto;
+    display: 	inline-block;
+}
+
+/* Inline image */
+.THIS .toolkit.inline-image {
+    box-shadow: 	none;
+    margin: 		0 !important;
+    vertical-align: 	middle;
+}
+
+/* Special Callouts */
+.THIS .toolkit.callout {
+    background-repeat: 		no-repeat;
+    min-height: 		60px;
+    margin: 			30px 0;
+    padding: 			10px 10px 10px 85px;
+    background-attachment: 	scroll;
+    background-color: 		token(colorZebraStripeSW);
+    background-position: 	7px 7px;
+    border: 			token(dpBorderWidth) token(dpBorderStyle) token(colorBorderSW);
+}
+
+.THIS .toolkit.callout > div {
+    margin-left: 15px;
+}
+
+.THIS .toolkit.callout p {
+    margin-top: 	3px;
+    padding-left: 	1px;
+}
+
+.THIS .toolkit.warning {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_warning) no-repeat left center;
+    background-color: 	token(colorZebraStripeSW);
+    background-size: 	90px;
+}
+
+.THIS .toolkit.important {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_important) no-repeat left center;
+    background-color: 	token(colorZebraStripeSW);
+    background-size: 	90px;
+
+}
+
+.THIS .toolkit.note {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_note) no-repeat left center;
+    background-color: 	token(colorZebraStripeSW);
+    background-size: 	90px;
+}
+
+.THIS .toolkit.best-practice {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_bestpractice) no-repeat left center;
+    background-color: 	token(colorZebraStripeSW);
+    background-size: 	90px;
+}
+
+/* Circle Elements */
+.THIS .toolkit.circle {
+    padding-top: 	7px;
+    clear: 		left;
+}
+
+.THIS .toolkit.circlewords {
+    display: 		inline;
+}
+
+.THIS .toolkit.circledot {
+    width: 		11px;
+    height: 		11px;
+    border-radius: 	50%;
+    display: 		inline-block;
+    margin: 		0 .5em .1em .5em;
+    vertical-align: 	middle;
+}
+
+.THIS .toolkit.circle #lightblue {
+    background: token(dpLtGray);
+}
+
+.THIS .toolkit.circle #orange {
+    background: token(dpOrange);
+}
+
+.THIS .toolkit.circle #green {
+    background: token(dpGreen);
+}
+
+.THIS .toolkit.circle #blue {
+    background: token(dpBlue);
+}
+
+/* Icons */
+
+.THIS .toolkit.bulb {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_lightbulb) no-repeat 0 0;
+    background-size: 	contain;
+    width: 		200px;
+    height: 		200px;
+    margin-right: 	10px;
+}
+
+/* BULLET POINTS */
+.THIS ol.toolkit.decimal li,
+.THIS ol.toolkit.letter li,
+.THIS ol.toolkit.roman li,
+.THIS ul.toolkit.disc li {
+    margin: 		5px auto;
+    margin-left: 	1.5em;
+    padding-left: 	0.2em;
+}
+
+.THIS ol.toolkit.decimal {
+    list-style-type: 	decimal;
+}
+
+.THIS ol.toolkit.letter li {
+    list-style-type: 	lower-alpha !important;
+}
+
+.THIS ol.toolkit.roman li {
+    list-style-type: 	upper-roman !important;
+}
+
+.THIS ul.toolkit.disc li {
+    list-style-type: 	disc !important;
+}
+
+.THIS ul.toolkit.new_bullet li {
+    list-style-type: 	none;
+    padding: 		0;
+    margin: 		0;
+}
+
+.THIS ul.toolkit.new_bullet li:before {
+    display: 		inline-block;
+    margin-right: 	0.2em;
+    margin-bottom: 	0.2em;
+    padding: 		1em;
+    content: 		"";
+    vertical-align: 	middle;
+}
+
+/* Bullet = Light bulb */
+.THIS ul.toolkit.new_bullet.lightbulb li:before {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_lightbulb) no-repeat 0 0;
+    background-size: 	contain;
+}
+
+/* Bullet = Checkmark */
+.THIS ul.toolkit.new_bullet.checkmark li:before {
+    background: 	url(https://softerware.force.com/dpcommunity/s/sfsites/c/resource/commKB_checkmark) no-repeat 0 0;
+    background-size: 	contain;
+}
+
+/* Image with Side note */
+.THIS .toolkit.notecall {
+    background: 	token(colorZebraStripeSW);
+    border: 		token(dpBorderWidth) token(dpBorderStyle) token(colorBorderSW);
+    border-radius: 	token(styleBorderRadiusSW);
+    display: 		flex;
+    margin: 		1em auto;
+    padding: 		0 10px;
+    width: 		80%;
+}
+
+.THIS .toolkit.notecall div {
+    text-align: 	left;
+    padding: 		1.5em 1em 1em 0;
+    word-break: 	keep-all;
+}
+
+.THIS .toolkit.notecall img {
+    height: 	100% !important;
+}
+
+@media screen and (max-width: 530px) {
+    .THIS .toolkit.notecall div {
+        word-break: break-all;
+    }
+}
+
+.THIS .toolkit.note-wrapper {
+    background: 	token(colorZebraStripeSW);
+    border: 		token(dpBorderWidth) token(dpBorderStyle) token(colorBorderSW);
+    border-radius: 	token(styleBorderRadiusSW);
+    display: 		block;
+    margin: 		1em auto;
+    padding: 		10px;
+    width: 		60%;
+}
+
+.THIS .toolkit.note-wrapper img {
+    height: 		auto;
+    max-width: 		100%;
+    vertical-align: 	middle;
+    width: 		15%;
+}
+
+.THIS .toolkit.note-wrapper span {
+    width: 		80%;
+    display: 		inline-block;
+    vertical-align: 	middle;
+}
+
+.THIS .toolkit.note-wrapper h1,
+.THIS .toolkit.note-wrapper h2,
+.THIS .toolkit.note-wrapper h3,
+.THIS .toolkit.note-wrapper p {
+    margin: 	0;
+    word-break: break-word;
+}
+
+.THIS .toolkit.left-wrap {
+    margin: 0 auto;
+}
+
+.THIS .toolkit.left-note {
+    text-align: 	left;
+    padding-top: 	1em;
+    line-height: 	1.2em;
+}
