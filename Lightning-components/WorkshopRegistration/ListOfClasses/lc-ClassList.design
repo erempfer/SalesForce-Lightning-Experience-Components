@@ -1,0 +1,5 @@
+<design:component label="Class List Registration">
+    <design:attribute name="linkText" 		label="Pay Now Button Text"/>
+    <design:attribute name="linkText2" 		label="Pay Later Button Text"/>
+	<design:attribute name="whichProduct" 	label="Which Product" datasource="DonorPerfect, EZ, RSA" default="EZ"/>         
+</design:component>

@@ -1,0 +1,25 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="CommunityAlertsApexController">
+    <!-- For icons refer to https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/aura_compref_lightning_icon.htm -->    
+    <aura:attribute name="textLink" 		type="String" 	access="global" default="Link Text" />
+    <aura:attribute name="iconLink"			type="String" 	access="global" default="fas fa-book" />
+    <aura:attribute name="useFontAwesome" 	type="Boolean" 	access="global" default="true" />
+    <aura:attribute name="urlLinkList"		type="String" 	access="global" default="" />
+    <aura:attribute name="urlLinkDetail"	type="String" 	access="global" default="" />
+	<aura:attribute name="whatProduct"		type="String" />
+    <aura:attribute name="whatObject"		type="String" />
+    <aura:attribute name="alertCount"		type="Map" />
+    <aura:attribute name="lookBackDays"		type="Integer" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <a aura:id="button-alert" href="javascript:void(0)" onclick="{!c.gotoURL}">
+        <aura:if isTrue="{!v.useFontAwesome}">
+    		<span class="{!'icon ' + v.iconLink}" aria-hidden="true"></span>
+    	<aura:set attribute="else">
+      		<lightning:icon class="icon sf-icon" iconName="{!v.iconLink}" size="large" alternativeText="Icon"/>
+    	</aura:set>
+  		</aura:if>               
+        <span class="text">{!v.textLink}</span>
+        <div aura:id="alert" class="alert-dot hidden"><span>{!v.alertCount.cnt}</span></div>
+    </a>    
+</aura:component>

@@ -1,0 +1,4 @@
+<design:component label="Global Nav Menu: Shrinking">
+    <design:attribute name="directions" label="Edit the nav menu in Community Builder > Settings > Theme > Configure > Navigation Menu" />
+    <design:attribute name="whichProduct" 	label="Which Product" datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/>
+</design:component>

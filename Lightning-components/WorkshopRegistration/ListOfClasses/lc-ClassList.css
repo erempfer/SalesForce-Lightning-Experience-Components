@@ -1,0 +1,144 @@
+/**************************
+Global Text Styling 
+***************************/
+.THIS {
+    font-size: 1rem;
+}
+
+.THIS h1 {
+    font-size: 		1.1rem;
+}
+
+.THIS h2, .THIS h3, .THIS h4 {
+    margin: 		0;
+    font-size: 		1.1rem;
+    line-height: 	1.2rem;
+    font-weight: 	bold;
+    color: 			token(ezColor1);
+}
+
+.THIS h3 {
+    margin-top:		0.7rem;	
+    font-weight:	normal;
+}
+
+.THIS.dp-style h2, 
+.THIS.dp-style h3,
+.THIS h4,
+.THIS h4 span {
+    color: token(colorTextDefaultSW);
+}
+
+.THIS p, .THIS h1 {
+    margin: 		0 0 20px 0;
+}
+
+.THIS small {
+    display: 		inline-block;
+    margin-top: 	5px;
+    font-size: 		85%;
+    line-height:	1.2em;
+    font-style:		italic;
+}
+
+
+/**************************
+Global List Styling 
+***************************/
+.THIS ul {
+    margin: 		5px 0;
+    padding: 		0 1.1em;
+    list-style-type: disc;
+}
+
+
+/**************************
+Checkbox Styling 
+***************************/
+.THIS input[type='checkbox']:checked{
+    border-color: 		token(ezColor2);
+    background-color: 	token(ezColor2);
+    box-shadow:			none;
+}
+
+.THIS.dp-style input[type='checkbox']:checked{
+    border-color: 		token(dpColor2);
+    background-color: 	token(dpColor2);
+}
+
+.THIS .experience-level .slds-radio_button-group .slds-button:hover {
+    color: 		token(dpColor2);
+    box-shadow: 0 0 2px token(dpColor2);
+}
+
+.THIS .experience-level [type="radio"]:checked + label,
+.THIS .experience-level [type="radio"]:checked + label:hover {
+    background: token(dpColor2);
+}
+
+
+/**************************
+Class Container Styling 
+***************************/
+.THIS .single-class,
+.THIS .no-classes {
+    border-top: token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+    padding: 	20px 10px;
+}
+
+/*
+.THIS .single-class:nth-child(even) {
+    background: token(colorZebraStripeSW);
+}
+
+/* Styling for the ClassAttendees.cmp overlay when the class is full to prevent registration 
+.THIS .single-class:nth-child(even) .full-house:before {
+    background: token(colorZebraStripeSW);
+}
+*/
+.THIS .single-class .basic-info {
+    display: flex;
+}
+
+.THIS .single-class .basic-info section {
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+.THIS .flag-container {
+    display: 		inline-block;
+    width: 			25px;
+    height: 		25px;
+    margin-left: 	8px;
+    vertical-align: middle;
+}
+
+.THIS .flag-US {    
+    background-image: url("https://www.softerware.com/community/donorperfect/assets/icons/classes/US.png");
+}
+
+.THIS .flag-Canada {
+    background-image: url("https://www.softerware.com/community/donorperfect/assets/icons/classes/Canada.png");
+}
+
+
+/**************************
+Global Styling 
+***************************/
+.THIS .hidden{
+    display: none;
+}
+
+.THIS .browserWarning {
+    font-style: italic;
+}
+
+
+/**************************
+Phone Styling 
+***************************/
+@media only screen and (max-width: 900px) {	
+    .THIS .single-class .basic-info {
+        flex-wrap: wrap;
+    }
+}

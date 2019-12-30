@@ -1,0 +1,49 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="ArticleArchivesByType">
+    <ltng:require scripts="/resource/comm_jquery" afterScriptsLoaded="{!c.jsLoaded}"/>
+    
+    <aura:attribute name="articles" 				type="SObject[]" /> 
+    <aura:attribute name="articleType" 				type="String" 	default="Featured__kav"/> 
+    <aura:attribute name="numOfArticles" 			type="Integer" 	default="500" /> 
+    <aura:attribute name="hasTopic" 				type="Boolean" 	default="false"/>
+    <aura:attribute name="topicExists" 				type="Boolean" 	default="true"/>
+    <aura:attribute name="twoColumns" 				type="Boolean" 	default="true"/>
+    <aura:attribute name="filterHow"				type="String" />
+    <aura:attribute name="filterName"			 	type="String" />
+    <aura:attribute name="keyWordFilter"			type="String" 	default="" />    
+    <aura:attribute name="topic" 					type="List" />
+    <aura:attribute name="docID"					type="String"	default="Group-1" />
+    
+    <aura:handler name="init" 						value="{!this}" action="{!c.getArticle}" />
+    <aura:handler event="c:SearchKeyChange" 		action="{!c.searchKeyChange}"/>  
+    
+    <aura:if isTrue="{!v.topicExists}">
+        <aura:if isTrue="{!v.hasTopic}">        
+            <div id="{!v.docID}" class="cat_wrapper">
+                <aura:iteration var="article" items="{!v.articles}" >
+                    <article aura:id="top_container" class="topic-container" data-value="{!article.Topic__c}"> 
+                        <h1 aura:id="top_title"><ui:outputText value="{!article.Topic__c}"/></h1>
+                        <p><a href="javascript:void(0)" onclick="{!c.gotoArticle}" data-value="{!article.UrlName}" data-id="{!article.Id}">{!article.Title}</a></p>                  
+                    </article>
+                </aura:iteration>  
+            </div>
+            <aura:set attribute="else">
+                <c:SearchBarComponent />
+                <div>
+                    <aura:iteration var="article" items="{!v.articles}">
+                        <article>
+                            <small><ui:outputDate value="{!article.LastPublishedDate}"/></small>
+                            <div>                    
+                                <h2><a href="javascript:void(0)" onclick="{!c.gotoArticle}" data-value="{!article.UrlName}" data-id="{!article.Id}">{!article.Title}</a></h2>
+                                <p>{!article.Summary}</p>
+                            </div>
+                        </article>
+                    </aura:iteration>  
+                </div>
+            </aura:set>
+        </aura:if>   
+        <aura:set attribute="else">
+            <h1>Article Error</h1>
+            <p>There is no topic field for this article type. Please choose another article type or uncheck the "Display by topic?" box in the property inspector.</p>
+        </aura:set>
+    </aura:if> 
+</aura:component>

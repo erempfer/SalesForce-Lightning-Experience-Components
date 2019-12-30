@@ -1,0 +1,6 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">  
+    <form>
+        <span class="fa fa-search"></span>
+        <input type="text" class="search-bar" onkeyup="{!c.searchKeyChange}" onkeydown="{!c.keyDown}" placeholder="Search Articles"/>
+    </form> 
+</aura:component>

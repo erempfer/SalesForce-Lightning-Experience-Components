@@ -1,0 +1,21 @@
+<design:component label="Articles By Type">
+    <design:attribute name="articleType" 		label="Show these types of articles" 	datasource="DPMobile__kav, 
+                                                                                                    FAQ__kav, 
+                                                                                                    Featured__kav, 
+                                                                                                    general_article__kav, 
+                                                                                                    How_To__kav, 
+                                                                                                    Information__kav, 
+                                                                                                    Quick_Tips__kav, 
+                                                                                                    Release_Notes__kav, 
+                                                                                                    Video_Feature__kav" default="Featured__kav"/> 
+    <design:attribute name="numOfArticles" 		label="How many articles do you want to display?" />  
+    <design:attribute name="hasTopic" 			label="Display by Topic?" 							description="The article template must have a topic field for this to work. All fields below this line only work when this is turned on."/>
+    <design:attribute name="filterHow"	 		label="What articles do you want to show?"		 	datasource="Show ALL articles,
+                                                                                                                    Remove articles with the topic...,
+                                                                                                                    Show ONLY articles with the topic..."
+                      																				default="Show ALL articles" />
+    <design:attribute name="filterName"			label="Topic name" />
+    <design:attribute name="keyWordFilter"		label="Filter articles by the Keywords:" 		description="Filter for multiple words by using ', ' between words"/>
+    <design:attribute name="twoColumns"			label="Display list in two columns." />
+    <design:attribute name="docID"				label="HTML ID name" description="If you want to use this component more than once on one page, a unique ID tag must be given to stop erros from occurring."/> 
+</design:component>

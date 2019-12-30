@@ -1,0 +1,43 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="IdeaDashboard">
+    <aura:attribute name="ideas" 		type="SObject[]" />
+    <aura:attribute name="zoneIds"	 	type="SObject[]" />
+    <aura:attribute name="ideaIds"		type="String[]" />
+    <aura:attribute name="howMany"		type="Integer" /> 
+    <aura:attribute name="whatProduct"	type="String" />
+    <aura:attribute name="title"		type="String" 	default="Trending Ideas" /> 
+    <aura:attribute name="urlOne" 		type="String" 	default="/suggest-and-vote-ezcare" />
+    <aura:attribute name="urlTwo"	 	type="String" />
+    <aura:attribute name="isLoading"	type="boolean" 	default="false"/>
+    
+    <aura:handler event="aura:waiting" 			action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" 		action="{!c.hideSpinner}"/>
+    <aura:handler name="init" value="{!this}" 	action="{!c.doInitJs}" />
+    
+    <section aura:id="idea-leaderboard">        
+        <h2>{!v.title}</h2>
+
+        <aura:if isTrue="{!v.isLoading}">
+            <lightning:spinner alternativeText="Loading" size="large" />
+        </aura:if>
+        
+        <aura:iteration var="thisIdea" items="{!v.ideas}" indexVar="listNum">
+            <article>
+                <div class="votes">
+                    <a aura:id="vote-up" href="javascript:void(0)" data-id="{!thisIdea.Id}" data-type="up" onclick="{!c.createVote}"><i class="fas fa-caret-up"></i></a>
+                    <div class="vote-count">
+                        <h3>{!thisIdea.VoteTotal}</h3>
+                        <small>points</small>   
+                    </div>
+                    <a aura:id="vote-down" href="javascript:void(0)" data-id="{!thisIdea.Id}" data-type="down" onclick="{!c.createVote}"><i class="fas fa-caret-down"></i></a>
+                </div>
+                <a class="details" href="javascript:void(0)" data-id="{!thisIdea.Id}" data-commid="{!thisIdea.CommunityId}" onclick="{!c.gotoURL}">
+                    <p>{!thisIdea.Title}</p>
+                    <small >
+                        <span aura:id="idea-comments" class="comments"><i class="far fa-comments"></i>{!thisIdea.NumComments}</span>
+                        <span aura:id="idea-status" class="status" >{!thisIdea.Status}</span>
+                    </small>
+                </a>
+            </article>
+        </aura:iteration>        
+    </section>
+</aura:component>

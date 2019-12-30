@@ -1,0 +1,6 @@
+<design:component label="Articles by Time">
+    <design:attribute 	name="numOfArticles" 	label="How many articles do you want to display?" />  
+    <design:attribute 	name="whichProduct" 	label="Which Product" datasource="DonorPerfect, EZCare, RSA" default="DonorPerfect"/>
+    <design:attribute 	name="myHeight"			label="Display height" />
+	<design:attribute 	name="isPublic" 		label="This search is public facing" />
+</design:component>

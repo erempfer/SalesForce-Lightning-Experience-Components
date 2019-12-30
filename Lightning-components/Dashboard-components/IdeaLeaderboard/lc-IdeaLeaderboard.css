@@ -1,0 +1,213 @@
+.THIS {
+    min-height: 		300px;
+    position:			relative;
+    box-shadow:			token(dpBoxShadow);
+    border-radius: 		token(styleBorderRadiusDashboard);
+    background: 		#fff;
+}
+
+/*************************** 
+General Text Style
+***************************/
+.THIS h2 {
+    padding: 		20px;
+    color: 			#fff;
+    text-transform:	uppercase;
+    font-size: 		1.3rem;
+    line-height: 	1.5rem;
+    background: 	token(ezColor1);
+    border-radius:	token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard) 0 0;
+}
+
+.THIS.dp-style h2 {
+	background-color: 	token(dpColor1);
+    background-image:	token('linear-gradient(to right,' + dpGradientBlue + ',' + dpGradientTeal +')');
+}
+
+.THIS h3 {
+    font-size: 		1.5rem;
+    font-weight: 	bold;
+}
+
+.THIS h3,
+.THIS small {
+    margin-top:		0.5rem;
+    line-height: 	0.8rem;
+}
+
+.THIS p {
+    line-height: 1.2rem;
+}
+
+
+/*************************** 
+Idea Row Style
+***************************/
+.THIS article {
+    display: 		flex;
+    align-items:	center;
+    margin: 		0 20px;
+    padding: 		20px 0;
+    border-bottom:	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW); 
+}
+
+.THIS article:last-of-type {
+    border-bottom: none;
+}
+
+
+/*************************** 
+Vote Count Style
+***************************/
+.THIS .votes {
+    margin-right: 	20px;
+    min-width:		50px;
+	text-align:		center;
+}
+
+.THIS .votes a {
+    display: 			block;
+    text-decoration:	none;
+    color:				token(colorTextLabelSW);
+}
+
+.THIS .votes a:hover {
+    color: token(colorBrandSW);
+}
+
+.THIS .votes a,
+.THIS .votes a i {
+    font-size: 			30px;
+    line-height:		1rem;
+}
+
+/***** Already voted status ****/
+.THIS .votes a.voted-up {
+    color: token(ezGreen);
+    cursor: default;
+}
+
+.THIS.dp-style .votes a.voted-up {
+    color: token(dpGreen);
+    cursor: default;
+}
+
+.THIS .votes a.voted-down {
+    color: token(ezRed);
+    cursor: default;
+}
+
+.THIS.dp-style .votes a.voted-down {
+    color: token(dpRed);
+    cursor: default;
+}
+
+.THIS .votes a.inactive,
+.THIS .votes a:hover.inactive {
+    cursor: default;
+    color: 	token(colorTextLabelSW);
+}
+
+
+/*************************** 
+Idea Title and Status Style
+***************************/
+.THIS .details {
+    color: 				token(colorTextDefaultSW);
+    text-decoration:	none;
+}
+
+.THIS .details:hover {
+    color: token(colorBrandSW);
+}
+
+.THIS .details:hover p {
+    text-decoration: underline;
+}
+
+.THIS .details:hover .status {
+    text-decoration: none;
+}
+
+.THIS .comments {
+    color: token(colorTextLabelSW);
+}
+
+.THIS i.fa-comments {
+    margin-right: 5px;
+}
+
+/*************************** 
+Status Colors for EZ
+***************************/
+.THIS .status {
+    color: 			token(ezDarkBlue);
+    margin-left: 	5px;
+    font-weight:	600;
+}
+
+.THIS .status:before {
+    content: 		'|';
+    margin-right: 	5px;
+    color: 			token(colorTextLabelSW);
+}
+
+.THIS .status._statDone {
+    color: 	token(ezGreen);
+}
+
+.THIS .status._statWorking {
+    color: 	token(ezRed);
+}
+
+.THIS .status.stat-yes {
+    color: 	token(ezOrange);
+}
+
+.THIS .status.stat-maybe {
+    color: 	token(ezBlue);
+}
+
+
+/*************************** 
+Status Colors for DP
+***************************/
+.THIS.dp-style .status {
+    color: 	token(ezDarkBlue);
+}
+
+.THIS.dp-style .status._statDone {
+    color: 	token(dpGreen);
+}
+
+.THIS.dp-style .status._statWorking {
+    color: 	token(dpPurple);
+}
+
+.THIS.dp-style .status.stat-yes {
+    color: 	token(dpOrange);
+}
+
+.THIS.dp-style .status.stat-maybe {
+    color: 	token(dpLtBlue);
+}
+
+
+/*************************** 
+Loading Spinner Style
+***************************/
+.THIS .slds-spinner_container {
+    z-index: 	10000;
+    position: 	absolute;
+    background: #fff;
+    opacity: 	0.75;
+}
+
+
+/*************************** 
+Global Hidden DP
+***************************/
+.THIS .hidden,
+.THIS.hidden {
+    display: none;
+}

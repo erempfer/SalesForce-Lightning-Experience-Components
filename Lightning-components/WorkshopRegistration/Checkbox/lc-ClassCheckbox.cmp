@@ -1,0 +1,78 @@
+<aura:component access="global">
+    <aura:attribute name="labelName" 			type="String" 	access="global" />
+    <aura:attribute name="firstName" 			type="String" 	access="global" />
+    <aura:attribute name="lastName" 			type="String" 	access="global" />
+    <aura:attribute name="userId" 				type="String" 	access="global" />
+    <aura:attribute name="expLevel" 			type="String" 	access="global" default="Intermediate"/>
+    <aura:attribute name="ddLabel" 				type="String" 	access="global" default="Select an experience level"/>
+    <aura:attribute name="defaultCheck"			type="Boolean"	access="global" default="false"/>
+    <aura:attribute name="nameChecked"			type="Boolean"	access="global" default="false"/>
+	<aura:attribute name="maxDateCounter"		type="Integer" 	access="global" />
+    <aura:attribute name="dateCounter"			type="Integer" 	access="global" />
+    <aura:attribute name="fromParentWarningOn" 	type="Boolean"	access="global"/>
+    <aura:attribute name="fromParentRate" 		type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentTaxPerc"	type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentTaxRate"	type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentSubTotal"	type="Decimal" 	access="global" />
+	<aura:attribute name="fromParentNoTaxAmt"	type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentTotalPrice"	type="Decimal" 	access="global" />
+	<aura:attribute name="fromParentDiscRate"	type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentDiscTotal"	type="Decimal" 	access="global" />
+    <aura:attribute name="fromParentRegCounter" type="Integer" 	access="global" /> 
+	<aura:attribute name="fromParentOneClass" 	type="Boolean"	access="global" />
+    <aura:attribute name="fromParentOwner"		type="String"	access="global" />
+    <aura:attribute name="fromParentDates"		type="Date[]" 	access="global" />
+	<aura:attribute name="fromParentIsVirtClass" 		type="Boolean" 	access="global" default="false"/>
+	<aura:attribute name="fromParentClassType"			type="String" 	access="global"/>
+	<aura:attribute name="fromParentVirtClassString"	type="String" />
+    <aura:attribute name="daysAttending"		type="Date[]" 	access="global" />
+    <aura:attribute name="radioGroupName"		type="String" 	access="global" default="group"/>
+    <aura:attribute name="options" 				type="List" 	access="global"	default="[{'label': 'Beginner', 'value': 'Beginner'},
+                                                        						{'label': 'Intermediate', 'value': 'Intermediate'},
+                                                        						{'label': 'Advanced', 'value': 'Advanced'} ]"/>
+    
+    <!-- Create methods for parent component ClassAttendees to call and run functions -->
+    <aura:method name="_turnOff" 	action="{!c.disableBoxesJs}" 	access="public" />
+    <aura:method name="_turnOn" 	action="{!c.enableBoxesJs}" 	access="public" />
+    <aura:method name="_setWarning"	action="{!c.noLevelDetectedJs}"	access="public" />
+    
+    <!-- Register event to be received by parent component ClassAttendees -->
+    <aura:registerEvent name="cmpEventFired" type="c:ClassAppEvent"/>   
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <div aura:id ="main">
+        <span aura:id="staff-info" data-firstname="{!v.firstName}" data-lastname="{!v.lastName}" data-id="{!v.userId}"></span>
+        <ui:inputCheckbox aura:id="my-checkbox" class="user-checkbox" label="{!v.labelName}" click="{!c.clickedBoxJs}" value="{!v.nameChecked}"/>
+        
+        <div aura:id="add-options" class="{!v.nameChecked ? 'additional-options show' : 'additional-options'}">
+            <lightning:radioGroup aura:id="skill-level" 
+                                  class="{!v.fromParentIsVirtClass ? 'experience-level hidden' : 'experience-level'}" 
+                                  type="button" 
+                                  name="{!v.radioGroupName}" 
+                                  label="{!v.ddLabel}" 
+                                  options="{!v.options}" 
+                                  value="{!v.expLevel}" 
+                                  onchange="{! c.onSelectChangeJs }" /> 
+            
+            <div class="{!v.fromParentOneClass ? 'group-checkboxes hidden' : 'group-checkboxes'}">
+                <fieldset class="form-element">
+                    <legend class="form-legend">Day(s) Attending <span aura:id="level-warning" class="warning hidden">*No day(s) selected</span></legend>
+                    <div class="form-element_control">
+                        <aura:iteration var="thisDate" items="{!v.fromParentDates}" indexVar="listNum">
+                            <span class="date-checkbox">
+                                    <input aura:id="dateCheckbox" type="checkbox" id="{!v.radioGroupName + '-' + listNum}" value="{!thisDate}" onclick="{!c.clickedDateJs}" checked="checked"></input>
+                                    <label aura:id="dateLabel" for="{!v.radioGroupName + '-' + listNum}" class="checkbox-label">
+                                    <span>
+                                        <lightning:formattedDateTime class="label-day" value="{!thisDate}" weekday="short"/>                                    
+                                        <lightning:formattedDateTime class="label-date" value="{!thisDate}" month="numeric" day="numeric"/>
+                                    </span>                            
+                                </label>            	
+                            </span>
+                        </aura:iteration>
+                    </div>
+                </fieldset>    
+            </div>                 
+        </div>        
+    </div>    
+</aura:component>

@@ -1,0 +1,98 @@
+/* TOP BLUE BAR */
+.THIS.tophead {
+    background:none;
+    height:auto;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+}
+
+.THIS .topbox {
+    margin-right: 15%;
+    max-width:960px;    
+    position: fixed;
+    top: 10px;
+}
+
+.THIS .dpologo {
+    height:auto;
+    margin-left: 2%;
+    width:13%;
+}
+
+.THIS .planelogo {
+    margin-left:2%;
+    width:25%
+}
+
+@media only screen and (max-width: 48em) {
+    .THIS .dpologo {
+        display: none;
+    }
+    .THIS .planelogo {
+        width: 35%;
+    }
+}
+
+/*Phone Style*/
+@media only screen and (max-width: 40em) {
+    .THIS .topbox {
+        width: auto;
+        margin: 0;
+        right: 40px;
+    }
+    .THIS .community-logo {
+        display: none;
+    }
+}
+
+/* My System */
+.THIS p.arrow {
+    background-image: url("https://www.softerware.com/community/donorperfect/assets/header/arrow462.png");
+    background-repeat: no-repeat;
+    text-indent: 27px;
+    line-height: 20px;
+    display: inline-block;
+    height: 20px;
+    width: 123px;
+    color: #fff;
+}
+
+.THIS p.arrow:hover {
+    background-image: url("https://www.softerware.com/community/donorperfect/assets/header/arrow462-HOVER.png");
+    color:rgb(251, 176, 59);
+}
+
+.THIS .system {
+    color:#fff;
+    display:inline;
+    float: right;
+    line-height: 30px;
+    text-decoration: none;
+}    
+
+.THIS .system:hover {
+    color:#EAEBF1;
+}
+
+.THIS system:visited {
+    color:#EAEBF1;
+} 
+
+.THIS .system:active {
+    color:grey;
+} 
+
+@media only screen and (max-width: 40em) {
+    .THIS .system {
+        display: inline-block;
+        float: right;
+        color: #fff;
+        line-height: 40px;
+        margin: 0;
+    }
+}

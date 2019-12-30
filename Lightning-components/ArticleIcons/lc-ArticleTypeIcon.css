@@ -1,0 +1,42 @@
+.THIS {
+    display: 		inline-block;
+    text-align: 	center;
+	position: 		absolute;
+    top: 			25px;
+    left: 			25px;
+    max-width: 		100px;
+}
+
+.THIS:hover, .THIS:focus {
+	text-decoration: none;
+}
+
+.THIS img {
+    margin-bottom: 5px;
+}
+
+.THIS h5 {
+    font-weight: 	bold;
+    font-size: 		1rem;
+    line-height:	1rem;
+}
+
+.THIS h5.casey {
+    color: token(ezDarkBlue);
+}
+
+.THIS h5.ru {
+    color: token(ezGreen);
+}
+
+.THIS h5.magnus {
+    color: token(ezBlue);
+}
+
+.THIS h5.scout {
+    color: token(ezRed);
+}
+
+.THIS h5.piper {
+    color: token(ezOrange);
+}

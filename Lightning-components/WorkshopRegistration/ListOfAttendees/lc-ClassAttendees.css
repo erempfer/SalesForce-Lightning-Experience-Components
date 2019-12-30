@@ -1,0 +1,187 @@
+/**************************
+Global Styling 
+***************************/
+.THIS {
+    position: relative;
+}
+
+.THIS .hidden, .THIS.hidden {
+    display: none !important;
+}
+
+.THIS .fas,
+.THIS .far {
+    font-size: 		1.5rem;
+    vertical-align: text-bottom;
+}
+
+/* Styling for the even class overlay when the class is full is found in the parent component, Class List, style sheet*/
+.THIS.full-house:before {
+    content: 	'';
+    display: 	block;
+    position: 	absolute;
+	z-index: 	9999;
+    width: 		100%;
+    height: 	100%;
+    background:	#fff;
+    opacity:	.75;
+}
+
+/**************************
+Text Styling 
+***************************/
+.THIS h2 {
+    margin-bottom: 5px;
+}
+
+.THIS h4 {
+    margin-top:		5px;
+    font-size:		1.2rem;
+    font-weight:	normal;
+}
+
+.THIS .total-cost {
+    margin:			0.5rem auto;
+    padding-top:	0.5rem;
+    font-size:		1.5rem;
+    font-weight:	bold;
+    line-height:	1.7rem;
+    border-top: 	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS small {
+    margin-left: 	0.5rem;
+    font-size:		1rem;
+    font-weight:	normal;
+    color: 			token(colorTextDefaultSW);    
+}
+
+.THIS .error-message {
+    margin:			15px auto;
+    padding: 		10px;
+    border: 		token(sizeBorderSW) token(styleBorderSW) red;
+    border-radius: 	5px;
+    line-height:	1.2rem;
+    font-weight: 	600;
+    color: 			token(dpRed);
+}
+
+
+/**************************
+List Styling
+***************************/
+.THIS ul.attendance-list {
+    margin:		5px 0 15px 0;
+    list-style:	none;
+    padding: 	0; 
+    max-height: 0;
+    overflow:	hidden;
+    
+    transition: max-height 0.5s;
+}
+
+.THIS li {
+    margin: 	0;
+    padding: 	10px;
+    background: token(colorZebraStripeSW);
+}
+
+.THIS li:first-of-type {
+    margin-top: 10px;
+}
+
+.THIS li:nth-child(even) {
+    background: #fff;
+}
+
+
+/**************************
+Toggle Staff Button Styling
+***************************/
+.THIS .toggle-staff {
+    text-align: right;
+}
+
+.THIS .toggle-staff a,
+.THIS .toggle-staff a:focus {
+    margin:				0;
+    color: 				token(colorTextLinkSW);
+    text-decoration: 	none;
+}
+
+.THIS .toggle-staff a:hover {
+    color: 				token(colorBrandSW);
+    text-decoration: 	none;
+}
+
+/**************************
+Submit Buttons Styling
+***************************/
+.THIS .pay-now-button, 
+.THIS .slds-button.pay-now-button:focus {
+    display:		inline-block;
+    padding: 		1rem;
+    font-size:		1rem;
+    line-height:	1.2rem;
+    text-align:		center;
+    text-decoration:none;
+    color:			#fff;    
+    background:		token(colorBrandSW);
+    border:			token(sizeBorderSW) token(styleBorderSW) token(colorBrandSW);
+    border-radius:	5px;
+    box-shadow:		none;
+    
+    transition:		background .1s linear, color .1s linear;
+}
+
+.THIS .pay-now-button:hover,
+.THIS .pay-now-button:hover span {
+    background: 	none !important; 					/* Use !important b/c SLDS styling uses it */
+    text-decoration:none;
+    color:			token(colorBrandSW);
+}
+
+.THIS .ghost-button,
+.THIS .ghost-button span,
+.THIS .slds-button.ghost-button {
+    background: none !important;						/* Use !important b/c SLDS styling uses it */
+    border: 	none !important;						/* Use !important b/c SLDS styling uses it */
+    color:		token(colorTextLabelSW);
+    box-shadow:	none;
+}
+
+.THIS .ghost-button:hover,
+.THIS .ghost-button:hover span {
+    background: 		none !important;						/* Use !important b/c SLDS styling uses it */
+    border: 			none !important;						/* Use !important b/c SLDS styling uses it */
+    color: 				token(colorBrandSW);
+    text-decoration: 	underline;
+}
+
+.THIS.sign-up .submit-btns[disabled],
+.THIS.sign-up .submit-btns[disabled]:hover {
+    opacity: 		0.4;
+    pointer-events: none;
+}
+
+.THIS.sign-up .submit-btns[disabled],
+.THIS.sign-up .submit-btns[disabled]:hover {
+    opacity: 		0.4;
+    pointer-events: none;
+}
+
+.THIS.sign-up .sold-out {
+	position: 			relative;
+    z-index: 			99999;
+    display: 			inline-block;
+    padding: 			1rem;
+    color:				token(colorBrandSW);
+    font-size: 			1rem;
+    font-weight: 		bold;
+    line-height: 		1.2rem;
+    text-align: 		center;
+    text-decoration: 	none;
+	background:			#fff;
+    border:				2px token(styleBorderSW) token(colorBrandSW);
+    border-radius:		5px;
+}

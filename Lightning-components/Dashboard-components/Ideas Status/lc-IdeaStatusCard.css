@@ -1,0 +1,196 @@
+.THIS {
+    display:			flex;
+	position:			relative;
+    padding:			20px;
+    border-radius: 		token(styleBorderRadiusDashboard);
+    font-size: 			1rem;
+    box-shadow:			token(dpBoxShadow);
+    cursor: 			pointer;
+    background:			#fff;
+}
+
+/*DP top border style*/ 
+.THIS.dp-style:before {
+    content: 		"";
+	display: 		block;
+	position: 		absolute;
+	right: 			0;
+	top: 			0;
+	height: 		5px;
+	width: 			100%;
+	border-radius: 	token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard) 0 0;
+    background: 	token('linear-gradient(to right,' + dpGradientBlue + ',' + dpGradientTeal +')');
+}
+
+.THIS:hover,
+.THIS:active {
+   	text-decoration:	none; 
+}
+
+.THIS .idea-status-stat {
+    color: token(colorTextDefaultSW);
+}
+
+.THIS .idea-status-stat p {
+    font-size: 		2rem;
+    font-weight: 	bold;
+    line-height:	2.1rem;
+}
+
+.THIS .idea-status-stat h2 {
+    font-size: 		0.8rem;
+    color: 			token(colorTextLabelSW);
+}
+
+/*************************** 
+Icon Style Default
+***************************/
+.THIS .icon-container {
+    margin: 		0 15px 5px 0;
+    width:			50px;
+    height:			50px;
+    border-radius: 	50%;
+    background: 	token('rgba(' + ezBlueRGB + ', 0.15)');
+}
+
+.THIS .icon,
+.THIS .sf-icon svg {    
+    color: 		token('rgb(' + ezBlueRGB + ')');
+    fill:		token('rgb(' + ezBlueRGB + ')');
+}
+
+.THIS .icon {
+	display: 		block;
+	text-align: 	center;
+	line-height: 	50px;
+}
+
+.THIS .fa,
+.THIS .fas,
+.THIS .far,
+.THIS .fab,
+.THIS .sf-icon svg {
+    font-size: 		28px;
+    max-width:		50px;
+}
+
+
+/*************************** 
+Icon Coloring for EZ
+***************************/
+/*EZ Completed*/ 
+.THIS .icon-container.stat-done {
+    background: token('rgba(' + ezGreenRGB + ', 0.15)');
+}
+
+.THIS .icon-container.stat-done .icon,
+.THIS .icon-container.stat-done .sf-icon svg {    
+    color: 		token('rgb(' + ezGreenRGB + ')');
+    fill:		token('rgb(' + ezGreenRGB + ')');
+}
+
+/*EZ Planned*/ 
+.THIS .icon-container.stat-working {
+    background: token('rgba(' + ezRedRGB + ', 0.15)');
+}
+
+.THIS .icon-container.stat-working .icon,
+.THIS .icon-container.stat-working .sf-icon svg {    
+    color: 		token('rgb(' + ezRedRGB + ')');
+    fill:		token('rgb(' + ezRedRGB + ')');
+}
+
+/*EZ Started*/ 
+.THIS .icon-container.stat-yes {
+    background: token('rgba(' + ezOrangeRGB + ', 0.15)');
+}
+
+.THIS .icon-container.stat-yes .icon,
+.THIS .icon-container.stat-yes .sf-icon svg {    
+    color: 		token('rgb(' + ezOrangeRGB + ')');
+    fill:		token('rgb(' + ezOrangeRGB + ')');
+}
+
+/*EZ Under Review*/ 
+.THIS .icon-container.stat-maybe {
+    background: token('rgba(' + ezBlueRGB + ', 0.15)');
+}
+
+.THIS .icon-container.stat-maybe .icon,
+.THIS .icon-container.stat-maybe .sf-icon svg {    
+    color: 		token('rgb(' + ezBlueRGB + ')');
+    fill:		token('rgb(' + ezBlueRGB + ')');
+}
+
+
+/*************************** 
+Icon Coloring for DP
+***************************/
+/*DP Default*/ 
+.THIS.dp-style .icon-container {
+    background: 	token('rgba(' + ezBlueRGB + ', 0.15)');
+}
+
+.THIS.dp-style .icon,
+.THIS.dp-style .sf-icon svg {    
+    color: 		token('rgb(' + ezBlueRGB + ')');
+    fill:		token('rgb(' + ezBlueRGB + ')');
+}
+
+/*DP Completed*/ 
+.THIS.dp-style .icon-container.stat-done {
+    background: token('rgba(' + dpGreenRGB + ', 0.15)');
+}
+
+.THIS.dp-style .icon-container.stat-done .icon,
+.THIS.dp-style .icon-container.stat-done .sf-icon svg {    
+    color: 		token('rgb(' + dpGreenRGB + ')');
+    fill:		token('rgb(' + dpGreenRGB + ')');
+}
+
+/*DP Planned*/ 
+.THIS.dp-style .icon-container.stat-working {
+    background: token('rgba(' + dpPurpleRGB + ', 0.15)');
+}
+
+.THIS.dp-style .icon-container.stat-working .icon,
+.THIS.dp-style .icon-container.stat-working .sf-icon svg {    
+    color: 		token('rgb(' + dpPurpleRGB + ')');
+    fill:		token('rgb(' + dpPurpleRGB + ')');
+}
+
+/*DP Started*/ 
+.THIS.dp-style .icon-container.stat-yes {
+    background: token('rgba(' + dpOrangeRGB + ', 0.15)');
+}
+
+.THIS.dp-style .icon-container.stat-yes .icon,
+.THIS.dp-style .icon-container.stat-yes .sf-icon svg {    
+    color: 		token('rgb(' + dpOrangeRGB + ')');
+    fill:		token('rgb(' + dpOrangeRGB + ')');
+}
+
+/*DP Under Review*/ 
+.THIS.dp-style .icon-container.stat-maybe {
+    background: token('rgba(' + dpLtBlueRGB + ', 0.15)');
+}
+
+.THIS.dp-style .icon-container.stat-maybe .icon,
+.THIS.dp-style .icon-container.stat-maybe .sf-icon svg {    
+    color: 		token('rgb(' + dpLtBlueRGB + ')');
+    fill:		token('rgb(' + dpLtBlueRGB + ')');
+}
+
+
+/*************************** 
+Phone Style 
+***************************/
+@media only screen and (max-width: 640px) {
+    .THIS {
+        padding: 15px;
+    }
+}
+
+.THIS .hidden {
+    display: none;
+}

@@ -1,0 +1,121 @@
+<aura:component access="global" controller="TrainingEventApex">
+    <aura:attribute name="regCounter" 	type="Integer" 	access="global" default="5" />
+    <aura:attribute name="listCount" 	type="String" 	access="global" />
+    <aura:attribute name="rate" 		type="Decimal" 	access="global" />
+    <aura:attribute name="subTotal" 	type="Decimal" 	access="global" />
+    <aura:attribute name="taxPercent"	type="Decimal"	access="global" />
+    <aura:attribute name="taxAmount"	type="Decimal"  access="global" />
+    <aura:attribute name="noTaxAmount"	type="Decimal"  access="global"/>
+    <aura:attribute name="totalPrice" 	type="Decimal" 	access="global" />
+    <aura:attribute name="discRate"		type="Decimal" 	access="global" />
+    <aura:attribute name="discTotal"	type="Decimal" 	access="global" />
+    <aura:attribute name="dateRange"	type="Date[]" 	access="global" />
+	<aura:attribute name="oneClass" 	type="Boolean"	access="global" default="true"/> <!-- make default true -->
+    <aura:attribute name="classID" 		type="String" 	access="global" />
+    <aura:attribute name="companyOwner"	type="String"	access="global" />    
+    <aura:attribute name="payNowText" 	type="String" 	access="global" default="Register and Pay Now" />
+    <aura:attribute name="payLaterText" type="String"  	default="Register and Pay Later" /> 
+    <aura:attribute name="userInfo" 	type="SObject[]" />    
+    <aura:attribute name="myContacts" 	type="SObject[]" />
+    <aura:attribute name="warningOn" 	type="Boolean" 	access="global" default="false" />
+    <aura:attribute name="showTax"		type="Boolean"	access="global"	default="false" />
+    <aura:attribute name="classType"	type="String" 	access="global"/>
+    <aura:attribute name="seatsOpen"	type="Integer" 	access="global"/>
+	<aura:attribute name="isVClass"		type="Boolean" 	access="global" default="false"/>
+    <aura:attribute name="vClassString"	type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />     
+    
+    <!-- Handle event from child component ClassCheckbox -->
+    <aura:handler event="c:ClassAppEvent" action="{!c.disableButtonsJs}"/>
+    
+    <section class="{!v.seatsOpen &#60;= 0 ? 'sign-up full-house' : 'sign-up'}">
+        <h2>Who Will Attend the Class?</h2>
+        <aura:iteration var="user" items="{!v.userInfo}" >
+            <span aura:id	= "contact-info" 
+                  data-fn	= "{!user.FirstName}" 
+                  data-ln	= "{!user.LastName}"
+                  data-id	= "{!user.Id}"
+                  data-ctid	= "{!user.Contact.Id}"
+                  data-email= "{!user.Contact.Email}" 
+                  data-an	= "{!user.Account.Name}"
+                  data-aid	= "{!user.Account.Id}"
+                  data-lang	= "{!user.Contact.Language__c}"
+                  data-acid	= "{!user.Account.Client_Id__c}">
+            </span>
+            <c:ClassCheckbox aura:id="peepsCheckBox"
+                             labelName="{!user.Name}"
+                             firstName="{!user.FirstName}"
+                             lastName="{!user.LastName}"
+                             userId="{!user.Contact.Id}"
+                             defaultCheck="true"
+                             nameChecked="true"
+                             fromParentRate="{!v.rate}"
+                             fromParentTaxPerc="{!v.taxPercent}"
+                             fromParentTaxRate="{!v.taxAmount}"
+                             fromParentDiscRate="{!v.discRate}"
+                             fromParentDiscTotal="{!v.discTotal}"
+                             fromParentSubTotal="{!v.subTotal}"
+                             fromParentNoTaxAmt="{!v.noTaxAmount}"
+                             fromParentTotalPrice="{!v.totalPrice}" 
+                             fromParentRegCounter="{!v.regCounter}"
+                             fromParentOneClass="{!v.oneClass}"
+                             fromParentWarningOn="{!v.warningOn}" 
+            				 fromParentOwner="{!v.companyOwner}"
+                             fromParentDates="{!v.dateRange}"
+                             fromParentIsVirtClass="{!v.isVClass}"
+                             fromParentClassType="{!v.classType}"
+                             fromParentVirtClassString ="{!v.vClassString}"
+                             radioGroupName="{! user.Id + '-' + v.listCount}" />
+        </aura:iteration>        
+      
+        <div class="toggle-staff">
+            <a class="toggle-button show-more hidden" aura:id="show-staff" href="javascript:void(0)" onclick="{!c.toggleStaffJs}"><i class="fas fa-plus-circle" aria-hidden="true"></i> Add More People </a>
+            <a class="toggle-button show-less hidden" aura:id="hide-staff" href="javascript:void(0)" onclick="{!c.toggleStaffJs}"><i class="fas fa-minus-circle" aria-hidden="true"></i> Show Less People </a>
+        </div>                    
+        
+        <ul class="attendance-list" aura:id="staff-list">
+            <h3 aura:id="limit-counter">Register up to <b>{!v.regCounter}</b> more <ui:outputText aura:id="text-peeps" value="people" />.</h3>
+            <h3 aura:id="limit-reached" class="hidden">The number of people you can register has been reached.</h3>
+            <aura:iteration var="otherPeeps" items="{!v.myContacts}">
+                <li>  
+                    <c:ClassCheckbox aura:id="peepsCheckBox"
+                                     labelName="{!otherPeeps.Name}"
+                                     firstName="{!otherPeeps.FirstName}"
+                                     lastName="{!otherPeeps.LastName}"
+                                     userId="{!otherPeeps.Id}"
+                                     defaultCheck="false"
+                                     nameChecked="false" 
+                                     fromParentRate="{!v.rate}"
+                                     fromParentTaxPerc="{!v.taxPercent}"
+                                     fromParentTaxRate="{!v.taxAmount}"
+                                     fromParentDiscRate="{!v.discRate}"
+                                     fromParentDiscTotal="{!v.discTotal}"
+                                     fromParentSubTotal="{!v.subTotal}"
+                                     fromParentNoTaxAmt="{!v.noTaxAmount}"
+                                     fromParentTotalPrice="{!v.totalPrice}" 
+                                     fromParentRegCounter="{!v.regCounter}" 
+                                     fromParentOneClass="{!v.oneClass}"
+                                     fromParentWarningOn="{!v.warningOn}" 
+                                     fromParentOwner="{!v.companyOwner}" 
+                                     fromParentDates="{!v.dateRange}"
+                                     fromParentIsVirtClass="{!v.isVClass}"
+                                     fromParentClassType="{!v.classType}"
+                                     fromParentVirtClassString ="{!v.vClassString}"
+                                     radioGroupName="{!otherPeeps.Id + '-' + v.listCount}"/>
+                </li>
+            </aura:iteration>
+        </ul>
+        <!-- Set initial prices in the JS helper, getCanadianTaxJs -->
+        <h4 class="{!v.showTax || v.oneClass == false ? '' : 'hidden'}">Class Cost: <span><ui:outputCurrency aura:id="class-price" value="{!v.subTotal}"/></span></h4>
+        <h4 class="{!v.oneClass ? 'hidden' : ''}">Multi-Day Discount: -<span><ui:outputCurrency aura:id="multi-day-discount" value="{!v.discTotal}"/></span></h4>
+        <h4 class="{!v.showTax ? '' : 'hidden'}">Tax: +<span><ui:outputCurrency aura:id="tax-price" value="{!v.taxAmount}"/></span></h4>
+        <h4 class="total-cost">Total Cost: <span><ui:outputCurrency aura:id="total-price" value="{!v.totalPrice}"/></span>
+        	<small class="{!v.showTax ? '' : 'hidden'}">(In Canadian Dollars)</small>
+        </h4>
+        <p aura:id="errorMessage" class="error-message hidden">Oops! Someone wants training, but we don't know when! Select the dates and try again.</p>
+        <ui:button class="pay-now-button submit-btns" aura:id="payNow" label="{!v.payNowText}" press="{!c.gotoURLJs}"/>
+        <ui:button class="ghost-button submit-btns" aura:id="payLater" label="{!v.payLaterText}" press="{!c.gotoURLJs}"/>
+        <div class="hidden sold-out" aura:id="soldOut">This Class is Sold Out</div>
+    </section>
+</aura:component>

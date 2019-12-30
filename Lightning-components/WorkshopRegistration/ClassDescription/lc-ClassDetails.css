@@ -1,0 +1,101 @@
+/**************************
+Toggle Styling 
+***************************/
+.THIS.toggle-button,
+.THIS.toggle-button:focus {
+    margin: 	10px 0;
+    display:	inline-block;
+    color: 		token(colorTextLinkSW);
+    text-decoration:	none;
+}
+
+.THIS.toggle-button:hover {
+    color: 				token(colorBrandSW);
+    text-decoration:	none;
+}
+
+/* Allow the a tag to run the function even when it's children are clicked */
+.THIS.toggle-button * {
+    pointer-events: none;
+}
+
+/**************************
+Class Detail Styling 
+***************************/
+.THIS.additional-info {
+    display: 	flex;
+    flex-wrap:	wrap;
+    max-height: 0;
+    overflow:	hidden;
+    
+    transition: max-height 0.5s;
+}
+
+/*
+.THIS.virtual-class {
+    flex-wrap:	nowrap;
+}
+*/
+
+.THIS > section {
+    flex-basis: 50%;
+    padding-right: 20px;
+}
+
+.THIS .class-description {
+    flex-basis: 100%;
+}
+
+.THIS .virtual-class-description {
+    flex-basis: 	auto;
+    flex-shrink: 	5;
+    margin-right:	10px;
+}
+/*
+.THIS .virtual-class-topic {
+    flex-basis: 	auto;
+}
+*/
+/**************************
+Phone Styling 
+***************************/
+@media only screen and (max-width: 900px) {	
+    .THIS.virtual-class {
+    	flex-wrap:	wrap;
+	}
+    
+    .THIS > section,
+    .THIS .virtual-class-topic,
+    .THIS .virtual-class-description {
+        flex-basis: 100%;
+        margin:		0;
+    }
+    
+    .THIS.toggle-button {
+        margin-top:	20px;
+    }
+}
+
+/**************************
+Global Styling 
+***************************/
+.THIS .hidden, .THIS.hidden {
+    display: none;
+}
+
+.THIS ul,
+.THIS ol {
+    margin-left: 1rem;
+}
+
+/**************************
+FontAwesome Styling 
+***************************/
+.THIS .fas,
+.THIS .far {
+    margin-right:	5px;
+    font-size: 		1.5rem;
+    vertical-align: text-bottom;
+    
+    transition: transform 0.5s;
+}

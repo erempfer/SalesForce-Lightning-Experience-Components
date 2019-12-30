@@ -1,0 +1,12 @@
+.THIS {
+    margin-bottom: 100px;
+}
+
+.THIS .articleList {
+    padding: 7px 10px;
+    border-bottom: token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS .articleList:nth-child(even){
+    background: token(colorZebraStripeSW);    
+}

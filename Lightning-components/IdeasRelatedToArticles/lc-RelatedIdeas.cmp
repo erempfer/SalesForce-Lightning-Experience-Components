@@ -1,0 +1,30 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" controller="RelatedIdeas_ApexController">
+    <aura:attribute name="ideaLinks" 	type="SObject[]" />
+    <aura:attribute name="zoneIds"	 	type="SObject[]" />
+    <aura:attribute name="theRecordId" 	type="String" />
+    <aura:attribute name="whatProduct"	type="String" />
+    <aura:attribute name="title"		type="String" default="Related Ideas" />
+    <aura:attribute name="numOfIdeas" 	type="Integer" default="5" /> 
+    <aura:attribute name="haslinks" 	type="Boolean" default="true" />
+    <aura:attribute name="urlZone1"		type="String" />
+    <aura:attribute name="urlZone2"		type="String" />
+    <aura:attribute name="topMarg" 		type="Boolean" default="true" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <section class="related-ideas">     
+        <aura:if isTrue="{!v.haslinks}">       
+            <h1 aura:id ="header-idea" class="{!v.topMarg ? 'add-top-margin' : ''}" >{!v.title}</h1>
+            <aura:iteration items="{!v.ideaLinks}" var="currentItem">
+                <div class="single-idea">
+                    <a href="javascript:void(0)" onclick="{!c.gotoIdea}" 
+                       data-status="{!currentItem.Status}" 
+                       data-commId="{!currentItem.CommunityId}" 
+                       data-id="{!currentItem.Id}">{!currentItem.Title} 
+                        <span class="vote-count"><i class="fas fa-vote-yea"></i>{!currentItem.VoteTotal} votes</span>
+                    </a>
+                </div>
+            </aura:iteration>   
+        </aura:if> 
+    </section>     
+</aura:component>

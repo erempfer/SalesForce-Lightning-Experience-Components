@@ -1,0 +1,72 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="TrainingEventApex">
+    <aura:attribute name="classes" 		type="SObject[]" />
+    <aura:attribute name="attendees"	type="SObject[]" />
+    <aura:attribute name="linkText" 	type="String" 		access="global" default="Register and Pay Now"/>
+    <aura:attribute name="linkText2" 	type="String" 		access="global" default="Register and Pay Later"/>
+    <aura:attribute name="whichProduct"	type="String" 		access="global" />
+    <aura:attribute name="noClasses"	type="Boolean"		access="global"	default="false" />
+    <aura:attribute name="isIE"			type="Boolean"		access="global"	default="false" />
+    <aura:attribute name="vClassString"	type="String"		access="global" default="Virtual Class" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <section aura:id="main">
+        <aura:if isTrue="{!v.noClasses}">
+            <div aura:id="noClass" class="{!v.isIE ? 'hidden' : ''}">There are no classes at the moment. Please check back later.</div>
+            <div aura:id="outdatedBrowser" class="{!v.isIE ? 'browserWarning' : 'hidden'}">Sorry! Your browser does not support this feature. Please install the latest version of 
+                <a href="javascript:void(0)" onclick="{!c.gotoURLChrome}">Chrome</a> or 
+                <a href="javascript:void(0)" onclick="{!c.gotoURLFireFox}">Firefox</a> and try again. 
+            </div>
+            <aura:set attribute="else">                
+                <aura:iteration var="thisClass" items="{!v.classes}" indexVar="listNum">            
+                    <article class="single-class" aura:id ="{!thisClass.Id}" data-id="{!thisClass.Id}" data-name="{!thisClass.Name}">
+                        <div class="basic-info">
+                            <section class="date-place">
+                                <h2>{!thisClass.Class_Type__c}</h2>
+                                <h1>{!thisClass.Name}</h1>
+                                
+                                <h2>Date</h2>
+                                <p><ui:outputDate value="{!thisClass.Date__c}" format="MM/DD/YYYY"/>
+                                    <span aura:id="end-date"> - <ui:outputDate value="{!thisClass.End_Date__c}" format="MM/DD/YYYY"/></span>
+                                </p>
+                                
+                                <h2 class="{!thisClass.Class_Type__c == v.vClassString ? 'hidden' : ''}">City</h2>
+                                <p class="{!thisClass.Class_Type__c == v.vClassString ? 'hidden' : ''}">{!thisClass.Location__c}<span aura:id="flagIcon" class="flag-container"></span></p>
+                            
+                            	<h2>Seats Available</h2>
+                                <p class="{!thisClass.seatsLeft__c > 0 ? '' : 'hidden'}">
+                                    <span class="{!thisClass.seatsLeft__c &#60; 10000 ? '' : 'hidden'}">{!thisClass.seatsLeft__c} seats remaining</span>
+                                    <span class="{!thisClass.seatsLeft__c > 10000 ? '' : 'hidden'}">Unlimited</span>
+                                </p>
+                                <p class="{!thisClass.seatsLeft__c &#60;= 0 ? 'full-house' : 'hidden'}">Class is full</p>
+                            </section>
+                            
+                            <c:ClassAttendees rate="{!thisClass.Rate__c}"
+                                              payNowText="{!v.linkText}"
+                                              payLaterText="{!v.linkText2}" 
+                                              classID="{!thisClass.Id}" 
+                                              discRate="{!thisClass.Multi_Day_Discount__c}"
+                                              seatsOpen="{!thisClass.seatsLeft__c}"
+                                              companyOwner="{!thisClass.Company_Owner__c}" 
+                                              dateRange="{!thisClass.dateRange__c}"
+                                              listCount="{!listNum}" 
+                                              classType="{!thisClass.Class_Type__c}"
+                                              vClassString="{!v.vClassString}"/>
+                        </div>
+                        
+                        <c:ClassDetails aura:id="childDetails"
+                                        description="{!thisClass.Description__c}"
+                                        topics="{!thisClass.Topics__c}"
+                                        address="{!thisClass.Full_Address__c}"
+                                        level="{!thisClass.Experience_Level__c}"
+                                        hours="{!thisClass.Hours__c}"
+                                        whatToBring="{!thisClass.What_to_Bring__c}"
+                                        rate="{!thisClass.Rate__c}" 
+                                        classType="{!thisClass.Class_Type__c}"
+                                        vClassString="{!v.vClassString}"/>
+                    </article>            
+                </aura:iteration>
+            </aura:set>
+        </aura:if>
+    </section>   
+</aura:component>

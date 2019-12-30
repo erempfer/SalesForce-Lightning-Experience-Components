@@ -1,0 +1,38 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="GetBlogPostApex">   
+    <aura:attribute name="blogPost" 		type="SObject[]" />    
+    <aura:attribute name="itExists" 		type="Boolean" 	default="true" />    
+    <aura:attribute name="headerText" 		type="String"	default="Blog Post" />    
+    <aura:attribute name="linkText" 		type="String" 	default="Read more..." />
+    <aura:attribute name="whatProduct"		type="String" 	/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <div aura:id ="main-container">
+        <aura:if isTrue="{!v.itExists}">
+            <a class="blog-container" href="javascript:void(0)" onclick="{!c.gotoURL}">    
+                <aura:iteration var="blog" items="{!v.blogPost}"> 
+                    <span class="blog-header" aura:id ="blog-color">
+                        <h1>{!v.headerText}</h1>
+                    	<h2>{!blog.Name}</h2>
+                    </span>
+					<div class="blog-content">
+                        <p><aura:unescapedHtml value="{!blog.Body__c}"/></p>   
+                    	<span class="link-text">{!v.linkText}</span>
+                    </div>                
+                </aura:iteration>                                    
+            </a>            
+            
+            <aura:set attribute="else">
+                <div class="error-no-article">
+                    <h1>No Blog Post Found</h1>
+                    <p><b>Troubleshooting</b></p>
+                    <ol>
+                        <li>Has a record been created in the Blog Post Object?</li>
+                        <li>Does the Blog Post record's Product field match the Lightning Component's field?</li>
+                    </ol>
+                </div>
+            </aura:set>        
+        </aura:if>
+        <div aura:id="newRibbon" class="ribbon hidden"><span>New!</span></div>
+    </div>
+</aura:component>

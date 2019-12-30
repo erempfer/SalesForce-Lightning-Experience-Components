@@ -1,0 +1,53 @@
+<aura:component access="global">
+    <aura:attribute name="description" 	type="String" access="global" default="Class description"/>
+    <aura:attribute name="topics" 		type="String" access="global" default="N/A"/>
+    <aura:attribute name="level" 		type="String" access="global" default="N/A"/>
+    <aura:attribute name="hours" 		type="String" access="global" default="N/A"/>
+    <aura:attribute name="address" 		type="String" access="global" default="N/A"/>
+    <aura:attribute name="whatToBring" 	type="String" access="global" default="Notebook"/>
+    <aura:attribute name="rate" 		type="String" access="global" default="100"/>
+    <aura:attribute name="classType"	type="String" access="global"/>
+    <aura:attribute name="isVClass"		type="Boolean" access="global" default="false"/>
+    <aura:attribute name="vClassString"	type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <!-- Create method for parent component ClassList to call -->
+    <aura:method name="_hideDisclaimer" action="{!c.toggleDisclaimerJs}" access="public" />
+    
+    <a class="toggle-button show-more" aura:id="show-details" href="javascript:void(0)" onclick="{!c.toggleDetailsJs}">
+        <i aura:id="fa-icon" class="fas fa-chevron-circle-down" aria-hidden="true"></i>  
+    	<span aura:id="toggle-text">Show Class Details</span>
+    </a>
+    
+    <div class="{!v.isVClass ? 'virtual-class additional-info' : 'additional-info'}" aura:id="class-details">
+        <section class="{!v.isVClass ? 'virtual-class-description' : 'class-description'}">
+            <h2>Description</h2>
+            <p>{!v.description}</p>
+        </section>
+        <section class="{!v.isVClass ? 'virtual-class-topic' : 'class-topic'}">
+            <h2>Topics Covered</h2>
+            <p><aura:unescapedHtml value="{!v.topics}"/></p>   
+            
+            <h2 class="{!v.isVClass ? 'hidden' : ''}">Price per Person per Day</h2>
+            <p class="{!v.isVClass ? 'hidden' : ''}">${!v.rate}</p>
+        </section>
+        <section class="other-info">            
+            <span class="{!v.isVClass ? 'hidden' : ''}">
+                <h2>Experience Level</h2>
+                <p>
+                    {!v.level}<br />
+                    <small aura:id="disclaimer">This workshop is designed for advanced users. We recommend that beginner-level users take advantage of our webinars, virtual training or on-site training.</small>           
+                </p>
+                
+                <h2>Building Address</h2>
+                <p><aura:unescapedHtml value="{!v.address}"/></p> 
+            </span>
+            <h2>Hours</h2>
+            <p><aura:unescapedHtml value="{!v.hours}"/></p>
+            
+            <h2>What to Bring</h2>
+            <p>{!v.whatToBring}</p>
+        </section>
+    </div>   
+</aura:component>

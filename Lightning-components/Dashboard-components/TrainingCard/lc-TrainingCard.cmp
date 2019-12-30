@@ -1,0 +1,38 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="TrainingEventApex">
+    <aura:attribute name="whatProduct"		type="String" /> 
+    <aura:attribute name="linkText"			type="String" 	default="Learn more about this workshop." />
+    <aura:attribute name="url"		 		type="String" 	default="/feature-story" />
+    <aura:attribute name="classes" 			type="SObject[]" />
+    <aura:attribute name="itExists" 		type="Boolean" 	default="true" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+<section aura:id="main-container">
+        <a  href="javascript:void(0)" onclick="{!c.gotoURL}" class="{!v.itExists ? 'class' : 'hidden'}">
+            <div class="icon-container">
+                <i class="fas fa-school icon"></i>
+            </div>
+            
+            <div class="class-info-container">
+                <aura:iteration var="thisClass" items="{!v.classes}" indexVar="listNum">
+                    <p class="class-name">{!thisClass.Name}</p>
+                    <p class="class-info">
+                        <i class="far fa-calendar-alt"></i> 
+                        <ui:outputDate value="{!thisClass.Date__c}" format="MM/DD/YYYY"/> | 
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <span>{!thisClass.Location__c}</span>                   
+                    </p>
+                    <h4>{!v.linkText}</h4>
+                </aura:iteration>
+            </div> 
+        </a>  
+            <div aura:id="main-container-no-classes" class="{!v.itExists ? 'hidden' : 'no-class'}">
+                <div class="icon-container">
+                    <i class="fas fa-couch icon"></i>
+                </div>
+                <div class="webinar-info">
+                    <p class="class-name">There are no workshops coming up.</p>
+                    <p class="class-info">We're like school on a Saturday...no class.</p>
+                </div>
+            </div>
+    </section>
+</aura:component>

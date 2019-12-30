@@ -1,0 +1,87 @@
+.THIS > *{
+    display:			flex;
+	position:			relative;
+    padding:			20px;
+    border-radius: 		token(styleBorderRadiusDashboard);
+    font-size: 			1rem;
+    box-shadow:			token(dpBoxShadow);
+    cursor: 			pointer;
+    background:			#fff;
+}
+
+.THIS .no-class {
+    cursor: auto;
+}
+
+/*DP top border style*/ 
+.THIS.dp-style >*:before {
+    content: 		"";
+	display: 		block;
+	position: 		absolute;
+	right: 			0;
+	top: 			0;
+	height: 		5px;
+	width: 			100%;
+	border-radius: 	token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard) 0 0;
+    background: 	token('linear-gradient(to right,' + dpGradientBlue + ',' + dpGradientTeal +')');
+}
+
+.THIS > *:hover,
+.THIS > *:active {
+   	text-decoration:	none; 
+    color:				token(colorBrandSW);
+}
+
+
+/*************************** 
+Text Style 
+***************************/
+.THIS p {
+    color: 			token(colorTextLabelSW);
+    line-height:	1.3rem;
+}
+
+.THIS .class-name {
+    color: 			token(colorTextDefaultSW);
+    font-weight: 	bold;
+}
+
+.THIS .class-info,
+.THIS .no-class p {
+    margin:	5px 0;
+}
+
+
+/*************************** 
+Icon Style Default
+***************************/
+.THIS .icon-container {
+    margin: 		0 15px 5px 0;
+    width:			50px;
+    min-width:		50px;
+    height:			50px;
+    border-radius: 	50%;
+    background: 	token('rgba(' + dpBlueRGB + ', 0.15)');
+    font-size: 		28px;
+    max-width:		50px;
+}
+
+.THIS .icon,
+.THIS .sf-icon svg {    
+    color: 		token('rgb(' + dpBlueRGB + ')');
+    fill:		token('rgb(' + dpBlueRGB + ')');
+}
+
+.THIS .icon {
+	display: 		block;
+	text-align: 	center;
+	line-height: 	50px;
+}
+
+.THIS .fa-school {
+	line-height: 	45px;    
+}
+
+.THIS .class-info-container i {
+    margin-right: 0.4rem;
+}

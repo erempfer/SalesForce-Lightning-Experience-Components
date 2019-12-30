@@ -1,0 +1,9 @@
+<design:component label="Article Icons">
+    <design:attribute name="theRecordId" label="Record ID" default="{!recordId}" required="true"/>
+    
+    <design:attribute name="clickLink1" label="Casey's Articles" 	default="/article/How-to-Use-the-EZ-Explorers"/>
+    <design:attribute name="clickLink2" label="Ru's Articles" 		default="/article/How-to-Use-the-EZ-Explorers"/>
+    <design:attribute name="clickLink3" label="Magnus's Articles" 	default="/article/How-to-Use-the-EZ-Explorers"/>
+    <design:attribute name="clickLink4" label="Scout's Articles" 	default="/article/How-to-Use-the-EZ-Explorers"/>
+    <design:attribute name="clickLink5" label="Piper's Articles" 	default="/article/How-to-Use-the-EZ-Explorers"/>
+</design:component>

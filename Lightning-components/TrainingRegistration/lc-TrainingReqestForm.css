@@ -1,0 +1,142 @@
+/**************************
+Global Text Styling 
+***************************/
+.THIS {
+    font-size: 1rem;
+}
+
+.THIS .hidden {
+    display: none;
+}
+
+
+/**************************
+Form Styling 
+***************************/
+.THIS .slds-input:focus,
+.THIS .slds-input:active,
+.THIS .slds-textarea:focus,
+.THIS .slds-textarea:active {
+    border-color: 	token(ezGreen);
+    box-shadow:		none;
+}
+
+.THIS.dp-style .slds-input:focus,
+.THIS.dp-style .slds-input:active,
+.THIS.dp-style .slds-textarea:focus,
+.THIS.dp-style .slds-textarea:active {
+    border-color: 	token(dpGreen);
+    box-shadow:		none;
+}
+
+.THIS label,
+.THIS legend {
+    margin-bottom:	3px;
+    line-height:	1.4rem;
+    font-size:		1rem;
+    font-weight:	600;
+    color:			token(colorTextLabelSW);
+}
+
+.THIS ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:   token(colorTextLabelSW);
+}
+
+.THIS :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    token(colorTextLabelSW);
+   opacity:  1;
+}
+
+.THIS ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    token(colorTextLabelSW);
+   opacity:  1;
+}
+
+.THIS :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    token(colorTextLabelSW);
+}
+
+.THIS .slds-form-element {
+    margin-bottom: 1rem;
+}
+
+
+/**************************
+Checkbox Styling 
+***************************/
+.THIS .slds-checkbox__label .slds-form-element__label {
+    font-weight: normal;
+}
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox--faux, 
+.THIS .slds-checkbox [type=checkbox]:checked~.slds-checkbox--faux,
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox__label .slds-checkbox--faux {
+    background-color: 	token(ezGreen);
+    border-color:		token(ezGreen);
+    box-shadow:			none;
+}
+
+.THIS.dp-style .slds-checkbox [type=checkbox]:checked+.slds-checkbox--faux, 
+.THIS.dp-style .slds-checkbox [type=checkbox]:checked~.slds-checkbox--faux,
+.THIS.dp-style .slds-checkbox [type=checkbox]:checked+.slds-checkbox__label .slds-checkbox--faux {
+    background-color: 	token(dpGreen);
+    border-color:		token(dpGreen);
+}
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox--faux:after, 
+.THIS .slds-checkbox [type=checkbox]:checked~.slds-checkbox--faux:after,
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox__label .slds-checkbox--faux:after {
+    border-color: #fff;
+}
+
+.THIS .slds-checkbox .slds-form-element__label {
+    color: token(colorTextDefaultSW);
+}
+
+.THIS .training-info {
+    margin-top: 30px;
+}
+
+
+/**************************
+Button Styling 
+***************************/
+.THIS .submit.center-me {
+    margin: 	15px auto;
+    width: 		auto;
+    flex-basis: auto;
+}
+
+.THIS .submit button {
+    display:		inline-block;
+    margin-right:	0.7rem;
+    padding: 		1.2rem 1rem;
+    font-size:		1rem;
+    font-weight:	bold;
+    line-height:	1.2rem;
+    text-align:		center;
+    text-decoration:none;
+    color:			#fff;    
+    background:		token(colorBrandSW);
+    border:			token(sizeBorderSW) token(styleBorderSW) token(colorBrandSW);
+    border-radius:	5px;
+    
+    transition:		background .1s linear, color .1s linear;
+}
+
+.THIS .submit button:hover {
+    background: 	none; 					/* Use !important b/c SLDS styling uses it */
+    text-decoration:none;
+    color:			token(colorBrandSW);	/* Use !important b/c SLDS styling uses it */
+}
+
+.THIS .submit button.disable,
+.THIS .submit button.disable:hover {
+    background-color: 	token(colorTextLabelSW);
+    color: 				#fff; 
+    border:				none;
+}
+
+.THIS .read-only {
+    background: rgb(245, 245, 245);
+}

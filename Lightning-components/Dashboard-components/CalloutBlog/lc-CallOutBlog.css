@@ -1,0 +1,184 @@
+.THIS {
+    position:		relative;
+    background: 	#fff;
+    font-size: 		1rem;
+    box-shadow:		token(dpBoxShadow);
+    border-radius: 	token(styleBorderRadiusDashboard);
+}
+
+
+/*************************** 
+Text Style 
+***************************/
+.THIS h1 {
+    color: 			#fff;
+    font-size: 		1rem;
+    line-height:	1.5rem;
+    font-weight: 	normal;
+    text-transform: uppercase;
+}
+
+.THIS h2 {
+    color: 			#fff;
+    font-size: 		1.4rem;
+    line-height:	1.6rem;
+    font-weight: 	normal;  
+}
+
+.THIS p {
+    color: token(colorTextDefaultSW);
+}
+
+.THIS .link-text {
+    width: 			100%;
+    display: 		inline-block;
+    margin-top:		1rem;
+}
+
+.THIS a:hover .link-text {
+    text-decoration: underline;
+}
+
+
+/*************************** 
+Container Style 
+***************************/
+.THIS .blog-container {
+    display: block;
+}
+
+.THIS .blog-container:hover,
+.THIS .blog-container:focus {
+    color: 				token(colorBrandSW);
+    text-decoration: 	none;
+}
+
+/* EZCare Style */
+.THIS .blog-header {
+    display: 			inline-block;
+    width:				100%;
+    padding:			20px 40px 20px 75px;
+	background: 		url('https://www.softerware.com/community/ez/assets/icons/blogPost/blog_ru.png') left no-repeat;
+    background-position:-75px;
+    background-color: 	token(ezColor2);
+	border-radius:		token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard) 0 0;
+}
+
+.THIS .blog-header.blue {
+	background: 		url('https://www.softerware.com/community/ez/assets/icons/blogPost/blog_casey.png') left no-repeat;
+    background-position:-75px;
+    background-color: 	token(ezColor1);
+}
+
+.THIS .blog-header.orange {
+	background: 		url('https://www.softerware.com/community/ez/assets/icons/blogPost/blog_piper.png') left no-repeat;
+    background-position:-75px;
+    background-color: 	token(ezColor5);
+}
+
+.THIS .blog-header.red {
+	background: 		url('https://www.softerware.com/community/ez/assets/icons/blogPost/blog_scout.png') left no-repeat;
+    background-position:-75px;
+    background-color: 	token(ezColor4);
+}
+
+.THIS .blog-header.purple {
+	background: 		url('https://www.softerware.com/community/ez/assets/icons/blogPost/blog_magnus.png') left no-repeat;
+    background-position:-75px;
+    background-color: 	token(ezColor3);
+}
+
+/* DP Style */
+.THIS.dp-style .blog-header {
+    background:			none;
+	background-color: 	token(dpColor2);
+    background-image:	token('linear-gradient(to right,' + dpGradientGreen + ',' + dpGradientTeal +')');
+    background-position:0;
+    padding:			20px;
+}
+
+.THIS.dp-style .blog-header.blue {
+	background-color: 	token(dpColor1);
+    background-image:	token('linear-gradient(to right,' + dpGradientBlue + ',' + dpGradientTeal +')');
+}
+
+.THIS.dp-style .blog-header.orange {
+	background-color: 	token(dpColor5);
+    background-image:	token('linear-gradient(to right,' + dpOrange + ',' + dpGradientTeal +')');
+}
+
+.THIS.dp-style .blog-header.red {
+	background-color: 	token(dpColor4);
+    background-image:	token('linear-gradient(to right,' + dpGradientRed + ',' + dpGradientTeal +')');
+}
+
+.THIS.dp-style .blog-header.purple {
+	background-color: 	token(dpColor3);
+    background-image:	token('linear-gradient(to right,' + dpGradientPurple + ',' + dpGradientTeal +')');
+}
+
+.THIS .blog-content {
+    padding:		20px;
+	/*border:			token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW); */
+    border-top:		none;
+    border-radius: 	0 0 token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard);
+}
+
+
+/*************************** 
+Ribbon Style 
+***************************/
+.THIS .ribbon {
+    display:	block;
+    position: 	absolute;
+    right: 		-15px;
+    top: 		-15px;
+    z-index: 	1;
+    width: 		75px;
+    height: 	75px;
+}
+
+.THIS .ribbon span {
+    display: 		block;
+    width: 			75px;
+    height: 		75px;
+    line-height: 	75px;
+    border-radius: 	50%;
+    font-size: 		1rem;
+    font-weight:	bold;
+    text-align: 	center;
+    background: 	token(colorAlertNew);   
+}
+
+
+/*************************** 
+Hidden Style 
+***************************/
+.THIS .hidden,
+.THIS.hidden {
+    display: none;
+}
+
+
+/*************************** 
+No Article Style 
+***************************/
+.THIS .error-no-article {
+    text-align: left;
+}
+
+.THIS .error-no-article ul,
+.THIS .error-no-article ol {
+    display: 			block;
+    list-style-type: 	disc;
+    margin: 			1rem 0;
+    padding-left: 		40px;
+}
+
+.THIS .error-no-article ol {
+    list-style-type: decimal;
+}
+
+.THIS .error-no-article li {
+    margin-bottom: 5px;
+}

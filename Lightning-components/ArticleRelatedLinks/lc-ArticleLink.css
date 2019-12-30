@@ -1,0 +1,91 @@
+.THIS .hidden,
+.THIS .hidden + div{
+    display: none;
+}
+
+.THIS h1,
+.THIS h2,
+.THIS h3,
+.THIS h4 {
+    position:		relative;
+    font-size: 		1.2rem;
+    line-height: 	1.5rem;
+    font-weight: 	normal;
+    /*text-transform:	token(textTransformSW);*/
+}
+
+.THIS .information h1:before,
+.THIS .article a:after {
+    content: 		"\f15c";
+    font-family: 	"Font Awesome 5 Free";
+}
+
+.THIS .information h2:before,
+.THIS .video a:after {
+    content: 		"\f144";
+    font-family: 	"Font Awesome 5 Free";
+}
+
+.THIS .information h3:before,
+.THIS .misc a:after {
+    content: 		"\f35d";
+    font-family: 	"Font Awesome 5 Free";
+    font-weight: 	bold;
+}
+
+.THIS .information h1:before,
+.THIS .information h2:before,
+.THIS .information h3:before {
+      margin-right:	5px;  
+} 
+
+.THIS h2,
+.THIS h3 {
+    margin-top:		30px;
+}
+
+.THIS h2.no-margin,
+.THIS h3.no-margin {
+    margin-top:		0;
+}
+
+.THIS .information a {
+    width: 			100%;
+    position:		relative;
+    display:		inline-block;
+    vertical-align:	top;
+    /* color:			token(colorTextDefaultSW); */
+    font-size:		0.9rem;
+    font-weight:	400;
+    line-height:	1.3rem;
+    padding:		0.8rem 20px 0.8rem 0;
+    border-top:	token(sizeBorderSW) token(styleBorderSW) token(colorBorderSW);
+}
+
+.THIS .information a:first-child {
+	border: none;
+}
+.THIS .article a:after,
+.THIS .video a:after,
+.THIS .misc a:after {
+    display: 		inline-block;
+    position: 		absolute;
+    top: 			50%;
+    right: 			-5px;
+    transform: 		translate(-50%, -50%);
+    /* color:			token(colorTextLabelSW); */
+    
+    transition:		all .1s linear;
+}
+
+.THIS .information a:hover,
+.THIS .information a:hover:after {
+    text-decoration: 	none;
+    color: 				token(colorBrandSW);
+}
+
+.THIS .information ul,
+.THIS .information ol {
+    list-style-type: 	none;
+    margin-left:		0;
+}

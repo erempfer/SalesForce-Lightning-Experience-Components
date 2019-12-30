@@ -1,0 +1,21 @@
+<design:component label="Ideas Related Links">
+    <design:attribute name="theRecordId" 	label="Record ID"
+                      						default="{!recordId}" required="true"/>	
+    
+    <design:attribute name="whatProduct" 	label="The SofterWare product" 
+                      						datasource="DonorPerfect, EZCare, RSA" 
+                      						default="DonorPerfect"/>
+    
+    <design:attribute name="title" 			label="Name for the 1st set of articles." />	
+	<design:attribute name="numOfIdeas" 	label="How many ideas do you want to display?" /> 
+    <design:attribute name="urlZone1"		label="DP or EZ Suggest and Vote page"
+                      						placeholder="/suggest-and-vote-ezcare" 
+                      						default="/ideas-donorperfect" 
+                      						required="true"/>
+    
+	<design:attribute name="urlZone2"		label="Online Forms Suggest and Vote page"
+                      						placeholder="/ideas-weblink" 
+                      						description="Used if there are 2 different Suggest and Votes" />
+    <design:attribute name="topMarg"		label="Apply top margin" default="true" />
+    
+</design:component>

@@ -1,0 +1,36 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" controller="ArticleLinksApexController">
+    <aura:attribute name="morelinks" 	type="SObject[]" />
+    <aura:attribute name="theRecordId" 	type="String" />
+    <aura:attribute name="whatProduct"	type="String" />
+    <aura:attribute name="title1"		type="String" default="Related Articles" />
+    <aura:attribute name="title2"		type="String" default="Related Videos" />
+	<aura:attribute name="title3"		type="String" default="Walk me through" />
+    <aura:attribute name="noneMessage"	type="String" default="There are no related articles." />
+    <aura:attribute name="haslinks" 	type="Boolean" default="true"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>     
+        <aura:if isTrue="{!v.haslinks}">
+            <aura:iteration items="{!v.morelinks}" var="currentItem">
+                <div class="information article">
+                    <h1 aura:id ="header-article">{!v.title1}</h1>
+                    <div aura:id ="related-articles"><ui:outputRichText value="{!currentItem.Related_Information__c}"/></div>
+                </div>
+                <div class="information video">
+                    <h2 aura:id ="header-video">{!v.title2}</h2>
+                    <div aura:id ="related-videos"><ui:outputRichText value="{!currentItem.Related_Video__c}"/></div>
+                </div>
+                <div class="information misc">
+                    <h3 aura:id ="header-misc">{!v.title3}</h3>
+                    <div aura:id ="related-misc"><ui:outputRichText value="{!currentItem.Related_Other__c}"/></div>
+                </div>
+            </aura:iteration> 
+            <aura:set attribute="else">
+                <div class="no-information">
+                	<h4>{!v.noneMessage}</h4>
+                </div>
+            </aura:set>
+        </aura:if> 
+    </div>     
+</aura:component>

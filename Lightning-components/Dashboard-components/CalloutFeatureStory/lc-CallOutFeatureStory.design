@@ -1,0 +1,6 @@
+<design:component label="Callout: Feature Story">
+	<design:attribute name="picture" 		label="Default URL Cover Image" />
+    <design:attribute name="linkText" 		label="Text for Link" /> 
+    <design:attribute name="url"			label="Url for the link" 		placeholder="/feature-story"/>
+	<design:attribute name="whichArticle" 	label="Featured Article Number" description="A 9 digit number that will override the last featured article published from displaying. Leaving this field blank will display the last published featured article type." />
+</design:component>

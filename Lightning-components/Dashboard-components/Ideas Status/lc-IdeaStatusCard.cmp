@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="IdeaDashboard">
+    <aura:attribute name="whatProduct"		type="String" /> 
+    <aura:attribute name="whatStatus"		type="String" /> 
+	<aura:attribute name="whatColor"		type="String" /> 
+    <aura:attribute name="ideasTotal"		type="Integer" default="0"/> 
+    <aura:attribute name="useFontAwesome" 	type="Boolean" 	default="true" /> 
+    <aura:attribute name="iconName" 		type="String" 	default="far fa-star"/>
+    <aura:attribute name="url"		 		type="String" 	default="/ideas" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitJs}" />
+    
+    <a aura:id="main-container" href="javascript:void(0)" onclick="{!c.gotoURL}">
+        <div aura:id="status-icon" class="icon-container">
+            <aura:if isTrue="{!v.useFontAwesome}">
+                <span class="{!'icon ' + v.iconName}" aria-hidden="true"></span>
+                <aura:set attribute="else">
+                    <lightning:icon class="icon sf-icon" iconName="{!v.iconLink}" size="large" alternativeText="Icon"/>
+                </aura:set>
+            </aura:if>
+        </div>
+        <div class="idea-status-stat">
+            <p>{!v.ideasTotal}</p>
+            <h2>{!v.whatStatus}</h2>
+        </div>        
+    </a>    
+</aura:component>

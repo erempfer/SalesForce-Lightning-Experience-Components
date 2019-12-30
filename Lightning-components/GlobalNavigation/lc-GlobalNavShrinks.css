@@ -1,0 +1,532 @@
+.THIS {
+    margin: 	0 auto;
+    text-align: center;
+}
+
+.THIS.scroll-nav-btns {
+    text-align: left;
+}
+
+.THIS.toggle-mobile-menu {
+    display: 	none;
+}
+
+/*********************
+HOME BUTTON  
+**********************/
+.THIS > li:first-of-type {
+    display: 	none;
+}
+
+.THIS .dropdown-button {
+    margin: 	0 20px 0 0;
+}
+
+/*********************
+MAIN NAV DROPDOWN TEXT 
+**********************/
+.THIS .slds-dropdown,
+.THIS .dropdown-content.dropdown__list,
+.THIS .dropdown-content.dropdown__list .slds-dropdown__item,
+.THIS .dropdown-content.dropdown__list .slds-dropdown__item a {
+    font-size: 	1rem;
+    width:		100%;
+    margin:		0;
+}
+
+/********************* MAIN NAV DROPDOWN TEXT SCROLLING **********************/
+.THIS.scroll-nav-btns .slds-dropdown,
+.THIS.scroll-nav-btns .dropdown-content.dropdown__list,
+.THIS.scroll-nav-btns .dropdown-content.dropdown__list .slds-dropdown__item,
+.THIS.scroll-nav-btns .dropdown-content.dropdown__list .slds-dropdown__item a {
+    width: auto;
+}
+
+/*********************
+BUTTON  
+**********************/
+.THIS .slds-dropdown-trigger {
+    font-size:		1rem;
+    margin-right: 	5%;
+    cursor: 		pointer;
+}
+
+.THIS > div:last-of-type {
+    margin-right: 0;
+}
+
+.THIS .slds-button {
+    display: 			inline-block;
+    font-size:			1rem;
+    height: 			44px;
+    padding: 			0 5px 0 20px;
+    background: 		token(colorTextLinkSW);
+    border: 			2px solid token(colorTextLinkSW);
+    border-right: 		none;
+    border-radius: 		100px 0 0 100px;
+    color: 				#ffffff;
+    
+    -webkit-transition: none;
+    -moz-transition: 	none;
+    transition: 		none;
+}
+
+.THIS .slds-button:active {
+    color: #fff;
+}
+
+.THIS .slds-button:after, 
+.THIS .slds-button:before {
+    content: 		" ";
+    height: 		0;
+    width: 			0;
+    position: 		absolute;
+    left: 			100%;
+    top: 			50%;
+    border: 		solid transparent;
+    pointer-events: none;
+}
+
+.THIS .slds-button:after {
+    border-color: 		rgba(0, 0, 0, 0);
+    border-left-color: 	token(colorTextLinkSW);
+    border-width: 		20px;
+    margin-top: 		-20px;
+}
+
+.THIS .slds-button:before {
+    border-color: 		rgba(0, 0, 0, 0);
+    border-left-color: 	token(colorTextLinkSW);
+    border-width: 		22px;
+    margin-top: 		-22px;
+}
+
+.THIS .arrow-down {
+    display: none;
+	margin-left: 4px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+	border-top: 5px solid;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+/********************* BUTTON SCROLLING **********************/
+.THIS.scroll-nav-btns .slds-dropdown-trigger {
+    margin-right: 	0;
+}
+
+.THIS.scroll-nav-btns .arrow-down {
+    display: inline-block;
+}
+
+/********************* BUTTON TABLET **********************/
+@media only screen and (min-width: 48em) {
+    .THIS .slds-dropdown-trigger {
+        margin-right: 	2%;
+    }
+}
+
+/*********************
+BUTTON HOVER 
+**********************/
+.THIS .slds-dropdown-trigger:hover .slds-button {
+    background: #ffffff;
+    color: 		token(colorTextLinkSW);
+}
+
+.THIS .slds-dropdown-trigger:hover .slds-button:after {
+    border-left-color: #ffffff;
+}
+
+.THIS .slds-dropdown {
+    width:			auto;
+    background: 	#fff;
+    border: 		1px solid #D9D9D9;
+    margin-right: 	25px;
+}
+
+.THIS .slds-dropdown__item > a {
+    color: token(colorTextLinkSW);
+}
+
+.THIS .slds-dropdown__item > a:hover, 
+.THIS .slds-dropdown__item > a:focus {
+    background-color: 	token(colorTextLinkSW);
+    color:				#fff;
+}
+
+
+/*********************
+ICONS 
+**********************/
+.THIS .nav-bar-icons {
+    display: 			inline-block;
+    vertical-align: 	middle;
+    margin-left: 		10px;
+    height: 			61px;
+    background-repeat: 	no-repeat;
+    background-size: 	contain;
+    transition: 		height .5s; 
+}
+
+/*********************
+Learn Icon 
+**********************/
+.THIS > div:nth-of-type(1) .nav-bar-icons {
+    width:				145px;
+    margin: 			0;
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/learn.png");
+}
+
+/* EZCare Learn Icon for Winter */
+.THIS.winter > div:nth-of-type(1) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/learn_winter.png");
+}
+
+/* EZCare Learn Icon for Birthday */
+.THIS.bday > div:nth-of-type(1) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/Learn_bday.png");
+}
+
+/* DonorPerfect Learn Icon */
+.THIS.dp-style > div:nth-of-type(1) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn.png");
+}
+
+/* DonorPerfect Learn Icon for Winter */
+.THIS.dp-style.winter > div:nth-of-type(1) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn_winter.png");
+}
+
+/* DonorPerfect Learn Icon for Birthday */
+.THIS.dp-style.bday > div:nth-of-type(1) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn_bday.png");
+}
+
+/*********************
+Discuss Icon 
+**********************/
+.THIS > div:nth-of-type(2) .nav-bar-icons {
+    width:				98px;
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/discuss.png");
+}
+
+/* EZCare Discuss Icon for Winter */
+.THIS.winter > div:nth-of-type(2) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/discuss_winter.png");
+}
+
+/* EZCare Discuss Icon for Birthday */
+.THIS.bday > div:nth-of-type(2) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/Discuss_bday.png");
+}
+
+/* DonorPerfect Discuss Icon */
+.THIS.dp-style > div:nth-of-type(2) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss.png");
+}
+
+/* DonorPerfect Discuss Icon for Winter */
+.THIS.dp-style.winter > div:nth-of-type(2) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss_winter.png");
+}
+
+/* DonorPerfect Discuss Icon for Birthday */
+.THIS.dp-style.bday > div:nth-of-type(2) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss_bday.png");
+}
+
+
+/*********************
+Manage Icon 
+**********************/
+.THIS > div:nth-of-type(3) .nav-bar-icons {
+    width:				93px;
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/manage.png");
+}
+
+/* EZCare Manage Icon for Winter */
+.THIS.winter > div:nth-of-type(3) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/manage_winter.png");
+}
+
+/* EZCare Manage Icon for Birthday */
+.THIS.bday > div:nth-of-type(3) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/Manage_bday.png");
+}
+
+/* DonorPerfect Manage Icon */
+.THIS.dp-style > div:nth-of-type(3) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage.png");
+}
+
+/* DonorPerfect Manage Icon for Winter */
+.THIS.dp-style.winter > div:nth-of-type(3) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage_winter.png");
+}
+
+/* DonorPerfect Manage Icon for Birthday */
+.THIS.dp-style.bday > div:nth-of-type(3) .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage_bday.png");
+}
+
+/********************* ICONS SCROLLING **********************/
+.THIS.scroll-nav-btns .nav-bar-icons {
+    display: none;
+}
+
+
+/*********************
+ICONS HOVER 
+**********************/
+/*********************
+Learn Hover 
+**********************/
+.THIS > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/learn_hover.png");
+}
+
+/* EZCare Learn Hover for Winter */
+.THIS.winter > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/learn_hover_winter.png");
+}
+
+/* EZCare Learn Hover for Birthday */
+.THIS.bday > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/Learn_bday_hover.png");
+}
+
+/* DonorPerfect Learn Hover */
+.THIS.dp-style > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn_hover.png");
+}
+
+/* DonorPerfect Learn Hover for Winter */
+.THIS.dp-style.winter > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn_winter_hover.png");
+}
+
+/* DonorPerfect Learn Hover for Birthday */
+.THIS.dp-style.bday > div:nth-of-type(1):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Learn_bday_hover.png");
+}
+
+/*********************
+Discuss Hover 
+**********************/
+.THIS > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/discuss_hover.png");
+}
+
+/* EZCare Discuss Hover for Winter */
+.THIS.winter > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/discuss_hover_winter.png");
+}
+
+/* EZCare Discuss Hover for Birthday */
+.THIS.bday > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/Discuss_bday_hover.png");
+}
+
+/* DonorPerfect Discuss Hover */
+.THIS.dp-style > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss_hover.png");
+}
+
+/* DonorPerfect Discuss Hover for Winter */
+.THIS.dp-style.winter > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss_winter_hover.png");
+}
+
+/* DonorPerfect Discuss Hover for Birthday */
+.THIS.dp-style.bday > div:nth-of-type(2):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Discuss_bday_hover.png");
+}
+
+/*********************
+Manage Hover 
+**********************/
+.THIS > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/manage_hover.png");
+}
+
+/* EZCare Manage Hover for Winter */
+.THIS.winter > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/manage_hover_winter.png");
+}
+
+/* EZCare Manage Hover for Birthday */
+.THIS.bday > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/ez/assets/header/manage_bday_hover.png");
+}
+
+/* DonorPerfect Discuss Hover */
+.THIS.dp-style > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage_hover.png");
+}
+
+/* DonorPerfect Discuss Hover for Winter*/
+.THIS.dp-style.winter > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage_winter_hover.png");
+}
+
+/* DonorPerfect Discuss Hover for Birthday*/
+.THIS.dp-style.bday > div:nth-of-type(3):hover .nav-bar-icons {
+    background-image: 	url("https://www.softerware.com/community/donorperfect/assets/header/newIcons/Manage_bday_hover.png");
+}
+
+
+/*** PHONE ***/
+@media only screen and (max-width: 767px) {	
+    .THIS {
+        position:	relative;
+        top: 		0;
+        right: 		0;
+        text-align: left;
+    }
+       
+    /*** HAMBURGER MENU TOGGLE ***/
+    .THIS.toggle-mobile-menu {
+        position:	absolute;
+		top: 		-41px;
+    	right: 		75px;
+        display:	block;
+    	height:		40px;
+    }
+    
+    .THIS.toggle-mobile-menu a {
+        display: 	inline-block;
+        margin: 	0;
+    }
+    
+    .THIS.toggle-mobile-menu div {       
+        width: 			25px;
+        height: 		5px;
+        margin: 		5px 0;
+        background: 	#fff;
+        border-radius:	2px;
+    }
+    
+    .THIS:hover.toggle-mobile-menu div,
+    .THIS:focus.toggle-mobile-menu div {
+        background-color: #fff;
+    }
+    
+    
+    /*** NAVIGATIONAL MENU BUTTONS ***/
+    .THIS.nav-menu {
+        position:			absolute;
+        top:				35px; /* matches (.ShrinkNavThemeLayout .ezSearchRegion .search-component) height*/
+        left: 				100%;
+        z-index:			-1;
+        min-height: 		1000px;
+        overflow: 			hidden;
+        background: 		rgba(50, 50, 50, 0.8);
+        border-bottom: 		none;
+        pointer-events:		none;
+        
+        -webkit-transition: left .5s ease;
+        -moz-transition: 	left .5s ease;
+        transition: 		left .5s ease;
+    }    
+    
+    .THIS.toggle-mobile-menu:hover ~ .nav-menu, 
+    .THIS.toggle-mobile-menu:focus ~ .nav-menu,
+    .THIS.nav-menu:hover,
+    .THIS.nav-menu:focus {
+        left: 		0;
+        z-index:	1;
+        pointer-events:	all;
+    }  
+        
+    .THIS .slds-dropdown-trigger {
+        display: 		block;
+        width: 			100%;
+        pointer-events:	all;
+        margin-bottom: 	2px;
+        padding: 		0;
+    }
+    
+    
+    /*** BUTTONS ***/
+    .THIS .slds-button {
+        display: 		block;
+        position: 		relative;
+        width: 			100%;
+        height: 		auto;
+        margin: 		0;
+        padding: 		10px 15px;
+        border-bottom:	0;
+        border-radius:	0;
+        text-align: 	left;
+    }   
+    
+    .THIS .slds-dropdown-trigger:hover .slds-button,
+    .THIS .slds-dropdown-trigger:focus .slds-button {
+        background: 	#ffffff;
+        border: 		1px solid token(colorTextLinkSW);
+        color: 			token(colorTextLinkSW);
+    }
+        
+	.THIS .nav-bar-icons {
+        display: none;
+    }
+    
+    .THIS .arrow-down {
+        display: 	inline-block;
+        position: 	relative;
+        top: 		50%;
+        border-top: 6px solid #ffffff;
+    }
+    
+    .THIS .slds-dropdown-trigger:hover .arrow-down,
+    .THIS .slds-dropdown-trigger:focus .arrow-down {
+        border-top: 6px solid token(colorTextLinkSW);
+    }
+       
+    .THIS .slds-button:after, 
+    .THIS .slds-button:before {
+        display: none;
+    }
+    
+    
+    /*** DROP DOWN MENU ***/
+    .THIS .slds-dropdown-trigger .slds-dropdown {        
+        display: 			block;
+        width: 				100%;
+        max-width: 			100%;
+        max-height: 		0;
+        overflow: 			hidden;
+        
+        position: 			relative;
+        z-index: 			7000;
+        left: 				50%;
+        visibility: 		visible;
+        opacity: 			1;        
+        float: 				none;
+        
+        margin-top: 		0;
+        padding: 			0;
+        border: 			1px solid token(colorTextLinkSW);
+        border-top: 		0;
+        border-bottom:		0;
+        border-radius: 		0;
+        
+        font-size: 			1;
+        background: 		rgb(255, 255, 255);
+        box-shadow: 		none;
+        -webkit-transform:	translateX(-50%);
+        -ms-transform: 		translateX(-50%);
+        transform: 			translateX(-50%);            
+    }
+        
+    .THIS .slds-dropdown-trigger:hover .slds-dropdown, 
+    .THIS .slds-dropdown-trigger:focus .slds-dropdown {        
+        max-height: 		500px;
+        
+        -webkit-transition: max-height 1s ease-out;
+        -moz-transition: 	max-height 1s ease-out;
+        transition: 		max-height 1s ease-out;
+    }
+}

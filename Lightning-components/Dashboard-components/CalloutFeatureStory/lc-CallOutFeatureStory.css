@@ -1,0 +1,187 @@
+.THIS {
+    position:		relative;
+    background: 	#fff;
+    font-size: 		1rem;
+    box-shadow:		token(dpBoxShadow);
+    border-radius: 	token(styleBorderRadiusDashboard);
+}
+
+
+/*************************** 
+Text Style 
+***************************/
+.THIS .story-content > h1 {
+    margin-bottom:	0.75rem;
+    color: 			token(colorTextDefaultSW);
+    font-size: 		1.4rem;
+    line-height:	1.6rem;
+    font-weight: 	normal;
+}
+
+.THIS .story-content > p img,
+.THIS.dp-style .story-content > p img {
+    display: none;
+}
+
+.THIS p {
+    line-height: 	1.5rem;
+    color: 			token(colorTextDefaultSW);
+}
+
+.THIS .link-text {
+    width: 			100%;
+    display: 		inline-block;
+    margin: 		10px auto 0; 
+}
+
+.THIS a:hover .link-text {
+    text-decoration: underline;
+}
+
+
+/*************************** 
+Container Style 
+***************************/
+.THIS .story-container:hover,
+.THIS .story-container:focus {
+    color: 				token(colorBrandSW);
+    text-decoration: 	none;
+}
+
+.THIS .image-container {
+    width: 					100%;
+    padding-top:			50%;
+    border-radius:			token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard) 0 0;
+    background: 			url('https://www.softerware.com/community/donorperfect/assets/feature-story/TeaPot.jpg');
+    background-position: 	center !important;
+    background-repeat: 		no-repeat !important;
+    background-size: 		cover !important;
+}
+
+.THIS .story-content {
+    padding:		20px;
+    border-radius: 	0 0 token(styleBorderRadiusDashboard) token(styleBorderRadiusDashboard);
+}
+
+
+/*************************** 
+Ribbon Style 
+***************************/
+.THIS .ribbon {
+    display: 	block;
+    position: 	absolute;
+    right: 		-15px;
+    top: 		-15px;
+    z-index: 	1;
+    width: 		75px;
+    height: 	75px;
+}
+
+.THIS .ribbon span {
+    display: 		block;
+    width: 			75px;
+    height: 		75px;
+    line-height: 	75px;
+    border-radius: 	50%;
+    font-size: 		1rem;
+    font-weight:	bold;
+    text-align: 	center;
+    background: 	token(colorAlertNew);   
+}
+
+
+/*************************** 
+Line Clamp Style 
+***************************/
+.THIS .line-clamp {
+    display: 			block;
+    display: 			-webkit-box;
+    -webkit-box-orient: vertical;
+    position:			relative;
+    
+    line-height: 		1.5;
+    overflow: 			hidden;
+    text-overflow: 		ellipsis;
+    padding:		 	0 !important;
+}
+
+.THIS .line-clamp:after {
+    content: 			'';
+    text-align: 		right;
+    bottom: 			0;
+    right: 				0;
+    width: 				25%;
+    display: 			block;
+    position: 			absolute;
+    height: 			calc(1rem * 1.5);
+    background: 		linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+}
+
+@supports (-webkit-line-clamp: 1) {
+    .THIS .line-clamp:after {
+        display: none !important;
+    }
+}
+
+.THIS .line-clamp-1 {
+    -webkit-line-clamp: 1;
+    height: 			calc(1em * 1.5 * 1);
+}
+
+.THIS .line-clamp-2 {
+    -webkit-line-clamp: 2;
+    height: 			calc(1em * 1.5 * 2);
+}
+
+.THIS .line-clamp-3 {
+    -webkit-line-clamp: 3;
+    height: 			calc(1em * 1.5 * 3);
+}
+
+.THIS .line-clamp-4 {
+    -webkit-line-clamp: 4;
+    height: 			calc(1em * 1.5 * 4);
+}
+
+.THIS .line-clamp-5 {
+    -webkit-line-clamp: 5;
+    height: 			calc(1em * 1.5 * 5);
+}
+
+.THIS .line-clamp-6 {
+    -webkit-line-clamp: 6;
+    height: 			calc(1em * 1.5 * 6);
+}
+
+
+/*************************** 
+Hidden Style 
+***************************/
+.THIS .hidden,
+.THIS.hidden {
+    display: none;
+}
+
+
+/*************************** 
+No Article Style 
+***************************/
+.THIS .error-no-article {
+    text-align: left;
+}
+
+.THIS .error-no-article ul,
+.THIS .error-no-article ol {
+    display: 			block;
+    list-style-type: 	disc;
+    margin: 			1rem 0;
+    padding-left: 		40px;
+}
+
+.THIS .error-no-article ol {
+    list-style-type: decimal;
+}
+
+.THIS .error-no-article li {
+    margin-bottom: 5px;
+}

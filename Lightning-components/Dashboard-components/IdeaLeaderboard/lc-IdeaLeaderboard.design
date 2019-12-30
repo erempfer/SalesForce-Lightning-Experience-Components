@@ -1,0 +1,7 @@
+<design:component label="Ideas: Leaderboard">
+    <design:attribute name="whatProduct" 	label="SofterWare Product" 		datasource = "DonorPerfect, EZCare" default="DonorPerfect" />
+    <design:attribute name="title"			label="Header text"  />
+    <design:attribute name="howMany"		label="Display this many ideas" default="5" />
+    <design:attribute name="urlOne"			label="Primary Product URL" 	placeholder="/suggest-and-vote-ezcare"/>
+    <design:attribute name="urlTwo"			label="Secondary Product URL" 	placeholder="/ideas-weblink"/>
+</design:component>
